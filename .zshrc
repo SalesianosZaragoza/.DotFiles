@@ -89,15 +89,15 @@ source $ZSH/plugins/fasd/fasd.plugin.zsh
 source  $ZSH/plugins/mvn/mvn.plugin.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export CMAKE_HOME="/home/gorka/TOOLS/cmake/cmake-3.8.0-Linux-x86_64/"
+export CMAKE_HOME="$HOME/TOOLS/cmake/cmake-3.8.0-Linux-x86_64/"
 export JAVA_HOME="/usr/lib/jvm/java-8-oracle/"
-export SCALA_HOME="/home/gorka/TOOLS/scala-2.11.7"
-export MAVEN_HOME="/home/gorka/TOOLS/apache-maven-3.3.9"
-export GRADLE_HOME="/home/gorka/TOOLS/gradle-2.9"
+export SCALA_HOME="$HOME/TOOLS/scala-2.11.7"
+export MAVEN_HOME="$HOME/TOOLS/apache-maven-3.3.9"
+export GRADLE_HOME="$HOME/TOOLS/gradle-2.9"
 export PATH=$CMAKE_HOME/bin:$PATH:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAVEN_HOME/bin
 
-export REBEL_BASE=/home/gorka/.jrebel
-export REBEL_HOME=/home/gorka/IDE/eclipse-jee/plugins/org.zeroturnaround.eclipse.embedder_7.1.6.RELEASE/jrebel
+export REBEL_BASE=$HOME/.jrebel
+export REBEL_HOME=$HOME/IDE/eclipse-jee/plugins/org.zeroturnaround.eclipse.embedder_7.1.6.RELEASE/jrebel
 export JAVA_OPTIONS=$JAVA_OPTIONS" -agentpath:$REBEL_HOME/lib/libjrebel64.so -Xmx4096m -Xms4096m"
 export PYTHONPATH=/usr/lib/python3/dist-packages/
 export ANDROID_HOME=~/SDK/ANDROID/
