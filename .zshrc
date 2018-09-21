@@ -3,7 +3,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation. 
-export ZSH=/home/gorka/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -90,18 +90,18 @@ source  $ZSH/plugins/mvn/mvn.plugin.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export CMAKE_HOME="$HOME/TOOLS/cmake/cmake-3.8.0-Linux-x86_64/"
-export JAVA_HOME="/usr/lib/jvm/java-8-oracle/"
+export JAVA_HOME="$HOME/SDK/JDK/jdk-10.0.2"
 export SCALA_HOME="$HOME/TOOLS/scala-2.11.7"
 export MAVEN_HOME="$HOME/TOOLS/apache-maven-3.3.9"
 export GRADLE_HOME="$HOME/TOOLS/gradle-2.9"
-export PATH=$CMAKE_HOME/bin:$PATH:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAVEN_HOME/bin
+export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAVEN_HOME/bin:$PATH
 
 export REBEL_BASE=$HOME/.jrebel
 export REBEL_HOME=$HOME/IDE/eclipse-jee/plugins/org.zeroturnaround.eclipse.embedder_7.1.6.RELEASE/jrebel
 export JAVA_OPTIONS=$JAVA_OPTIONS" -agentpath:$REBEL_HOME/lib/libjrebel64.so -Xmx4096m -Xms4096m"
 export PYTHONPATH=/usr/lib/python3/dist-packages/
 export ANDROID_HOME=~/SDK/ANDROID/
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$PATH
 
 alias remoteDebugOn="export MAVEN_OPTS='-Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 $JAVA_OPTIONS'"
 alias remoteDebugOff='unset MAVEN_OPTS'
