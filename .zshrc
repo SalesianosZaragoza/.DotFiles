@@ -87,12 +87,15 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source $ZSH/plugins/fasd/fasd.plugin.zsh
 source  $ZSH/plugins/mvn/mvn.plugin.zsh
+source $ZSH/plugins/docker-compose/docker-compose.plugin.zsh
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export CMAKE_HOME="$HOME/TOOLS/cmake/cmake-3.8.0-Linux-x86_64/"
-export JAVA_HOME="$HOME/SDK/JDK/jdk-10.0.2"
+#export JAVA_HOME="$HOME/SDK/JDK/jdk-10.0.2"
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
 export SCALA_HOME="$HOME/TOOLS/scala-2.11.7"
-export MAVEN_HOME="$HOME/TOOLS/apache-maven-3.3.9"
+export MAVEN_HOME="$HOME/TOOLS/apache-maven-3.5.4"
 export GRADLE_HOME="$HOME/TOOLS/gradle-2.9"
 export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAVEN_HOME/bin:$PATH
 
@@ -106,5 +109,18 @@ export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 alias remoteDebugOn="export MAVEN_OPTS='-Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 $JAVA_OPTIONS'"
 alias remoteDebugOff='unset MAVEN_OPTS'
 alias vim=nvim
+alias j10="export JAVA_HOME='$HOME/SDK/JDK/jdk-10.0.2/';export PATH='$JAVA_HOME:$PATH'"
+alias j11="export JAVA_HOME='/usr/lib/jvm/java-11-openjdk-amd64/';export PATH='$JAVA_HOME:$PATH'"
+
+
+
+
+
+
+
+
+
+
+
 
 
