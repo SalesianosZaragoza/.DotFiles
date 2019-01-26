@@ -99,7 +99,8 @@ export JAVA_HOME="$HOME/SDK/JDK/java-11-openjdk-hotswap/"
 export SCALA_HOME="$HOME/TOOLS/scala-2.11.7"
 export MAVEN_HOME="$HOME/TOOLS/apache-maven-3.6.0"
 export GRADLE_HOME="$HOME/TOOLS/gradle-2.9"
-export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAVEN_HOME/bin:$PATH
+export SALESFORCE_HOME="$HOME/TOOLS/salesforce/sfdx-cli-v6.48.0-bfccc40118-linux-x64"
+export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAVEN_HOME/bin:$SALESFORCE_HOME/bin:$PATH
 
 export JAVA_OPTIONS=$JAVA_OPTIONS"-Xmx4096m -Xms4096m"
 export PYTHONPATH=/usr/lib/python3/dist-packages/
@@ -108,16 +109,11 @@ export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 alias reloadPath='export PATH=$JAVA_HOME/bin:$PATH'
 alias remoteDebugOn="export MAVEN_OPTS='-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 $JAVA_OPTIONS'"
 alias remoteDebugOff='unset MAVEN_OPTS'
-alias vim=nvim
+#alias vim=nvim
 alias j10="export JAVA_HOME='$HOME/SDK/JDK/jdk-10.0.2/';export PATH='$JAVA_HOME:$PATH'"
 alias j11="export JAVA_HOME='/usr/lib/jvm/java-11-openjdk-amd64/';export PATH='$JAVA_HOME:$PATH'"
 alias jhotswap="export JAVA_HOME='$HOME/SDK/JDK/java-11-openjdk-hotswap/';export PATH='$JAVA_HOME:$PATH'"
-
-
-
-
-
-
+alias code-sfdx='code --extensions-dir ~/.sfdx-code'
 
 
 
