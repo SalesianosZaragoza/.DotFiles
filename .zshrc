@@ -53,7 +53,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git,zsh-completions)
+plugins=(git fzf mvn aws fasd zsh-completions vagrant docker docker-compose vagrant-prompt kubectl git-flow git gitfast command-not-found kubectl)
 autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
 
@@ -85,20 +85,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source $ZSH/plugins/fasd/fasd.plugin.zsh
-source  $ZSH/plugins/mvn/mvn.plugin.zsh
-source $ZSH/plugins/docker-compose/docker-compose.plugin.zsh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export CMAKE_HOME="$HOME/TOOLS/cmake/cmake-3.13.0-rc2-Linux-x86_64/"
+export CMAKE_HOME="$HOME/TOOLS/cmake/cmake-3.13.0-irc2-Linux-x86_64/"
 #export JAVA_HOME="/usr/lib/jvm/java-8-oracle/"
 export JAVA_HOME="$HOME/SDK/JDK/java-11-openjdk-hotswap/"
 #export JAVA_HOME="/usr/lib/jvm/java-10-openjdk-amd64/"
 #export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
-export SCALA_HOME="$HOME/TOOLS/scala-2.11.7"
+export SCALA_HOME="$HOME/TOOLS/scala-2.13.0"
 export MAVEN_HOME="$HOME/TOOLS/apache-maven-3.6.0"
-export GRADLE_HOME="$HOME/TOOLS/gradle-2.9"
+export GRADLE_HOME="$HOME/TOOLS/gradle-5.4.1"
 export SALESFORCE_HOME="$HOME/TOOLS/salesforce/sfdx-cli-v6.48.0-bfccc40118-linux-x64"
 export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAVEN_HOME/bin:$SALESFORCE_HOME/bin:$PATH
 
@@ -114,9 +110,10 @@ alias j10="export JAVA_HOME='$HOME/SDK/JDK/jdk-10.0.2/';export PATH='$JAVA_HOME:
 alias j11="export JAVA_HOME='/usr/lib/jvm/java-11-openjdk-amd64/';export PATH='$JAVA_HOME:$PATH'"
 alias jhotswap="export JAVA_HOME='$HOME/SDK/JDK/java-11-openjdk-hotswap/';export PATH='$JAVA_HOME:$PATH'"
 alias code-sfdx='code --extensions-dir ~/.sfdx-code'
+alias code-cpp='code --extensions-dir ~/.cpp-code'
+alias code-devops='code --extensions-dir ~/.devops-code'
 
-
-
-
-
-
+#export PYENV_ROOT="$HOME/.pyenv"
+#export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
