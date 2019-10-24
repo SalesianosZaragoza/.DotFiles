@@ -105,15 +105,13 @@ export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 alias reloadPath='export PATH=$JAVA_HOME/bin:$PATH'
 alias remoteDebugOn="export MAVEN_OPTS='-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 $JAVA_OPTIONS'"
 alias remoteDebugOff='unset MAVEN_OPTS'
-#alias vim=nvim
 alias j10="export JAVA_HOME='$HOME/SDK/JDK/jdk-10.0.2/';export PATH='$JAVA_HOME:$PATH'"
 alias j11="export JAVA_HOME='/usr/lib/jvm/java-11-openjdk-amd64/';export PATH='$JAVA_HOME:$PATH'"
 alias jhotswap="export JAVA_HOME='$HOME/SDK/JDK/java-11-openjdk-hotswap/';export PATH='$JAVA_HOME:$PATH'"
 alias code-sfdx='code --extensions-dir ~/.sfdx-code'
 alias code-cpp='code --extensions-dir ~/.cpp-code'
 alias code-devops='code --extensions-dir ~/.devops-code'
-
-#export PYENV_ROOT="$HOME/.pyenv"
-#export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init -)"
-#eval "$(pyenv virtualenv-init -)"
+alias code-python='code --extensions-dir ~/.python-code'
+alias code-arduino='code --extensions-dir ~/.arduino-code'
+alias code-scala='code --extensions-dir ~/.scala-code'
+alias code-node='code --extensions-dir ~/.node-code'
