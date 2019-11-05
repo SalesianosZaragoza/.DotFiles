@@ -56,6 +56,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
 plugins=(git fzf mvn aws fasd zsh-completions vagrant docker docker-compose vagrant-prompt kubectl git-flow git gitfast command-not-found kubectl)
 autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
+eval $(thefuck --alias)
 
 # User configuration
 
@@ -115,3 +116,5 @@ alias code-python='code --extensions-dir ~/.python-code'
 alias code-arduino='code --extensions-dir ~/.arduino-code'
 alias code-scala='code --extensions-dir ~/.scala-code'
 alias code-node='code --extensions-dir ~/.node-code'
+alias code-asm='code --extensions-dir ~/.asm-code'
+fpath=(~/.zsh.d/ $fpath)
