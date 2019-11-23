@@ -1,4 +1,3 @@
-#sh ~/.properscaling.sh  
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -53,7 +52,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf mvn aws fasd zsh-completions vagrant docker docker-compose vagrant-prompt kubectl git-flow git gitfast command-not-found kubectl)
+plugins=(git fzf mvn fasd zsh-completions vagrant docker docker-compose vagrant-prompt kubectl git-flow gitfast command-not-found)
 autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
 eval $(thefuck --alias)
@@ -102,7 +101,8 @@ export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAV
 export JAVA_OPTIONS=$JAVA_OPTIONS"-Xmx4096m -Xms4096m"
 export PYTHONPATH=/usr/lib/python3/dist-packages/
 export ANDROID_HOME=~/SDK/ANDROID/
-export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$PATH
+export BREW_HOME=~/linuxbrew/.linuxbrew/
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$BREW_HOME/bin:$PATH
 alias reloadPath='export PATH=$JAVA_HOME/bin:$PATH'
 alias remoteDebugOn="export MAVEN_OPTS='-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 $JAVA_OPTIONS'"
 alias remoteDebugOff='unset MAVEN_OPTS'
@@ -117,4 +117,5 @@ alias code-arduino='code --extensions-dir ~/.arduino-code'
 alias code-scala='code --extensions-dir ~/.scala-code'
 alias code-node='code --extensions-dir ~/.node-code'
 alias code-asm='code --extensions-dir ~/.asm-code'
+alias code-sql='code --extensions-dir ~/.sql-code'
 fpath=(~/.zsh.d/ $fpath)
