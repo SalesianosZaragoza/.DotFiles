@@ -88,27 +88,23 @@ eval $(thefuck --alias)
 
 
 export CMAKE_HOME="$HOME/TOOLS/cmake/cmake-3.13.0-irc2-Linux-x86_64/"
-#export JAVA_HOME="/usr/lib/jvm/java-8-oracle/"
 export JAVA_HOME="$HOME/SDK/JDK/java-11-openjdk-hotswap/"
-#export JAVA_HOME="/usr/lib/jvm/java-10-openjdk-amd64/"
-#export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
 export SCALA_HOME="$HOME/TOOLS/scala-2.13.0"
-export MAVEN_HOME="$HOME/TOOLS/apache-maven-3.6.0"
+export MAVEN_HOME="$HOME/TOOLS/apache-maven-3.6.2"
 export GRADLE_HOME="$HOME/TOOLS/gradle-5.4.1"
-export SALESFORCE_HOME="$HOME/TOOLS/salesforce/sfdx-cli-v6.48.0-bfccc40118-linux-x64"
+#export SALESFORCE_HOME="$HOME/TOOLS/salesforce/sfdx-cli-v7.33.2-045d48473e-linux-x64"
 export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAVEN_HOME/bin:$SALESFORCE_HOME/bin:$PATH
-
 export JAVA_OPTIONS=$JAVA_OPTIONS"-Xmx4096m -Xms4096m"
-export PYTHONPATH=/usr/lib/python3/dist-packages/
+export PYTHONPATH=/usr/lib/python3/dist-packages/:~/.local/lib/python3.7/site-packages:/usr/lib/python3.7/
 export ANDROID_HOME=~/SDK/ANDROID/
 export BREW_HOME=~/linuxbrew/.linuxbrew/
-export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$BREW_HOME/bin:$PATH
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$BREW_HOME/bin:~/.local/bin:$PATH
 alias reloadPath='export PATH=$JAVA_HOME/bin:$PATH'
 alias remoteDebugOn="export MAVEN_OPTS='-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 $JAVA_OPTIONS'"
 alias remoteDebugOff='unset MAVEN_OPTS'
-alias j10="export JAVA_HOME='$HOME/SDK/JDK/jdk-10.0.2/';export PATH='$JAVA_HOME:$PATH'"
-alias j11="export JAVA_HOME='/usr/lib/jvm/java-11-openjdk-amd64/';export PATH='$JAVA_HOME:$PATH'"
-alias jhotswap="export JAVA_HOME='$HOME/SDK/JDK/java-11-openjdk-hotswap/';export PATH='$JAVA_HOME:$PATH'"
+alias j11="export JAVA_HOME='/usr/lib/jvm/java-11-openjdk-amd64/' && export PATH='$JAVA_HOME/bin:$PATH'"
+alias j14="export JAVA_HOME='/usr/lib/jvm/java-1.14.0-openjdk-amd64/' && export PATH='$JAVA_HOME/bin:$PATH'"
+alias jhotswap="export JAVA_HOME='$HOME/SDK/JDK/java-11-openjdk-hotswap/' && export PATH='$JAVA_HOME/bin:$PATH'"
 alias code-sfdx='code --extensions-dir ~/.sfdx-code'
 alias code-cpp='code --extensions-dir ~/.cpp-code'
 alias code-devops='code --extensions-dir ~/.devops-code'
