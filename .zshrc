@@ -92,13 +92,13 @@ export JAVA_HOME="$HOME/SDK/JDK/java-11-openjdk-hotswap/"
 export SCALA_HOME="$HOME/TOOLS/scala-2.13.0"
 export MAVEN_HOME="$HOME/TOOLS/apache-maven-3.6.2"
 export GRADLE_HOME="$HOME/TOOLS/gradle-5.4.1"
-#export SALESFORCE_HOME="$HOME/TOOLS/salesforce/sfdx-cli-v7.33.2-045d48473e-linux-x64"
-export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAVEN_HOME/bin:$SALESFORCE_HOME/bin:$PATH
+export BREW_HOME="/home/linuxbrew/.linuxbrew"
+export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAVEN_HOME/bin:$SALESFORCE_HOME/bin:$BREW_HOME/bin:$PATH
 export JAVA_OPTIONS=$JAVA_OPTIONS"-Xmx4096m -Xms4096m"
 export PYTHONPATH=/usr/lib/python3/dist-packages/:~/.local/lib/python3.7/site-packages:/usr/lib/python3.7/
 export ANDROID_HOME=~/SDK/ANDROID/
-export BREW_HOME=~/linuxbrew/.linuxbrew/
-export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$BREW_HOME/bin:~/.local/bin:$PATH
+export BREW_HOME=/home/linuxbrew/.linuxbrew/
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$BREW_HOME/bin:~/.local/bin:/snap/bin:$PATH
 alias reloadPath='export PATH=$JAVA_HOME/bin:$PATH'
 alias remoteDebugOn="export MAVEN_OPTS='-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 $JAVA_OPTIONS'"
 alias remoteDebugOff='unset MAVEN_OPTS'
