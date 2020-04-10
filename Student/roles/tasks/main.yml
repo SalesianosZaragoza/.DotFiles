@@ -1,102 +1,112 @@
  
- ---
-  - name: Install packages that allow apt to be used over HTTPS
+---
+- name: Install packages that allow apt to be used over HTTPS
   apt:
-    name: "{{ packages }}"
     state: present
     update_cache: yes
-    vars:
-      packages:
-        - build-essential
-        - mc
-        - terminator
-        - curl
-        - wget
-        - git
-        - git-gui
-        - zsh
-  
-  - name: Backing up existing ~/.zshrc
-  shell: if [ -f ~/.zshrc ]; then mv ~/.zshrc{,.orig}; fi
-  when: installation|success
-  sudo: no
-  
-  - name: Cloning  oh-my-zsh
+    pkg:
+      - python3
+      - build-essential
+      - mc
+      - terminator
+      - curl
+      - wget
+      - git
+      - git-gui
+      - zsh
+      - linuxbrew-wrapper
+      - unzip
+  become: true
+
+- name: check if previious installed
+  stat: 
+    path: /home/vagrant/.oh-my-zsh
+  register: previous_zsh_instalation
+
+- name: Remove previous the zsh-installation
+  file: path=/home/vagrant/.oh-my-zsh state=absent
+  when: previous_zsh_instalation
+
+- name: Cloning  oh-my-zsh
   git:
     repo=https://github.com/robbyrussell/oh-my-zsh
     dest=~/.oh-my-zsh
-    when: installation|success
-    register: cloning
-    sudo: no
-    
-  - name: Creating new ~/.zshrc
+  register: cloning
+
+- name: Creating new ~/.zshrc
   copy:
     src=~/.oh-my-zsh/templates/zshrc.zsh-template
     dest=~/.zshrc
-    when: cloning|success
-    sudo: no
-      
-  - name: Add an apt signing key for Docker
+  when: cloning
+    
+- name: Add an apt signing key for Docker
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
     state: present
-        
-  - name: Add apt repository for stable version
+  become: true
+
+- name: Add apt repository for stable version
   apt_repository:
-    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu eoan stable
     state: present
-    
-  - name: Install docker and its dependecies
+  become: true
+
+- name: Install docker and its dependecies
   apt:
-    name: "{{ packages }}"
     state: present
     update_cache: yes
-    vars:
-      packages:
-        - docker-ce
-        - docker-ce-cli
-        - containerd.io
-        notify:
-          - docker status
-          
-  - name: Add an apt signing key for Kubernetes
+    pkg:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+  become: true
+
+- name: Add an apt signing key for Kubernetes
   apt_key:
     url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
     state: present
-              
-  - name: Adding apt repository for Kubernetes
-  apt_repository:
-    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
-    state: present
-    filename: kubernetes.list
-                
-  - name: Install Kubernetes binaries
-  apt:
-    name: "{{ packages }}"
-    state: present
-    update_cache: yes
-    vars:
-      packages:
-        - kubeadm
-        - kubectl
-        register: installed
-                      
+  become: true
+
+- name: Install microk8s
+  snap:
+    name:
+      - microk8s
+    classic: yes
+  become: true
+
+- name: Install eclipse
+  snap:
+    name:
+      - eclipse
+    classic: yes
+  become: true
+
 - name: Adds fasd repo
-apt_repository:
-  repo: 'ppa:aacebedo/fasd'
-  update_cache: yes
+  apt_repository:
+    repo: 'ppa:aacebedo/fasd'
+    update_cache: yes
+  become: true
 
 - name: Install fasd with apt
   apt: name=fasd state=latest
   become: true
 
-- name: Install Brew
-  script: /tmp/nvm-installer.sh
+- homebrew:
+    name: jesseduffield/lazygit/lazygit
+    state: present
+  become: false
 
-- homebrew_tap:
-  name: jesseduffield/lazydocker/lazydocker
-  
-- homebrew_tap:
-  name: jesseduffield/lazygit/lazygit
+- homebrew:
+    name: jesseduffield/lazydocker/lazydocker
+    state: present
+  become: false
 
-                          
+- name: Create eclipse directory if it does not exist
+  file:
+    path: ~/IDE/eclipse/
+    state: directory
+    mode: '0755'
+  become: false
+
+- name: Change shell
+  shell: chsh -s /bin/zsh

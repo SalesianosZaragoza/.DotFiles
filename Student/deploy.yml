@@ -1,6 +1,18 @@
 - name: "student"
-  hosts: localhost
-  connection: local
-
+  hosts: master 
+  become_method: sudo
+  become_user: root
+  become: no
+  vars:
+    ansible_python_interpreter: python3
+    ansible_become_pass: root
+    ansible_pkg_mgr: apt
+    eclipse_base_dir: "/home/vagrant/ide/eclipse"
+  tasks:
+    - name: Include task list in play only if the condition is true
+      include: "roles/tasks/main.yml"
   roles:
-    - { role: gantsign.visual-studio-code }
+    - role: gantsign.visual-studio-code 
+      users:
+        - username: vagrant
+    
