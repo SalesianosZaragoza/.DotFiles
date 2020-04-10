@@ -101,8 +101,8 @@ export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAV
 export JAVA_OPTIONS=$JAVA_OPTIONS"-Xmx4096m -Xms4096m"
 export PYTHONPATH=/usr/lib/python3/dist-packages/
 export ANDROID_HOME=~/SDK/ANDROID/
-export BREW_HOME=~/linuxbrew/.linuxbrew/
-export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$BREW_HOME/bin:$PATH
+export BREW_HOME=~/../linuxbrew/.linuxbrew/
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$BREW_HOME/bin:~/.local/bin:/snap/bin:$PATH
 alias reloadPath='export PATH=$JAVA_HOME/bin:$PATH'
 alias remoteDebugOn="export MAVEN_OPTS='-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 $JAVA_OPTIONS'"
 alias remoteDebugOff='unset MAVEN_OPTS'
@@ -119,3 +119,5 @@ alias code-node='code --extensions-dir ~/.node-code'
 alias code-asm='code --extensions-dir ~/.asm-code'
 alias code-sql='code --extensions-dir ~/.sql-code'
 fpath=(~/.zsh.d/ $fpath)
+LD_LIBRARY_PATH=/usr/local/cuda-10.2/targets/x86_64-linux/lib/
+export LD_LIBRARY_PATH

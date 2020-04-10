@@ -1,0 +1,6 @@
+- name: "student"
+  hosts: localhost
+  connection: local
+
+  roles:
+    - { role: gantsign.visual-studio-code }
