@@ -16,28 +16,36 @@
       - zsh
       - linuxbrew-wrapper
       - unzip
+      - fonts-powerline
+      - thefuck
+      - maven
+      - nodejs
+      - npm
+      - vagrant
+      - pylint
+      - python3-pip
   become: true
 
 - name: check if previious installed
   stat: 
-    path: /home/vagrant/.oh-my-zsh
+    path: ~/.oh-my-zsh
   register: previous_zsh_instalation
-
-- name: Remove previous the zsh-installation
-  file: path=/home/vagrant/.oh-my-zsh state=absent
-  when: previous_zsh_instalation
+  become: false
 
 - name: Cloning  oh-my-zsh
   git:
     repo=https://github.com/robbyrussell/oh-my-zsh
     dest=~/.oh-my-zsh
   register: cloning
+  when: previous_zsh_instalation
+  become: false
 
 - name: Creating new ~/.zshrc
   copy:
     src=~/.oh-my-zsh/templates/zshrc.zsh-template
     dest=~/.zshrc
   when: cloning
+  become: false
     
 - name: Add an apt signing key for Docker
   apt_key:
@@ -74,6 +82,13 @@
     classic: yes
   become: true
 
+- name: Install dbeaver
+  snap:
+    name:
+      - dbeaver-ce
+    classic: yes
+  become: true
+
 - name: Install eclipse
   snap:
     name:
@@ -91,14 +106,20 @@
   apt: name=fasd state=latest
   become: true
 
-- homebrew:
-    name: jesseduffield/lazygit/lazygit
-    state: present
+- name: update brew
+  shell: brew update
   become: false
 
-- homebrew:
-    name: jesseduffield/lazydocker/lazydocker
-    state: present
+- name: Install lazydocker
+  shell: brew install jesseduffield/lazydocker/lazydocker </dev/null
+  become: false
+
+- name: Install lazygit
+  shell: brew install jesseduffield/lazygit/lazygit </dev/null
+  become: false
+
+- name: Install tig
+  shell: brew install tig </dev/null
   become: false
 
 - name: Create eclipse directory if it does not exist
@@ -108,5 +129,26 @@
     mode: '0755'
   become: false
 
+- git:
+    repo: https://github.com/bhilburn/powerlevel9k.git
+    dest: ~/.oh-my-zsh/custom/themes/powerlevel9k
+
+- name: Delete ~/.zshrc
+  file:
+    path: ~/.zshrc
+    state: absent
+
+- name: update zshrc
+  get_url: 
+    url: https://raw.githubusercontent.com/SalesianosZaragoza/ConfigLinuxFiles/master/.zshrc
+    dest: ~/.zshrc
+    mode: '0775'
+  become: false
+
 - name: Change shell
-  shell: chsh -s /bin/zsh
+  expect:
+    command: "chsh -s /bin/zsh"
+    responses:
+      (?i)password: "vagrant"
+  become: false
+  
