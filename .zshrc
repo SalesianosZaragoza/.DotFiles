@@ -103,7 +103,9 @@ export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools
 alias reloadPath='export PATH=$JAVA_HOME/bin:$PATH'
 alias remoteDebugOn="export MAVEN_OPTS='-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 $JAVA_OPTIONS'"
 alias remoteDebugOff='unset MAVEN_OPTS'
+alias j8="export JAVA_HOME='/usr/lib/jvm/java-8-openjdk-amd64/' && export PATH='$JAVA_HOME/bin:$PATH'"
 alias j11="export JAVA_HOME='/usr/lib/jvm/java-11-openjdk-amd64/' && export PATH='$JAVA_HOME/bin:$PATH'"
+alias j13="export JAVA_HOME='/usr/lib/jvm/java-13-openjdk-amd64/' && export PATH='$JAVA_HOME/bin:$PATH'"
 alias j14="export JAVA_HOME='/usr/lib/jvm/java-1.14.0-openjdk-amd64/' && export PATH='$JAVA_HOME/bin:$PATH'"
 alias jhotswap="export JAVA_HOME='$HOME/SDK/JDK/java-11-openjdk-hotswap/' && export PATH='$JAVA_HOME/bin:$PATH'"
 alias code-sfdx='code --extensions-dir ~/.sfdx-code'

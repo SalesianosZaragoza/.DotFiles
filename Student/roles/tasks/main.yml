@@ -24,6 +24,12 @@
       - vagrant
       - pylint
       - python3-pip
+      - bat 
+      - openjdk-8-jdk
+      - openjdk-11-jdk
+      - openjdk-13-jdk
+      - openjdk-14-jdk
+      
   become: true
 
 - name: check if previious installed
@@ -120,13 +126,6 @@
 
 - name: Install tig
   shell: brew install tig </dev/null
-  become: false
-
-- name: Create eclipse directory if it does not exist
-  file:
-    path: ~/IDE/eclipse/
-    state: directory
-    mode: '0755'
   become: false
 
 - git:
