@@ -1,6 +1,6 @@
  
 ---
-- name: Install packages that allow apt to be used over HTTPS
+- name: Install packages with apt 
   apt:
     state: present
     update_cache: yes
@@ -14,7 +14,6 @@
       - git
       - git-gui
       - zsh
-      - linuxbrew-wrapper
       - unzip
       - fonts-powerline
       - thefuck
@@ -61,7 +60,7 @@
 
 - name: Add apt repository for stable version
   apt_repository:
-    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu eoan stable
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
     state: present
   become: true
 
@@ -95,6 +94,13 @@
     classic: yes
   become: true
 
+- name: Install vs code
+  snap:
+    name:
+      - code
+    classic: yes
+  become: true
+
 - name: Install eclipse
   snap:
     name:
@@ -108,34 +114,79 @@
     update_cache: yes
   become: true
 
+- name: Install brew
+  shell: curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | zsh -
+  args:
+    warn: no
+  become: false
+
+- name: Configure Homebrew in your ~/.profile
+  shell: echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> ${HOME}/.profile
+  become: false
+
+# Add Homebrew to your PATH
+- name: Configure Homebrew exports
+  shell: eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+  become: false
+
+- name: reload profile
+  shell: . ${HOME}/.profile
+  become: false
+
 - name: Install fasd with apt
   apt: name=fasd state=latest
   become: true
 
 - name: update brew
   shell: brew update
+  ignore_errors: yes
   become: false
 
 - name: Install lazydocker
   shell: brew install jesseduffield/lazydocker/lazydocker </dev/null
+  ignore_errors: yes
+  become: false
+
+- name: Upgrade lazydocker
+  shell: brew upgrade jesseduffield/lazydocker/lazydocker </dev/null
+  ignore_errors: yes
   become: false
 
 - name: Install lazygit
   shell: brew install jesseduffield/lazygit/lazygit </dev/null
+  ignore_errors: yes
+  become: false
+
+- name: Upgrade lazygit
+  shell: brew upgrade jesseduffield/lazygit/lazygit </dev/null
+  ignore_errors: yes
   become: false
 
 - name: Install tig
   shell: brew install tig </dev/null
+  ignore_errors: yes
+  become: false
+
+- name: Install tig
+  shell: brew upgrade tig </dev/null
+  ignore_errors: yes
   become: false
 
 - git:
     repo: https://github.com/romkatv/powerlevel10k.git
     dest: ~/.oh-my-zsh/custom/themes/powerlevel10k
 
-- name: Delete ~/.zshrc
+- name: check if previous installed
+  stat: 
+    path: ~/.zshrc
+  register: exists_zsh_instalation
+  become: false
+
+- name: Create ~/.zshrc
   file:
     path: ~/.zshrc
     state: absent
+  when: not exists_zsh_instalation
 
 - name: update zshrc
   get_url: 
@@ -144,10 +195,5 @@
     mode: '0775'
   become: false
 
-- name: Change shell
-  expect:
-    command: "chsh -s /bin/zsh"
-    responses:
-      (?i)password: "vagrant"
-  become: false
+
   

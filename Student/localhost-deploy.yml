@@ -1,18 +1,16 @@
-- name: "student"
-  hosts: master 
+- name: "localhost"
+  hosts: localhost 
   become_method: sudo
   become_user: root
   become: no
   vars:
     ansible_python_interpreter: python3
-    ansible_become_pass: root
     ansible_pkg_mgr: apt
-    eclipse_base_dir: "/home/vagrant/ide/eclipse" 
-  tasks:
+    eclipse_base_dir: "${HOME}/IDE/eclipse" 
+  tasks:  
     - name: Include task list in play only if the condition is true
       include: "roles/tasks/main.yml"
-  roles:
-    - role: gantsign.visual-studio-code 
-      users:
-        - username: vagrant
-    
+
+    - name: change shell to zsh
+      shell: "chsh -s /usr/bin/zsh"
+      become: true
