@@ -6,6 +6,7 @@
     update_cache: yes
     pkg:
       - python3
+      - snapd
       - build-essential
       - mc
       - terminator
