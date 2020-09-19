@@ -9,7 +9,7 @@
     ansible_pkg_mgr: apt
     eclipse_base_dir: "/home/vagrant/ide/eclipse" 
   tasks:
-    - name: Include task list in play only if the condition is true
+    - name: Include task list 
       include: "roles/tasks/main.yml"
       
     - name: change shell to zsh
@@ -17,6 +17,13 @@
         command: "chsh -s /usr/bin/zsh"
         responses:
           (?i)password: "vagrant"
+
+    - name: change keyboard to spanish
+      expect:
+        command: "localectl set-keymap es"
+        responses:
+          (?i)password: "vagrant"
+        
     
     - name: allow current user to manage docker
       file:

@@ -41,54 +41,16 @@
   become: true
 
 - include: zsh.yml
-    
 - include: docker.yml
-
-- name: Add an apt signing key for Kubernetes
-  apt_key:
-    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
-    state: present
-  become: true
-
+- include: jenv.yml
 - include: snap.yml
-
-- name: Install Kubebox
-  shell: curl -Lo kubebox https://github.com/astefanutti/kubebox/releases/download/v0.8.0/kubebox-linux && chmod +x kubebox
-  become: false
-
-- name: Reload profile
-  shell: . ${HOME}/.zprofile
-  become: false
-
-- name: Adds fasd repo
-  apt_repository:
-    repo: 'ppa:aacebedo/fasd'
-    update_cache: yes
-  become: true
-
-- name: Install fasd with apt
-  apt: name=fasd state=latest
-  become: true
-
-- include: brew.yml
-
-- name: Install spacevim
-  shell: curl -sLf https://spacevim.org/install.sh | zsh </dev/null
-  ignore_errors: yes
-  become: false
-
+- include: kubernetes.yml
+- include: fasd.yml
+- include: vim.yml
 - include: npm.yml
+- include: brew.yml
     
-- name: Install jenv
-  git: 
-    repo: https://github.com/jenv/jenv.git 
-    dest: ~/.jenv
 
-
-- name: Install Jenv into path
-  shell: echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.zshenv | echo 'eval "$(jenv init -)"' >> ~/.zshrc
-  ignore_errors: yes
-  become: false
     
 
 

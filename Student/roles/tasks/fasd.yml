@@ -1,0 +1,9 @@
+- name: Adds fasd repo
+  apt_repository:
+    repo: 'ppa:aacebedo/fasd'
+    update_cache: yes
+  become: true
+
+- name: Install fasd with apt
+  apt: name=fasd state=latest
+  become: true

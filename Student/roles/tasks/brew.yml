@@ -5,9 +5,17 @@
     warn: no
   become: false
 
-- name: Install brew into path
-  shell: echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >> ~/.zshenv | echo 'eval "$(jenv init -)"' >> ~/.zshrc
-  ignore_errors: yes
+- name: Export brew into path
+  blockinfile:
+    path: ~/.zshrc
+    marker: "# {mark} ANSIBLE MANAGED BLOCK for linuxbrew"
+    block: |
+      export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+
+- name: Reload zshrc
+  shell: . ${HOME}/.zshrc
+  args:
+    executable: /bin/zsh
   become: false
 
 - name: Update brew
@@ -18,104 +26,50 @@
   become: false
 
 - name: Install lazydocker
-  shell: brew install jesseduffield/lazydocker/lazydocker </dev/null
-  ignore_errors: yes
-  args:
-    executable: /bin/zsh
-  become: false
-
-- name: Upgrade lazydocker
-  shell: brew upgrade jesseduffield/lazydocker/lazydocker </dev/null
-  ignore_errors: yes
-  args:
-    executable: /bin/zsh
+  homebrew:
+    name: jesseduffield/lazydocker/lazydocker
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
   become: false
 
 - name: Install lazygit
-  shell: brew install jesseduffield/lazygit/lazygit </dev/null
-  ignore_errors: yes
-  args:
-    executable: /bin/zsh
-  become: false
-
-- name: Upgrade lazygit
-  shell: brew upgrade jesseduffield/lazygit/lazygit </dev/null
-  ignore_errors: yes
-  args:
-    executable: /bin/zsh
+  homebrew:
+    name: jesseduffield/lazygit/lazygit
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
   become: false
 
 - name: Install tig
-  shell: brew install tig </dev/null
-  ignore_errors: yes
-  args:
-    executable: /bin/zsh
-  become: false
-
-- name: Upgrade tig
-  shell: brew upgrade tig </dev/null
-  ignore_errors: yes
-  args:
-    executable: /bin/zsh
+  homebrew:
+    name: tig
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
   become: false
 
 - name: Install lazynpm
-  shell: brew install jesseduffield/lazynpm/lazynpm </dev/null
-  ignore_errors: yes
-  args:
-    executable: /bin/zsh
-  become: false
-
-- name: Upgrade lazynpm
-  shell: brew upgrade jesseduffield/lazynpm/lazynpm </dev/null
-  ignore_errors: yes
-  args:
-    executable: /bin/zsh
+  homebrew:
+    name: jesseduffield/lazynpm/lazynpm
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
   become: false
 
 - name: Install grv
-  shell: brew install grv </dev/null
-  ignore_errors: yes
-  args:
-    executable: /bin/zsh
-  become: false
-
-- name: Upgrade grv
-  shell: brew upgrade grv </dev/null
-  ignore_errors: yes
-  args:
-    executable: /bin/zsh
+  homebrew:
+    name: grv
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
   become: false
 
 - name: Install ctop
-  shell: brew install ctop </dev/null
-  ignore_errors: yes
-  args:
-    executable: /bin/zsh
-  become: false
-
-- name: Upgrade ctop
-  shell: brew upgrade ctop </dev/null
-  ignore_errors: yes
-  args:
-    executable: /bin/zsh
+  homebrew:
+    name: ctop
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
   become: false
 
 - name: Install dry
-  shell: brew install dry </dev/null
-  ignore_errors: yes
-  args:
-    executable: /bin/zsh
+  homebrew:
+    name: moncho/dry/dry
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
   become: false
-
-- name: Upgrade dry
-  shell: brew upgrade ctop </dev/null
-  ignore_errors: yes
-  args:
-    executable: /bin/zsh
-  become: false
-
-# - name: using homebrew task
-#   homebrew:
-#     name: jesseduffield/lazygit/lazygit
-#     state: latest

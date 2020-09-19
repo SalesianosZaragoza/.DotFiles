@@ -8,7 +8,7 @@
     ansible_pkg_mgr: apt
     eclipse_base_dir: "${HOME}/IDE/eclipse" 
   tasks:  
-    - name: Include task list in play only if the condition is true
+    - name: Include task list
       include: "roles/tasks/main.yml"
 
     - name: change shell to zsh
