@@ -17,4 +17,12 @@
         command: "chsh -s /usr/bin/zsh"
         responses:
           (?i)password: "vagrant"
+    
+    - name: allow current user to manage docker
+      file:
+        path: /var/run/docker.sock
+        owner: vagrant
+        group: vagrant
+      become: true
+
  

@@ -1,0 +1,11 @@
+- name: Install "dockly" package globally.
+  npm:
+    name: dockly
+    global: yes
+  become: true
+
+- name: Install "fkill-cli" package globally.
+  npm:
+    name: fkill-cli
+    global: yes
+  become: true
