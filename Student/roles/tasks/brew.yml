@@ -73,3 +73,10 @@
     path: /home/linuxbrew/.linuxbrew/bin
     state: latest
   become: false
+
+- name: Install helm
+  homebrew:
+    name: helm
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
+  become: false

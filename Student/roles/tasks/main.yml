@@ -31,6 +31,7 @@
       - openjdk-11-jdk
       - openjdk-13-jdk
       - openjdk-14-jdk
+      - chromium-browser
   ignore_errors: yes 
   become: true
 
@@ -49,6 +50,7 @@
 - include: vim.yml
 - include: npm.yml
 - include: brew.yml
+- include: serverless.yml
     
 
     
