@@ -1,0 +1,50 @@
+- name: Check if oh-my-zsh previious installed
+  stat: 
+    path: ~/.oh-my-zsh
+  register: previous_zsh_instalation
+  become: false
+
+- name: Cloning  oh-my-zsh
+  git:
+    repo=https://github.com/robbyrussell/oh-my-zsh
+    dest=~/.oh-my-zsh
+  register: cloning
+  when: previous_zsh_instalation
+  become: false
+
+- name: Creating new ~/.zshrc
+  copy:
+    src=~/.oh-my-zsh/templates/zshrc.zsh-template
+    dest=~/.zshrc
+  when: cloning
+  become: false
+
+- name: Installing powerlevel 10k
+  git:
+    repo: https://github.com/romkatv/powerlevel10k.git
+    dest: ~/.oh-my-zsh/custom/themes/powerlevel10k
+
+- name: Check if zsh previous installed
+  stat: 
+    path: ~/.zshrc
+  register: exists_zsh_instalation
+  become: false
+
+- name: Create ~/.zshrc
+  file:
+    path: ~/.zshrc
+    state: absent
+  when: not exists_zsh_instalation
+
+- name: Update zshrc
+  get_url: 
+    url: https://raw.githubusercontent.com/SalesianosZaragoza/ConfigLinuxFiles/master/.zshrc
+    dest: ~/.zshrc
+    mode: '0775'
+  become: false
+
+- name: Installing zsh completions
+  git:
+    repo: https://github.com/zsh-users/zsh-completions.git
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-completions
+   

@@ -1,0 +1,16 @@
+- name: Install spacevim
+  get_url:
+      url: https://spacevim.org/install.sh
+      dest: /tmp/spacevim-installer.sh
+      mode: +x
+  become: false
+
+- name: Execute the spacevim-installer.sh
+  shell: /tmp/spacevim-installer.sh
+  args:
+    executable: /bin/zsh
+  become: false
+
+- name: Remove the spacevim-installer.sh
+  file: path=/tmp/spacevim-installer.sh state=absent
+  become: false

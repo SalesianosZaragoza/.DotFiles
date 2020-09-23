@@ -1,0 +1,82 @@
+- name: Install brew
+  shell: curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | zsh -
+  args:
+    executable: /bin/zsh
+    warn: no
+  become: false
+
+- name: Export brew into path
+  blockinfile:
+    path: ~/.zshrc
+    marker: "# {mark} ANSIBLE MANAGED BLOCK for linuxbrew"
+    block: |
+      export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+
+- name: Reload zshrc
+  shell: . ${HOME}/.zshrc
+  args:
+    executable: /bin/zsh
+  become: false
+
+- name: Update brew
+  shell: brew update
+  ignore_errors: yes
+  args:
+    executable: /bin/zsh
+  become: false
+
+- name: Install lazydocker
+  homebrew:
+    name: jesseduffield/lazydocker/lazydocker
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
+  become: false
+
+- name: Install lazygit
+  homebrew:
+    name: jesseduffield/lazygit/lazygit
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
+  become: false
+
+- name: Install tig
+  homebrew:
+    name: tig
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
+  become: false
+
+- name: Install lazynpm
+  homebrew:
+    name: jesseduffield/lazynpm/lazynpm
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
+  become: false
+
+- name: Install grv
+  homebrew:
+    name: grv
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
+  become: false
+
+- name: Install ctop
+  homebrew:
+    name: ctop
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
+  become: false
+
+- name: Install dry
+  homebrew:
+    name: moncho/dry/dry
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
+  become: false
+
+- name: Install helm
+  homebrew:
+    name: helm
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
+  become: false

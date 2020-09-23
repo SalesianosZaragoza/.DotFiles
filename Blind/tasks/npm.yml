@@ -1,0 +1,28 @@
+- name: Install "dockly" package globally.
+  npm:
+    name: dockly
+    global: yes
+  become: true
+
+- name: Install "fkill-cli" package globally.
+  npm:
+    name: fkill-cli
+    global: yes
+  become: true
+
+- name: Install node version manager
+  get_url:
+      url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh
+      dest: /tmp/nvm-installer.sh
+      mode: +x
+  become: false
+
+- name: Execute the nvm-installer.sh
+  shell: /tmp/nvm-installer.sh
+  args:
+    executable: /bin/zsh
+  become: false
+
+- name: Remove the nvm-installer.sh
+  file: path=/tmp/nvm-installer.sh state=absent
+  become: false

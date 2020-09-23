@@ -1,0 +1,5 @@
+- name: Execute the spacevim-installer.sh
+  shell: curl -o- -L https://slss.io/install
+  args:
+    executable: /bin/zsh
+  become: false

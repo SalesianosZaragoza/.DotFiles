@@ -1,0 +1,12 @@
+- name: Install jenv
+  git: 
+    repo: https://github.com/jenv/jenv.git 
+    dest: ~/.jenv
+
+- name: Install brew into path
+  blockinfile:
+    path: ~/.zshrc
+    marker: "# {mark} ANSIBLE MANAGED BLOCK for jenv"
+    block: |
+      export PATH="$HOME/.jenv/bin:$PATH"
+      eval "$(jenv init -)"
