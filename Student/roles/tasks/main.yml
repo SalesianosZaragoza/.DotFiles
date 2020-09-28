@@ -23,6 +23,9 @@
       - npm
       - vagrant
       - pylint
+      - global
+      - exuberant-ctags
+      - python-pygments
       - python3-pip
       - bat 
       - nnn 

@@ -82,3 +82,6 @@ name = 'ctrlp'
 [[layers]]
   name = "lang#sh"
 
+[[layers]]
+  name = "gtags"
+  gtagslabel = "pygments"
