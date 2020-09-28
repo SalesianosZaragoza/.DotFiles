@@ -32,6 +32,8 @@
       - openjdk-13-jdk
       - openjdk-14-jdk
       - chromium-browser
+      - clang
+      - clangd
   ignore_errors: yes 
   become: true
 
