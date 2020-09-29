@@ -9,42 +9,6 @@
     name: fkill-cli
     global: yes
     
-- name: Install "flake8" package globally.
-  npm:
-    name: flake8
-    global: yes
-  become: true
-
-- name: Install "yapf" package globally.
-  npm:
-    name: yapf
-    global: yes
-  become: true
-
-- name: Install "autoflake" package globally.
-  npm:
-    name: autoflake
-    global: yes
-  become: true
-
-- name: Install "isort" package globally.
-  npm:
-    name: isort
-    global: yes
-  become: true
-
-- name: Install "coverage" package globally.
-  npm:
-    name: coverage
-    global: yes
-  become: true
-
-- name: Install "python-language-server" package globally.
-  npm:
-    name: python-language-server
-    global: yes
-  become: true
-
 - name: Install "bash-language-server" package globally.
   npm:
     name: bash-language-server

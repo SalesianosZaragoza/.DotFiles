@@ -1,0 +1,29 @@
+- name: Install "flake8" package globally.
+  pip:
+    name: flake8
+  become: true
+
+- name: Install "yapf" package globally.
+  pip:
+    name: yapf
+  become: true
+
+- name: Install "autoflake" package globally.
+  pip:
+    name: autoflake
+  become: true
+
+- name: Install "isort" package globally.
+  pip:
+    name: isort
+  become: true
+
+- name: Install "coverage" package globally.
+  pip:
+    name: coverage
+  become: true
+
+- name: Install "python-language-server" package globally.
+  pip:
+    name: python-language-server
+  become: true
