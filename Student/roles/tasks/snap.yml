@@ -4,6 +4,7 @@
       - microk8s
     classic: yes
   ignore_errors: yes
+  when: ansible_facts['distribution'] == "Ubuntu"
   become: true
 
 - name: Install dbeaver
@@ -12,6 +13,7 @@
       - dbeaver-ce
     classic: yes
   ignore_errors: yes
+  when: ansible_facts['distribution'] == "Ubuntu"
   become: true
 
 - name: Install vs code
@@ -20,6 +22,7 @@
       - code
     classic: yes
   ignore_errors: yes
+  when: ansible_facts['distribution'] == "Ubuntu"
   become: true
 
 - name: Install eclipse
@@ -28,4 +31,5 @@
       - eclipse
     classic: yes
   ignore_errors: yes
+  when: ansible_facts['distribution'] == "Ubuntu"
   become: true

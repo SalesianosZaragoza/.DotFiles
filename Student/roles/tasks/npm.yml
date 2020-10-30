@@ -8,6 +8,7 @@
   npm:
     name: fkill-cli
     global: yes
+  become: true
     
 - name: Install "bash-language-server" package globally.
   npm:
