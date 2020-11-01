@@ -120,3 +120,9 @@ alias code-php='code --extensions-dir ~/.php-code'
 fpath=(~/.zsh.d/ $fpath)
 LD_LIBRARY_PATH=/usr/local/cuda-10.2/targets/x86_64-linux/lib/
 export LD_LIBRARY_PATH
+
+export PATH="$HOME/.jenv/bin:$PATH"
+export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}')":0"
+export PULSE_SERVER=tcp:$(grep nameserver /etc/resolv.conf | awk '{print $2}');
+export GTAGSLABEL=pygments
+export DOCKER_HOST=tcp://localhost:2375
