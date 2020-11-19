@@ -3,6 +3,7 @@
     name:
       - microk8s
     classic: yes
+  ignore_errors: yes
   become: true
 
 - name: Install dbeaver
@@ -10,6 +11,7 @@
     name:
       - dbeaver-ce
     classic: yes
+  ignore_errors: yes
   become: true
 
 - name: Install vs code
@@ -17,6 +19,7 @@
     name:
       - code
     classic: yes
+  ignore_errors: yes
   become: true
 
 - name: Install eclipse
@@ -24,4 +27,5 @@
     name:
       - eclipse
     classic: yes
+  ignore_errors: yes
   become: true

@@ -111,6 +111,7 @@ export PYTHONPATH=/usr/lib/python3/dist-packages/:~/.local/lib/python3.7/site-pa
 export ANDROID_HOME=~/SDK/ANDROID/
 export BREW_HOME=~/../linuxbrew/.linuxbrew/
 export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$PATH:$BREW_HOME/bin:~/.local/bin:/snap/bin
+alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
 alias reloadPath='export PATH=$JAVA_HOME/bin:$PATH'
 alias remoteDebugOn="export MAVEN_OPTS='-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 $JAVA_OPTIONS'"
 alias remoteDebugOff='unset MAVEN_OPTS'
@@ -130,3 +131,9 @@ alias code-php='code --extensions-dir ~/.php-code'
 fpath=(~/.zsh.d/ $fpath)
 LD_LIBRARY_PATH=/usr/local/cuda-10.2/targets/x86_64-linux/lib/
 export LD_LIBRARY_PATH
+
+export PATH="$HOME/.jenv/bin:$PATH"
+export DISPLAY=$(grep nameserver /etc/resolv.conf | awk '{print $2}')":0"
+export PULSE_SERVER=tcp:$(grep nameserver /etc/resolv.conf | awk '{print $2}');
+export GTAGSLABEL=pygments
+export DOCKER_HOST=tcp://localhost:2375
