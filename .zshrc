@@ -7,9 +7,6 @@ export ZSH=~/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -52,8 +49,22 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf mvn fasd zsh-completions vagrant docker docker-compose vagrant-prompt kubectl git-flow gitfast command-not-found)
+plugins=(git fzf mvn fasd zsh-completions vagrant docker docker-compose vagrant-prompt kubectl git-flow gitfast command-not-found copydir copybuffer copyfile git-prompt dotenv colorize colored-man-pages zsh-history-substring-search extract sudo gitignore terraform)
+fpath+=$HOME/.zsh/pure
 autoload -U compinit && compinit
+autoload -U promptinit; promptinit
+# optionally define some options
+PURE_CMD_MAX_EXEC_TIME=10
+
+# change the path color
+zstyle :prompt:pure:path color white
+
+# change the color for both `prompt:success` and `prompt:error`
+zstyle ':prompt:pure:prompt:*' color cyan
+
+# turn on git stash status
+zstyle :prompt:pure:git:stash show yes
+prompt pure
 source $ZSH/oh-my-zsh.sh
 eval $(thefuck --alias)
 
