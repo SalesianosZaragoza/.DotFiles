@@ -19,10 +19,10 @@
   when: cloning
   become: false
 
-- name: Installing powerlevel 10k
+- name: zsh-history-substring-search
   git:
-    repo: https://github.com/romkatv/powerlevel10k.git
-    dest: ~/.oh-my-zsh/custom/themes/powerlevel10k
+    repo: https://github.com/zsh-users/zsh-history-substring-search.git
+    dest: ~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 
 - name: Check if zsh previous installed
   stat: 
@@ -47,4 +47,8 @@
   git:
     repo: https://github.com/zsh-users/zsh-completions.git
     dest: ~/.oh-my-zsh/custom/plugins/zsh-completions
-   
+
+- name: Installing zsh completions
+  git:
+    repo: https://github.com/zsh-users/zsh-history-substring-search.git
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search

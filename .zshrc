@@ -3,13 +3,11 @@
 
 # Path to your oh-my-zsh installation. 
 export ZSH=~/.oh-my-zsh
+ZSH_THEME=""
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -52,11 +50,24 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf mvn fasd zsh-completions vagrant docker docker-compose vagrant-prompt kubectl git-flow gitfast command-not-found)
+plugins=(git fzf mvn fasd zsh-completions vagrant docker docker-compose vagrant-prompt kubectl git-flow gitfast command-not-found copydir copybuffer copyfile git-prompt dotenv colorize colored-man-pages zsh-history-substring-search extract sudo gitignore terraform)
+fpath+=$HOME/.zsh/pure
 autoload -U compinit && compinit
+autoload -U promptinit; promptinit
+# optionally define some options
+PURE_CMD_MAX_EXEC_TIME=10
+
+# change the path color
+zstyle :prompt:pure:path color white
+
+# change the color for both `prompt:success` and `prompt:error`
+zstyle ':prompt:pure:prompt:*' color cyan
+
+# turn on git stash status
+zstyle :prompt:pure:git:stash show yes
 source $ZSH/oh-my-zsh.sh
 eval $(thefuck --alias)
-
+prompt pure
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -100,6 +111,7 @@ export PYTHONPATH=/usr/lib/python3/dist-packages/:~/.local/lib/python3.7/site-pa
 export ANDROID_HOME=~/SDK/ANDROID/
 export BREW_HOME=~/../linuxbrew/.linuxbrew/
 export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$PATH:$BREW_HOME/bin:~/.local/bin:/snap/bin
+alias awscli='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
 alias reloadPath='export PATH=$JAVA_HOME/bin:$PATH'
 alias remoteDebugOn="export MAVEN_OPTS='-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 $JAVA_OPTIONS'"
 alias remoteDebugOff='unset MAVEN_OPTS'
@@ -119,3 +131,6 @@ alias code-php='code --extensions-dir ~/.php-code'
 fpath=(~/.zsh.d/ $fpath)
 LD_LIBRARY_PATH=/usr/local/cuda-10.2/targets/x86_64-linux/lib/
 export LD_LIBRARY_PATH
+export PATH="$HOME/.jenv/bin:$PATH"
+export GTAGSLABEL=pygments
+export DOCKER_HOST=tcp://localhost:2375
