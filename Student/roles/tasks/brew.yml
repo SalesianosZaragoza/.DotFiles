@@ -80,3 +80,17 @@
     path: /home/linuxbrew/.linuxbrew/bin
     state: latest
   become: false
+
+- name: Install lf
+  homebrew:
+    name: lf
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
+  become: false
+
+- name: Install autojump
+  homebrew:
+    name: autojump
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
+  become: false

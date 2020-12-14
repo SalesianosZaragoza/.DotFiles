@@ -48,7 +48,8 @@
     repo: https://github.com/zsh-users/zsh-completions.git
     dest: ~/.oh-my-zsh/custom/plugins/zsh-completions
 
-- name: Installing zsh completions
+- name: Installing zsh-history-substring
   git:
     repo: https://github.com/zsh-users/zsh-history-substring-search.git
     dest: ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search
+

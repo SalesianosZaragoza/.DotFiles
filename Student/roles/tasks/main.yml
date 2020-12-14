@@ -37,6 +37,12 @@
       - chromium-browser
       - clang
       - clangd
+      - nnn
+      - atool
+      - libx11-dev 
+      - libxext-dev 
+      - libxft-dev
+      - stterm
   ignore_errors: yes 
   become: true
 
@@ -58,7 +64,18 @@
 - include: serverless.yml
 - include: pip.yml
     
+- name: Install spacevim
+  get_url:
+      url: https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs
+      dest: /tmp/plugins.sh
+      mode: +x
+  become: false
 
+- name: Execute the plugins.sh
+  shell: /tmp/plugins.sh
+
+- name: Remove the plugins.sh
+  file: path=/tmp/plugins.sh state=absent
     
 
 

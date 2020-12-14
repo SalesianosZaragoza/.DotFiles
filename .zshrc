@@ -129,8 +129,12 @@ alias code-java='code --extensions-dir ~/.java-code'
 alias code-php='code --extensions-dir ~/.php-code'
 
 fpath=(~/.zsh.d/ $fpath)
-LD_LIBRARY_PATH=/usr/local/cuda-10.2/targets/x86_64-linux/lib/
-export LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-10.2/targets/x86_64-linux/lib/
 export PATH="$HOME/.jenv/bin:$PATH"
 export GTAGSLABEL=pygments
 export DOCKER_HOST=tcp://localhost:2375
+export NNN_PLUG='o:fzopen'
+export NNN_FIFO='/tmp/nnn.fifo'
+export NNN_SEL='/tmp/.sel'
+export NNN_ARCHIVE="\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$"
+export NNN_OPENER="nuke"
