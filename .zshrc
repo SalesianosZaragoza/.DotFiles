@@ -130,7 +130,7 @@ alias code-php='code --extensions-dir ~/.php-code'
 
 fpath=(~/.zsh.d/ $fpath)
 export LD_LIBRARY_PATH=/usr/local/cuda-10.2/targets/x86_64-linux/lib/
-export PATH="$HOME/.jenv/bin:$PATH"
+export PATH="$HOME/.jenv/bin:$HOME/go/bin:$PATH"
 export GTAGSLABEL=pygments
 export DOCKER_HOST=tcp://localhost:2375
 export NNN_PLUG='o:fzopen'
