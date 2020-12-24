@@ -42,13 +42,13 @@ default_height = 30
   name = "debug"
 
 [[layers]]
-name = 'fzf'
+  name = 'fzf'
 
 [[layers]]
-name = 'lang#xml'
+  name = 'lang#xml'
 
 [[layers]]
-name = 'ctrlp'
+  name = 'ctrlspace'
 
 [[layers]]
   name = "lang#python"
@@ -103,7 +103,8 @@ name = 'ctrlp'
     "-Dlog.protocol=true",
     "-Dlog.level=NONE",
     "-noverify",
-    "-Xmx1G",
+    "-Xmx2G",
+    "-Xms1G",
     "-jar",
     "$HOME/TOOLS/jdt-language-server/plugins/org.eclipse.equinox.launcher_1.6.0.v20200915-1508.jar",
     "-configuration",
@@ -115,3 +116,14 @@ name = 'ctrlp'
 [[layers]]
   name = "checkers"
   show_cursor_error = false
+
+# custom plugins {{{
+[[custom_plugins]]
+name = 'autozimu/LanguageClient-neovim'
+merged = 0
+# }}}
+# custom_plugins {{{
+[[custom_plugins]]
+name = 'puremourning/vimspector'
+merged = 0
+# }}}
