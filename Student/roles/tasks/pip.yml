@@ -27,3 +27,25 @@
   pip:
     name: python-language-server
   become: true
+
+
+- name: Install "pure-prompt" package globally.
+  npm:
+    name: pure-prompt
+    global: yes
+  become: true
+  
+- name: Install "pynvim" package globally.
+  pip:
+    name: pynvim
+  become: true
+
+- name: Install "trollius" package globally.
+  pip:
+    name: trollius
+  become: true
+
+- name: Install "greenlet" package globally.
+  pip:
+    name: greenlet 
+  become: true

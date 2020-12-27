@@ -48,7 +48,7 @@ default_height = 30
   name = 'lang#xml'
 
 [[layers]]
-  name = 'ctrlspace'
+  name = 'coc'
 
 [[layers]]
   name = "lang#python"
@@ -125,5 +125,10 @@ merged = 0
 # custom_plugins {{{
 [[custom_plugins]]
 name = 'puremourning/vimspector'
+merged = 0
+# }}}
+# custom_plugins {{{
+[[custom_plugins]]
+name = 'Shougo/vimproc.vim'
 merged = 0
 # }}}

@@ -39,6 +39,13 @@
     name: pure-prompt
     global: yes
   become: true
+
+- name: Install "neovim" package globally.
+  npm:
+    name: neovim
+    global: yes
+  become: true
+  
   
 - name: Install node version manager
   get_url:
