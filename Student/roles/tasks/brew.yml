@@ -95,9 +95,16 @@
     state: latest
   become: false
   
-  - name: Install fzf
+- name: Install fzf
   homebrew:
     name: fzf
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
+  become: false
+
+- name: Install gh cli
+  homebrew:
+    name: gh
     path: /home/linuxbrew/.linuxbrew/bin
     state: latest
   become: false
