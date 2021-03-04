@@ -99,7 +99,7 @@ prompt pure
 
 
 export CMAKE_HOME="$HOME/TOOLS/cmake/cmake-3.13.0-irc2-Linux-x86_64/"
-export JAVA_HOME="/usr/lib/jvm/java-1.14.0-openjdk-amd64/"
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-armhf/"
 #"$HOME/SDK/JDK/java-11-openjdk-hotswap/"
 export ECLIPSE_HOME="$HOME/IDE/eclipse-jee"
 export MAVEN_HOME="$HOME/TOOLS/apache-maven-3.6.2"
@@ -116,25 +116,28 @@ alias reloadPath='export PATH=$JAVA_HOME/bin:$PATH'
 alias remoteDebugOn="export MAVEN_OPTS='-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 $JAVA_OPTIONS'"
 alias remoteDebugOff='unset MAVEN_OPTS'
 alias jhotswap="export JAVA_HOME='$HOME/SDK/JDK/java-11-openjdk-hotswap/' && export PATH='$JAVA_HOME/bin:$PATH'"
-alias code-sfdx='code --extensions-dir ~/.sfdx-code'
-alias code-cpp='code --extensions-dir ~/.cpp-code'
-alias code-devops='code --extensions-dir ~/.devops-code'
-alias code-python='code --extensions-dir ~/.python-code'
-alias code-arduino='code --extensions-dir ~/.arduino-code'
-alias code-scala='code --extensions-dir ~/.scala-code'
-alias code-node='code --extensions-dir ~/.node-code'
-alias code-asm='code --extensions-dir ~/.asm-code'
-alias code-sql='code --extensions-dir ~/.sql-code'
-alias code-java='code --extensions-dir ~/.java-code'
-alias code-php='code --extensions-dir ~/.php-code'
+alias code-sfdx='code-oss --extensions-dir ~/.sfdx-code'
+alias code-cpp='code-oss --extensions-dir ~/.cpp-code'
+alias code-devops='code-oss --extensions-dir ~/.devops-code'
+alias code-python='code-oss --extensions-dir ~/.python-code'
+alias code-arduino='code-oss --extensions-dir ~/.arduino-code'
+alias code-scala='code-oss --extensions-dir ~/.scala-code'
+alias code-node='code-oss --extensions-dir ~/.node-code'
+alias code-asm='code-oss --extensions-dir ~/.asm-code'
+alias code-sql='code-oss --extensions-dir ~/.sql-code'
+alias code-java='code-oss --extensions-dir ~/.java-code'
+alias code-php='code-oss --extensions-dir ~/.php-code'
 
 fpath=(~/.zsh.d/ $fpath)
 export LD_LIBRARY_PATH=/usr/local/cuda-10.2/targets/x86_64-linux/lib/
 export PATH="$HOME/.jenv/bin:$HOME/go/bin:$PATH"
 export GTAGSLABEL=pygments
 export DOCKER_HOST=tcp://localhost:2375
-export NNN_PLUG='o:fzopen'
+export NNN_PLUG='o:fzopen;p:preview-tui;t:preview-tabbed;i:imgthumb'
 export NNN_FIFO='/tmp/nnn.fifo'
 export NNN_SEL='/tmp/.sel'
 export NNN_ARCHIVE="\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$"
 export NNN_OPENER="nuke"
+export TERMINAL=terminator
+export USE_PISTOL=1
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

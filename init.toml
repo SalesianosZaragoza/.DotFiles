@@ -12,14 +12,11 @@
     # if you want to use more colorscheme, please load the colorscheme
     # layer
     colorscheme = "gruvbox"
-    colorscheme_bg = "dark"
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors
     enable_guicolors = true
     # Disable statusline separator, if you want to use other value, please
     # install nerd fonts
-    statusline_separator = "arrow"
-    statusline_inactive_separator = "arrow"
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
     enable_statusline_mode = false
@@ -27,13 +24,17 @@
     bootstrap_after = "myconfig#after"
 
 # Enable autocomplete layer
+#[[layers]]
+#  name = 'autocomplete'
+#  autocomplete_method = "coc"
+#  auto_completion_return_key_behavior = "complete"
+#  auto_completion_tab_key_behavior = "smart"
+#
 [[layers]]
 name = 'autocomplete'
 auto_completion_return_key_behavior = "complete"
 auto_completion_tab_key_behavior = "smart"
 
-[[layers]]
-name = "default"
 
 [[layers]]
 name = 'shell'
@@ -53,9 +54,6 @@ default_height = 15
   name = 'lang#xml'
 
 [[layers]]
-  name = 'coc'
-
-[[layers]]
   name = "lang#python"
   format_on_save = 1
 
@@ -63,11 +61,11 @@ default_height = 15
   name = "lang#plantuml"
   enable_typeinfo = true
 
-[[layers]]
-  name = "lsp"
 
 [[layers]]
   name = "lang#c"
+  enable_clang_syntax_highlight = true
+<<<<<<< Updated upstream
   clang_executable = "/usr/bin/clang"
 
 [[layers]]
@@ -97,7 +95,9 @@ default_height = 15
 [[layers]]
   name = "lsp"
   filetypes = [
-    "java"
+    "java",
+    "cpp",
+    "c"
   ]
   [layers.override_cmd]
     java = [
