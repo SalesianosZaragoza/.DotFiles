@@ -28,7 +28,6 @@
       - python-pygments
       - bat 
       - nnn 
-      - fzf
       - openjdk-8-jdk
       - openjdk-11-jdk
       - openjdk-13-jdk
