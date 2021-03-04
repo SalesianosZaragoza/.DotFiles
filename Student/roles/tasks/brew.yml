@@ -94,3 +94,10 @@
     path: /home/linuxbrew/.linuxbrew/bin
     state: latest
   become: false
+  
+  - name: Install fzf
+  homebrew:
+    name: fzf
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
+  become: false
