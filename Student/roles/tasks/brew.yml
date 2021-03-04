@@ -3,6 +3,7 @@
   args:
     executable: /bin/zsh
     warn: no
+  ignore_errors: yes
   become: false
 
 - name: Export brew into path
@@ -16,6 +17,7 @@
   shell: . ${HOME}/.zshrc
   args:
     executable: /bin/zsh
+  ignore_errors: yes
   become: false
 
 - name: Update brew
@@ -23,6 +25,7 @@
   ignore_errors: yes
   args:
     executable: /bin/zsh
+  ignore_errors: yes
   become: false
 
 - name: Install lazydocker
@@ -30,6 +33,7 @@
     name: jesseduffield/lazydocker/lazydocker
     path: /home/linuxbrew/.linuxbrew/bin
     state: latest
+  ignore_errors: yes
   become: false
 
 - name: Install lazygit
@@ -37,6 +41,7 @@
     name: jesseduffield/lazygit/lazygit
     path: /home/linuxbrew/.linuxbrew/bin
     state: latest
+  ignore_errors: yes
   become: false
 
 - name: Install tig
@@ -44,6 +49,7 @@
     name: tig
     path: /home/linuxbrew/.linuxbrew/bin
     state: latest
+  ignore_errors: yes
   become: false
 
 - name: Install lazynpm
@@ -51,6 +57,7 @@
     name: jesseduffield/lazynpm/lazynpm
     path: /home/linuxbrew/.linuxbrew/bin
     state: latest
+  ignore_errors: yes
   become: false
 
 - name: Install grv
@@ -58,6 +65,7 @@
     name: grv
     path: /home/linuxbrew/.linuxbrew/bin
     state: latest
+  ignore_errors: yes
   become: false
 
 - name: Install ctop
@@ -65,6 +73,7 @@
     name: ctop
     path: /home/linuxbrew/.linuxbrew/bin
     state: latest
+  ignore_errors: yes
   become: false
 
 - name: Install dry
@@ -72,6 +81,7 @@
     name: moncho/dry/dry
     path: /home/linuxbrew/.linuxbrew/bin
     state: latest
+  ignore_errors: yes
   become: false
 
 - name: Install helm
@@ -79,6 +89,7 @@
     name: helm
     path: /home/linuxbrew/.linuxbrew/bin
     state: latest
+  ignore_errors: yes
   become: false
 
 - name: Install lf
@@ -86,6 +97,7 @@
     name: lf
     path: /home/linuxbrew/.linuxbrew/bin
     state: latest
+  ignore_errors: yes
   become: false
 
 - name: Install autojump
@@ -93,6 +105,7 @@
     name: autojump
     path: /home/linuxbrew/.linuxbrew/bin
     state: latest
+  ignore_errors: yes
   become: false
   
 - name: Install fzf
@@ -100,6 +113,7 @@
     name: fzf
     path: /home/linuxbrew/.linuxbrew/bin
     state: latest
+  ignore_errors: yes
   become: false
 
 - name: Install gh cli
@@ -107,4 +121,7 @@
     name: gh
     path: /home/linuxbrew/.linuxbrew/bin
     state: latest
+  ignore_errors: yes
   become: false
+
+

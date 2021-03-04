@@ -1,0 +1,26 @@
+
+- name: Install Terraform step 1
+  shell: curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+  args:
+    executable: /bin/zsh
+    warn: no
+  become: false
+
+
+- name: Install Terraform step 2
+  shell: sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+  args:
+    executable: /bin/zsh
+    warn: no
+  become: false
+
+
+- name: Install Terraform step 3
+  shell: sudo apt-get update && sudo apt-get install terraform 
+  args:
+    executable: /bin/zsh
+    warn: no
+  become: false
+
+
+
