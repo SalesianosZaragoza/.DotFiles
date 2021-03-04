@@ -31,9 +31,12 @@ auto_completion_return_key_behavior = "complete"
 auto_completion_tab_key_behavior = "smart"
 
 [[layers]]
+name = "default"
+
+[[layers]]
 name = 'shell'
-default_position = 'top'
-default_height = 30
+default_position = 'bootom'
+default_height = 15
 
 [[layers]]
   name = "git"
