@@ -53,3 +53,10 @@
     repo: https://github.com/zsh-users/zsh-history-substring-search.git
     dest: ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search
 
+
+- name: Installing-pure-prompt
+  git:
+    repo: https://github.com/sindresorhus/pure.git
+    dest: ~/.zsh/pure
+
+

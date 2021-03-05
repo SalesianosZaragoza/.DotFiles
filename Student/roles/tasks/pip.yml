@@ -36,12 +36,6 @@
   become: true
 
 
-- name: Install "pure-prompt" package globally.
-  npm:
-    name: pure-prompt
-    global: yes
-  become: true
-  
 - name: Install "pynvim" package globally.
   pip:
     name: pynvim

@@ -1,7 +1,7 @@
 - name: Install brew
-  shell: curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | zsh -
+  shell: curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash -
   args:
-    executable: /bin/zsh
+    executable: /bin/bash
     warn: no
   ignore_errors: yes
   become: false
