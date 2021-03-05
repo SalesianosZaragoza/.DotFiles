@@ -22,7 +22,6 @@
 
 - name: Update brew
   shell: brew update
-  ignore_errors: yes
   args:
     executable: /bin/zsh
   ignore_errors: yes
