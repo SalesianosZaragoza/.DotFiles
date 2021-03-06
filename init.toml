@@ -135,3 +135,30 @@ merged = 0
 name = 'Shougo/vimproc.vim'
 merged = 0
 # }}}
+# custom_plugins {{{
+[[custom_plugins]]
+name = 'hashivim/vim-terraform'
+merged = 0
+# }}}
+# custom_plugins {{{
+[[custom_plugins]]
+name = 'nvim-lua/popup.nvim'
+merged = 0
+# }}}
+# custom_plugins {{{
+[[custom_plugins]]
+name = 'nvim-lua/plenary.nvim'
+merged = 0
+# }}}
+# custom_plugins {{{
+[[custom_plugins]]
+name = 'nvim-telescope/telescope.nvim'
+merged = 0
+# }}}
+# custom_plugins {{{
+[[custom_plugins]]
+name = 'nvim-treesitter/nvim-treesitter'
+merged = 0
+# }}}
+
+
