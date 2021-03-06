@@ -27,6 +27,7 @@
       - exuberant-ctags
       - python-pygments
       - bat 
+      - fd-find
       - nnn 
       - openjdk-8-jdk
       - openjdk-11-jdk
