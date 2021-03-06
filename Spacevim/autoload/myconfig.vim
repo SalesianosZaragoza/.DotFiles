@@ -29,7 +29,7 @@ function! myconfig#before() abort
   if !has("nvim")
     " disabled plugins
     let g:spacevim_disabled_plugins=[
-      \ 'neovim/nvim-lspconfig'
+      \ 'neovim/nvim-lspconfig',
       \ 'nvim-treesitter/nvim-treesitter'
       \ ]
   endif
