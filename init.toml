@@ -23,7 +23,8 @@
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
     enable_statusline_mode = false
-    bootstrap_after = "myconfig#before"
+    bootstrap_before = "myconfig#before"
+    bootstrap_after = "myconfig#after"
 
 # Enable autocomplete layer
 [[layers]]
