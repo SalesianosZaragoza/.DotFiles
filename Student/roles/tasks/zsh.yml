@@ -32,7 +32,7 @@
     path: ~/.zshrc 
     src: ~/GIT/ConfigLinuxFiles/.zshrc  
     state: link 
-    force: yes
+    force: no
 
 - name: Installing zsh completions
   git:

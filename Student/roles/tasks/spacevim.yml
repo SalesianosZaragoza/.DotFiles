@@ -30,11 +30,11 @@
     path: ~/.SpaceVim.d/init.toml 
     src: ~/GIT/ConfigLinuxFiles/init.toml  
     state: link 
-    force: yes
+    force: no
 
 - name: myconfig.vim symlink
   file: 
     path: ~/.SpaceVim/autoload/myconfig.vim 
     src: ~/GIT/ConfigLinuxFiles/Spacevim/autoload/myconfig.vim
     state: link 
-    force: yes
+    force: no
