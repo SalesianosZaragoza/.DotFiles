@@ -127,7 +127,7 @@ alias code-asm='code --extensions-dir ~/.asm-code'
 alias code-sql='code --extensions-dir ~/.sql-code'
 alias code-java='code --extensions-dir ~/.java-code'
 alias code-php='code --extensions-dir ~/.php-code'
-
+unalias grv
 fpath=(~/.zsh.d/ $fpath)
 export LD_LIBRARY_PATH=/usr/local/cuda-10.2/targets/x86_64-linux/lib/
 export PATH="$HOME/.jenv/bin:$HOME/go/bin:$PATH"

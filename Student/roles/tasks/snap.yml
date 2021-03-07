@@ -33,3 +33,11 @@
   ignore_errors: yes
   when: ansible_facts['distribution'] == "Ubuntu"
   become: true
+
+- name: Install nvim
+  snap:
+    name:
+      - nvim
+    channel: latest/edge
+  ignore_errors: yes
+  become: true

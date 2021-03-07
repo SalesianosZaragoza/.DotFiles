@@ -22,8 +22,6 @@
 
 - name: Update brew
   shell: brew update
-  args:
-    executable: /bin/zsh
   ignore_errors: yes
   become: false
 
@@ -123,4 +121,19 @@
   ignore_errors: yes
   become: false
 
+- name: Install dive
+  homebrew:
+    name: dive
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
+  ignore_errors: yes
+  become: false
+
+- name: Install stern
+  homebrew:
+    name: stern
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
+  ignore_errors: yes
+  become: false
 
