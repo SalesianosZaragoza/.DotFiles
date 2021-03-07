@@ -14,3 +14,15 @@
 - name: Remove the spacevim-installer.sh
   file: path=/tmp/spacevim-installer.sh state=absent
   become: false
+
+- name: init.toml symlink
+  file: path=~/.SpaceVim.d/init.toml 
+        src=~/GIT/ConfigLinuxFiles/init.toml  
+        state=link 
+        force=yes
+
+- name: myconfig.vim symlink
+  file: path=~/.SpaceVim/autoload/myconfig.vim 
+        src=~/GIT/ConfigLinuxFiles/Spacevim/autoload/myconfig.vim
+        state=link 
+        force=yes
