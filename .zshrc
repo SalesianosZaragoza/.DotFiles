@@ -116,7 +116,6 @@ alias reloadPath='export PATH=$JAVA_HOME/bin:$PATH'
 alias remoteDebugOn="export MAVEN_OPTS='-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 $JAVA_OPTIONS'"
 alias remoteDebugOff='unset MAVEN_OPTS'
 alias jhotswap="export JAVA_HOME='$HOME/SDK/JDK/java-11-openjdk-hotswap/' && export PATH='$JAVA_HOME/bin:$PATH'"
-alias code='code-oss'
 alias code-sfdx='code --extensions-dir ~/.sfdx-code'
 alias code-cpp='code --extensions-dir ~/.cpp-code'
 alias code-devops='code --extensions-dir ~/.devops-code'
