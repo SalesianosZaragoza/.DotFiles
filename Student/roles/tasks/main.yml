@@ -1,70 +1,21 @@
  
 ---
-- name: Install packages with apt 
-  apt:
-    state: present
-    update_cache: yes
-    pkg:
-      - python3
-      - snapd
-      - build-essential
-      - mc
-      - terminator
-      - curl
-      - wget
-      - git
-      - git-gui
-      - zsh
-      - unzip
-      - fonts-powerline
-      - thefuck
-      - maven
-      - nodejs
-      - npm
-      - vagrant
-      - pylint
-      - global
-      - exuberant-ctags
-      - python-pygments
-      - bat 
-      - fd-find
-      - nnn 
-      - openjdk-8-jdk
-      - openjdk-11-jdk
-      - openjdk-13-jdk
-      - openjdk-14-jdk
-      - chromium-browser
-      - clang
-      - clangd
-      - nnn
-      - atool
-      - libx11-dev 
-      - libxext-dev 
-      - libxft-dev
-      - stterm
-  ignore_errors: yes 
-  become: true
-
-- name: Upgrade all packages to the latest version
-  apt:
-    name: "*"
-    state: latest
-  become: true
-
+- include: apt.yml
 - include: zsh.yml
 - include: docker.yml
 - include: jenv.yml
 - include: snap.yml
 - include: kubernetes.yml
 - include: fasd.yml
-- include: vim.yml
+- include: spacevim.yml
 - include: npm.yml
 - include: brew.yml
 - include: serverless.yml
 - include: terraform.yml  
 - include: pip.yml
+- include: sdkman.yml
     
-- name: Install spacevim
+- name: Install nnn plugins 
   get_url:
       url: https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs
       dest: /tmp/plugins.sh
@@ -77,6 +28,4 @@
 - name: Remove the plugins.sh
   file: path=/tmp/plugins.sh state=absent
     
-
-
   

@@ -1,0 +1,8 @@
+
+- name: Install 
+  shell: wget https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_x86_64.deb | dpkg -i vagrant_2.2.14_x86_64.deb
+  args:
+    executable: /bin/bash
+    warn: no
+  ignore_errors: yes
+  become: false

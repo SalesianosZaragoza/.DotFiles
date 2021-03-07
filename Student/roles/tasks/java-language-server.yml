@@ -1,0 +1,6 @@
+- name: Install Java Language Server
+  get_url:
+      url: https://download.eclipse.org/staging/2021-03/plugins/org.eclipse.equinox.launcher_1.6.100.v20201223-0822.jar
+      dest: $HOME/jdp/org.eclipse.equinox.launcher
+      mode: +x
+  become: false

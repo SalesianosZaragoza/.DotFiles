@@ -1,0 +1,44 @@
+- name: Install packages with apt 
+  apt:
+    state: present
+    update_cache: yes
+    pkg:
+      - python3
+      - snapd
+      - build-essential
+      - mc
+      - terminator
+      - curl
+      - wget
+      - git
+      - git-gui
+      - zsh
+      - unzip
+      - fonts-powerline
+      - thefuck
+      - maven
+      - nodejs
+      - npm
+      - pylint
+      - global
+      - exuberant-ctags
+      - python-pygments
+      - bat 
+      - fd-find
+      - nnn 
+      - chromium-browser
+      - clang
+      - clangd
+      - atool
+      - libx11-dev 
+      - libxext-dev 
+      - libxft-dev
+      - stterm
+  ignore_errors: yes 
+  become: true
+
+- name: Upgrade all packages to the latest version
+  apt:
+    name: "*"
+    state: latest
+  become: true

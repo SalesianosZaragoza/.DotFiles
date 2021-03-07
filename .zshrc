@@ -116,17 +116,18 @@ alias reloadPath='export PATH=$JAVA_HOME/bin:$PATH'
 alias remoteDebugOn="export MAVEN_OPTS='-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 $JAVA_OPTIONS'"
 alias remoteDebugOff='unset MAVEN_OPTS'
 alias jhotswap="export JAVA_HOME='$HOME/SDK/JDK/java-11-openjdk-hotswap/' && export PATH='$JAVA_HOME/bin:$PATH'"
-alias code-sfdx='code-oss --extensions-dir ~/.sfdx-code'
-alias code-cpp='code-oss --extensions-dir ~/.cpp-code'
-alias code-devops='code-oss --extensions-dir ~/.devops-code'
-alias code-python='code-oss --extensions-dir ~/.python-code'
-alias code-arduino='code-oss --extensions-dir ~/.arduino-code'
-alias code-scala='code-oss --extensions-dir ~/.scala-code'
-alias code-node='code-oss --extensions-dir ~/.node-code'
-alias code-asm='code-oss --extensions-dir ~/.asm-code'
-alias code-sql='code-oss --extensions-dir ~/.sql-code'
-alias code-java='code-oss --extensions-dir ~/.java-code'
-alias code-php='code-oss --extensions-dir ~/.php-code'
+alias code='code-oss'
+alias code-sfdx='code --extensions-dir ~/.sfdx-code'
+alias code-cpp='code --extensions-dir ~/.cpp-code'
+alias code-devops='code --extensions-dir ~/.devops-code'
+alias code-python='code --extensions-dir ~/.python-code'
+alias code-arduino='code --extensions-dir ~/.arduino-code'
+alias code-scala='code --extensions-dir ~/.scala-code'
+alias code-node='code --extensions-dir ~/.node-code'
+alias code-asm='code --extensions-dir ~/.asm-code'
+alias code-sql='code --extensions-dir ~/.sql-code'
+alias code-java='code --extensions-dir ~/.java-code'
+alias code-php='code --extensions-dir ~/.php-code'
 
 fpath=(~/.zsh.d/ $fpath)
 export LD_LIBRARY_PATH=/usr/local/cuda-10.2/targets/x86_64-linux/lib/
@@ -140,5 +141,5 @@ export NNN_ARCHIVE="\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|l
 export NNN_OPENER="nuke"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/pi/.sdkman"
-[[ -s "/home/pi/.sdkman/bin/sdkman-init.sh" ]] && source "/home/pi/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="SHOME/.sdkman"
+[[ -s "SHOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

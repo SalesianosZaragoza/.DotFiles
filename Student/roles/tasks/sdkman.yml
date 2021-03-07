@@ -1,0 +1,16 @@
+- name: Install sdkman 
+  shell: curl -s "https://get.sdkman.io"| bash -
+  args:
+    executable: /bin/bash
+    warn: no
+  ignore_errors: yes
+  become: false
+
+- name: sdkman install java
+  shell: sdk install java
+  args:
+    executable: /bin/bash
+    warn: no
+  ignore_errors: yes
+  become: false
+

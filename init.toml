@@ -106,7 +106,7 @@ default_height = 15
     "-Xmx2G",
     "-Xms1G",
     "-jar",
-    "$HOME/TOOLS/jdt-language-server/plugins/org.eclipse.equinox.launcher_1.6.100.v20201223-0822.jar",
+    "$HOME/jdt-language-server/org.eclipse.equinox.launcher.jar",
     "-configuration",
     "$HOME/TOOLS/jdt-language-server/config_win",
     "-data",
