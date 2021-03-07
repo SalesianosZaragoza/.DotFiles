@@ -50,7 +50,7 @@ ZSH_THEME=""
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf mvn fasd vi-mode zsh-completions vagrant docker docker-compose vagrant-prompt kubectl git-flow gitfast command-not-found copydir copybuffer copyfile git-prompt dotenv colorize colored-man-pages zsh-history-substring-search extract sudo gitignore terraform)
+plugins=(git aws fzf mvn fasd vi-mode zsh-completions vagrant docker docker-compose vagrant-prompt kubectl git-flow gitfast command-not-found copydir copybuffer copyfile git-prompt dotenv colorize colored-man-pages zsh-history-substring-search extract sudo gitignore terraform)
 fpath+=$HOME/.zsh/pure
 autoload -U compinit && compinit
 autoload -U promptinit; promptinit
@@ -99,7 +99,7 @@ prompt pure
 
 
 export CMAKE_HOME="$HOME/TOOLS/cmake/cmake-3.13.0-irc2-Linux-x86_64/"
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-armhf/"
+export JAVA_HOME="/usr/lib/jvm/java-1.11.0-openjdk-armhf/"
 #"$HOME/SDK/JDK/java-11-openjdk-hotswap/"
 export ECLIPSE_HOME="$HOME/IDE/eclipse-jee"
 export MAVEN_HOME="$HOME/TOOLS/apache-maven-3.6.2"
@@ -138,6 +138,7 @@ export NNN_FIFO='/tmp/nnn.fifo'
 export NNN_SEL='/tmp/.sel'
 export NNN_ARCHIVE="\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$"
 export NNN_OPENER="nuke"
-export TERMINAL=terminator
-export USE_PISTOL=1
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/pi/.sdkman"
+[[ -s "/home/pi/.sdkman/bin/sdkman-init.sh" ]] && source "/home/pi/.sdkman/bin/sdkman-init.sh"

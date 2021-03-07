@@ -106,7 +106,7 @@ default_height = 15
     "-Xmx2G",
     "-Xms1G",
     "-jar",
-    "$HOME/TOOLS/jdt-language-server/plugins/org.eclipse.equinox.launcher_1.6.0.v20200915-1508.jar",
+    "$HOME/TOOLS/jdt-language-server/plugins/org.eclipse.equinox.launcher_1.6.100.v20201223-0822.jar",
     "-configuration",
     "$HOME/TOOLS/jdt-language-server/config_win",
     "-data",
@@ -119,7 +119,11 @@ default_height = 15
 
 # custom plugins {{{
 [[custom_plugins]]
+<<<<<<< HEAD
 name = 'autozimu/LanguageClient-neovim'
+=======
+name = 'neovim/nvim-lspconfig'
+>>>>>>> nvim-lsp java arm
 merged = 0
 # }}}
 # custom_plugins {{{
@@ -133,6 +137,30 @@ name = 'Shougo/vimproc.vim'
 merged = 0
 # }}}
 # custom_plugins {{{
+name = 'hashivim/vim-terraform'
+merged = 0
+# }}}
+#[[custom_plugins]]
+#name = 'neovim/nvim-lspconfig'
+#merged = 0
+# }}}
+# custom_plugins {{{
+[[custom_plugins]]
+name = 'nvim-lua/popup.nvim'
+merged = 0
+# }}}
+# custom_plugins {{{
+[[custom_plugins]]
+name = 'nvim-lua/plenary.nvim'
+merged = 0
+# }}}
+# custom_plugins {{{
+[[custom_plugins]]
+name = 'nvim-telescope/telescope.nvim'
+merged = 0
+# }}}
+<<<<<<< HEAD
+=======
 [[custom_plugins]]
 name = 'hashivim/vim-terraform'
 merged = 0
@@ -152,10 +180,14 @@ merged = 0
 name = 'nvim-telescope/telescope.nvim'
 merged = 0
 # }}}
+
 # custom_plugins {{{
-[[custom_plugins]]
 name = 'nvim-treesitter/nvim-treesitter'
 merged = 0
 # }}}
 
+# custom_plugins {{{
+name = 'kyazdani42/nvim-web-devicons'
+merged = 0
+# }}}
 
