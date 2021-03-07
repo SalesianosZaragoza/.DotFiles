@@ -119,11 +119,7 @@ default_height = 15
 
 # custom plugins {{{
 [[custom_plugins]]
-<<<<<<< HEAD
-name = 'autozimu/LanguageClient-neovim'
-=======
 name = 'neovim/nvim-lspconfig'
->>>>>>> nvim-lsp java arm
 merged = 0
 # }}}
 # custom_plugins {{{
@@ -140,27 +136,6 @@ merged = 0
 name = 'hashivim/vim-terraform'
 merged = 0
 # }}}
-#[[custom_plugins]]
-#name = 'neovim/nvim-lspconfig'
-#merged = 0
-# }}}
-# custom_plugins {{{
-[[custom_plugins]]
-name = 'nvim-lua/popup.nvim'
-merged = 0
-# }}}
-# custom_plugins {{{
-[[custom_plugins]]
-name = 'nvim-lua/plenary.nvim'
-merged = 0
-# }}}
-# custom_plugins {{{
-[[custom_plugins]]
-name = 'nvim-telescope/telescope.nvim'
-merged = 0
-# }}}
-<<<<<<< HEAD
-=======
 [[custom_plugins]]
 name = 'hashivim/vim-terraform'
 merged = 0
