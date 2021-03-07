@@ -1,4 +1,4 @@
-- name: Check if oh-my-zsh previious installed
+- name: Check if oh-my-zsh previous installed
   stat: 
     path: ~/.oh-my-zsh
   register: previous_zsh_instalation
@@ -22,7 +22,7 @@
     repo: https://github.com/SalesianosZaragoza/ConfigLinuxFiles.git
     dest: ~/GIT/ConfigLinuxFiles
 
-- name: remove the folder
+- name: remove zshrc previous config
   file: 
     path: ~/.zshrc 
     state: absent 

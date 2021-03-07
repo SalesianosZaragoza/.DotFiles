@@ -38,6 +38,7 @@
   snap:
     name:
       - nvim
+    classic: yes
     channel: latest/edge
   ignore_errors: yes
   become: true
