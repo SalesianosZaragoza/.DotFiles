@@ -23,7 +23,9 @@
     dest: ~/GIT/ConfigLinuxFiles
 
 - name: remove the folder
-  file: ~/.zshrc state=absent 
+  file: 
+    path: ~/.zshrc 
+    state: absent 
 
 - name: zshrc symlink
   file: 
