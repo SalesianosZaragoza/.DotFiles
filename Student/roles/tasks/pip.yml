@@ -1,9 +1,9 @@
 - name: Install pip3
-  shell: curl -fsSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py | python3 get-pip.py
+  shell: curl -fsSL https://bootstrap.pypa.io/get-pip.py -o SHOME/get-pip.py && python3 $HOME/get-pip.py
   args:
     executable: /bin/zsh
     warn: no
-  become: false
+  become: true
   
 - name: Install "flake8" package globally.
   pip:
