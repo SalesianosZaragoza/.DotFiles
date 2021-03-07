@@ -26,10 +26,11 @@
   file: ~/.zshrc state=absent 
 
 - name: zshrc symlink
-  file: path=~/.zshrc 
-        src=~/GIT/ConfigLinuxFiles/.zshrc  
-        state=link 
-        force=yes
+  file: 
+    src: ~/.zshrc 
+    dest: ~/GIT/ConfigLinuxFiles/.zshrc  
+    state: link 
+    force: yes
 
 - name: Installing zsh completions
   git:
