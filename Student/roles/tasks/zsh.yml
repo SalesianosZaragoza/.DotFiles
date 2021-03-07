@@ -29,8 +29,8 @@
 
 - name: zshrc symlink
   file: 
-    src: ~/.zshrc 
-    dest: ~/GIT/ConfigLinuxFiles/.zshrc  
+    path: ~/.zshrc 
+    src: ~/GIT/ConfigLinuxFiles/.zshrc  
     state: link 
     force: yes
 
