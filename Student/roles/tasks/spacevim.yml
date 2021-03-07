@@ -15,6 +15,16 @@
   file: path=/tmp/spacevim-installer.sh state=absent
   become: false
 
+- name: Ensures Spacevim.d dir exists
+  file: 
+    path: ~/.SpaceVim.d 
+    state: directory
+
+- name: Ensures Spacevim/autoload dir exists
+  file: 
+    path: ~/.SpaceVim/autoload/
+    state: directory
+    
 - name: init.toml symlink
   file: 
     path: ~/.SpaceVim.d/init.toml 
