@@ -4,14 +4,18 @@
   args:
     executable: /bin/zsh
     warn: no
+  when: ansible_facts['ansible_architecture'] == "x86_64"  
+  ignore_errors: yes
   become: false
 
 
-- name: Install Terraform step 2
+- name: Install Terraform step 2 x86_64
   shell: sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
   args:
     executable: /bin/zsh
     warn: no
+  when: ansible_facts['ansible_architecture'] == "x86_64"  
+  ignore_errors: yes
   become: false
 
 
@@ -20,6 +24,8 @@
   args:
     executable: /bin/zsh
     warn: no
+  when: ansible_facts['ansible_architecture'] == "x86_64"  
+  ignore_errors: yes
   become: false
 
 
