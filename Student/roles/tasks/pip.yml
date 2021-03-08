@@ -1,5 +1,5 @@
 - name: Install pip3
-  shell: curl -fsSL https://bootstrap.pypa.io/get-pip.py -o SHOME/get-pip.py && python3 $HOME/get-pip.py
+  shell: curl https://bootstrap.pypa.io/get-pip.py -o SHOME/get-pip.py && python3 $HOME/get-pip.py
   args:
     executable: /bin/zsh
     warn: no
