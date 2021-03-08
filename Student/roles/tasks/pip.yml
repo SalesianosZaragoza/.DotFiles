@@ -1,9 +1,9 @@
 - name: Install pip3
-  shell: curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py | python3 get-pip.py
+  shell: curl https://bootstrap.pypa.io/get-pip.py -o $HOME/get-pip.py && python3 $HOME/get-pip.py
   args:
     executable: /bin/zsh
     warn: no
-  become: false
+  become: true
   
 - name: Install "flake8" package globally.
   pip:
@@ -47,6 +47,6 @@
   become: true
 
 - name: Install "greenlet" package globally.
-  pip
+  pip:
     name: greenlet 
   become: true

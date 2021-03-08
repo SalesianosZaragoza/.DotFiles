@@ -1,4 +1,4 @@
-- name: Check if oh-my-zsh previious installed
+- name: Check if oh-my-zsh previous installed
   stat: 
     path: ~/.oh-my-zsh
   register: previous_zsh_instalation
@@ -12,36 +12,27 @@
   when: previous_zsh_instalation
   become: false
 
-- name: Creating new ~/.zshrc
-  copy:
-    src=~/.oh-my-zsh/templates/zshrc.zsh-template
-    dest=~/.zshrc
-  when: cloning
-  become: false
-
 - name: zsh-history-substring-search
   git:
     repo: https://github.com/zsh-users/zsh-history-substring-search.git
     dest: ~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 
-- name: Check if zsh previous installed
-  stat: 
-    path: ~/.zshrc
-  register: exists_zsh_instalation
-  become: false
+- name: Installing git configfiles
+  git:
+    repo: https://github.com/SalesianosZaragoza/ConfigLinuxFiles.git
+    dest: ~/GIT/ConfigLinuxFiles
 
-- name: Create ~/.zshrc
-  file:
-    path: ~/.zshrc
-    state: absent
-  when: not exists_zsh_instalation
+- name: remove zshrc previous config
+  file: 
+    path: ~/.zshrc 
+    state: absent 
 
-- name: Update zshrc
-  get_url: 
-    url: https://raw.githubusercontent.com/SalesianosZaragoza/ConfigLinuxFiles/master/.zshrc
-    dest: ~/.zshrc
-    mode: '0775'
-  become: false
+- name: zshrc symlink
+  file: 
+    path: ~/.zshrc 
+    src: ~/GIT/ConfigLinuxFiles/.zshrc  
+    state: link 
+    force: no
 
 - name: Installing zsh completions
   git:

@@ -116,7 +116,6 @@ alias reloadPath='export PATH=$JAVA_HOME/bin:$PATH'
 alias remoteDebugOn="export MAVEN_OPTS='-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 $JAVA_OPTIONS'"
 alias remoteDebugOff='unset MAVEN_OPTS'
 alias jhotswap="export JAVA_HOME='$HOME/SDK/JDK/java-11-openjdk-hotswap/' && export PATH='$JAVA_HOME/bin:$PATH'"
-alias code='code-oss'
 alias code-sfdx='code --extensions-dir ~/.sfdx-code'
 alias code-cpp='code --extensions-dir ~/.cpp-code'
 alias code-devops='code --extensions-dir ~/.devops-code'
@@ -128,7 +127,7 @@ alias code-asm='code --extensions-dir ~/.asm-code'
 alias code-sql='code --extensions-dir ~/.sql-code'
 alias code-java='code --extensions-dir ~/.java-code'
 alias code-php='code --extensions-dir ~/.php-code'
-
+unalias grv
 fpath=(~/.zsh.d/ $fpath)
 export LD_LIBRARY_PATH=/usr/local/cuda-10.2/targets/x86_64-linux/lib/
 export PATH="$HOME/.jenv/bin:$HOME/go/bin:$PATH"
@@ -141,5 +140,5 @@ export NNN_ARCHIVE="\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|l
 export NNN_OPENER="nuke"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="SHOME/.sdkman"
-[[ -s "SHOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

@@ -12,6 +12,7 @@
     name:
       - dbeaver-ce
     classic: yes
+    channel: latest/edge
   ignore_errors: yes
   when: ansible_facts['distribution'] == "Ubuntu"
   become: true
@@ -32,4 +33,13 @@
     classic: yes
   ignore_errors: yes
   when: ansible_facts['distribution'] == "Ubuntu"
+  become: true
+
+- name: Install nvim
+  snap:
+    name:
+      - nvim
+    classic: yes
+    channel: latest/edge
+  ignore_errors: yes
   become: true
