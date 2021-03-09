@@ -124,6 +124,11 @@ merged = 0
 # }}}
 # custom_plugins {{{
 [[custom_plugins]]
+name = 'szw/vim-maximizer'
+merged = 0
+# }}}
+# custom_plugins {{{
+[[custom_plugins]]
 name = 'puremourning/vimspector'
 merged = 0
 # }}}

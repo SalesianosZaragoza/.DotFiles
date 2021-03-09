@@ -1,10 +1,12 @@
 function! myconfig#after() abort
   let g:lsp_log_verbose = 1
-  let g:lsp_log_file = expand('~/vim-lsp.log')
-  lua require'lspconfig'.ccls.setup{}
-  lua require'lspconfig'.pyls.setup{}
-  lua require'lspconfig'.clangd.setup{}
-  lua require'lspconfig'.pyright.setup{}
+  if has("nvim")  
+    let g:lsp_log_file = expand('~/vim-lsp.log')
+    lua require'lspconfig'.ccls.setup{}
+    lua require'lspconfig'.pyls.setup{}
+    lua require'lspconfig'.clangd.setup{}
+    lua require'lspconfig'.pyright.setup{}
+  endif
   " Required for operations modifying multiple buffers like rename.
   set hidden
 
