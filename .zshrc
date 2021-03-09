@@ -139,8 +139,11 @@ export NNN_ARCHIVE="\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|l
 export NNN_OPENER="nuke"
 if grep "microsoft" /proc/version >> /dev/null ; then
     echo "Ubuntu on Windows"
+  elif grep "generic" /proc/version >> /dev/null; then
+    echo "Generic Linux"
   else
-      echo "native Linux"
+    echo "Raspberry Linux"
+    source $HOME/.aliases 
 fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
