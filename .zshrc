@@ -132,12 +132,16 @@ fpath=(~/.zsh.d/ $fpath)
 export LD_LIBRARY_PATH=/usr/local/cuda-10.2/targets/x86_64-linux/lib/
 export PATH="$HOME/.jenv/bin:$HOME/go/bin:$PATH"
 export GTAGSLABEL=pygments
-export DOCKER_HOST=tcp://localhost:2375
 export NNN_PLUG='o:fzopen;p:preview-tui;t:preview-tabbed;i:imgthumb'
 export NNN_FIFO='/tmp/nnn.fifo'
 export NNN_SEL='/tmp/.sel'
 export NNN_ARCHIVE="\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$"
 export NNN_OPENER="nuke"
+if grep "microsoft" /proc/version >> /dev/null ; then
+    echo "Ubuntu on Windows"
+  else
+      echo "native Linux"
+fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
