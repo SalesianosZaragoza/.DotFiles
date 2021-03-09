@@ -133,9 +133,6 @@ name = 'Shougo/vimproc.vim'
 merged = 0
 # }}}
 # custom_plugins {{{
-name = 'hashivim/vim-terraform'
-merged = 0
-# }}}
 [[custom_plugins]]
 name = 'hashivim/vim-terraform'
 merged = 0
@@ -155,13 +152,13 @@ merged = 0
 name = 'nvim-telescope/telescope.nvim'
 merged = 0
 # }}}
-
 # custom_plugins {{{
+[[custom_plugins]]
 name = 'nvim-treesitter/nvim-treesitter'
 merged = 0
 # }}}
-
 # custom_plugins {{{
+[[custom_plugins]]
 name = 'kyazdani42/nvim-web-devicons'
 merged = 0
 # }}}

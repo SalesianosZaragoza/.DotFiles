@@ -69,7 +69,7 @@ source $ZSH/oh-my-zsh.sh
 eval $(thefuck --alias)
 prompt pure
 # User configuration
-
+source $HOME/.aliases
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
