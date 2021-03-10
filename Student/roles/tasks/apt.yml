@@ -17,8 +17,6 @@
       - fonts-powerline
       - thefuck
       - maven
-      - nodejs
-      - npm
       - pylint
       - global
       - exuberant-ctags
