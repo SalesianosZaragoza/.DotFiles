@@ -11,13 +11,13 @@
     warn: no
   become: true
    
- - name: Install npm
+- name: Install npm
   shell: nvm install-latest-npm
   args:
-    executable: /bin/zsh
-    warn: no
+   executable: /bin/zsh
+   warn: no
   become: true  
-   
+
 - name: Install "dockly" package globally.
   npm:
     name: dockly
