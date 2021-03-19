@@ -18,12 +18,6 @@
 - name: Install nvm in bash
   shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
-- name: Install node in bash
-  shell: source ~/.bashrc && nvm install node
-  args:
-    executable: /bin/bash
-    warn: no
-  become: false
    
 - name: Install "dockly" package globally.
   npm:
