@@ -1,17 +1,34 @@
-- name: Install nvm
+- name: Install nvm in zsh
   shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | zsh
 
-- name: Install node
+- name: Install node in zsh
   shell: source ~/.zshrc && nvm install node
   args:
     executable: /bin/zsh
     warn: no
   become: false
    
-- name: Install npm
+- name: Install npm in zsh
   shell: source ~/.zshrc && nvm install-latest-npm
   args:
    executable: /bin/zsh
+   warn: no
+  become: false  
+
+- name: Install nvm in bash
+  shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+
+- name: Install node in bash
+  shell: source ~/.bashrc && nvm install node
+  args:
+    executable: /bin/bash
+    warn: no
+  become: false
+   
+- name: Install npm in bash
+  shell: source ~/.bashrc && nvm install-latest-npm
+  args:
+   executable: /bin/bash
    warn: no
   become: false  
 
