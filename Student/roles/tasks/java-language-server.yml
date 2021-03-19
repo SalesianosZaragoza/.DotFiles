@@ -2,7 +2,7 @@
 - name: jlannguage folder
   file: 
     path: ~/jls
-    state: present 
+    state: directory 
 
 - name: Install Java Language Server
   get_url:
