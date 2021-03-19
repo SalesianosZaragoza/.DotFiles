@@ -4,14 +4,14 @@
 - name: Install node
   shell: source ~/.zshrc && nvm install node
   args:
-    executable: /bin/bash
+    executable: /bin/zsh
     warn: no
   become: false
    
 - name: Install npm
   shell: source ~/.zshrc && nvm install-latest-npm
   args:
-   executable: /bin/bash
+   executable: /bin/zsh
    warn: no
   become: false  
 
