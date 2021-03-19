@@ -11,6 +11,4 @@
     - name: Include task list
       include: "roles/tasks/main.yml"
 
-    - name: change shell to zsh
-      shell: "chsh -s /usr/bin/zsh"
-      become: true
+

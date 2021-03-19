@@ -1,66 +1,61 @@
 - name: Install nvm
   shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | zsh
-  args:
-    creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
- 
-- name: Install npm
-  shell: curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh -o install_nvm.sh | zsh
 
 - name: Install node
-  shell: nvm install node
+  shell: source ~/.zshrc && nvm install node
   args:
     executable: /bin/zsh
     warn: no
-  become: true
+  become: false
    
 - name: Install npm
-  shell: nvm install-latest-npm
+  shell: source ~/.zshrc && nvm install-latest-npm
   args:
    executable: /bin/zsh
    warn: no
-  become: true  
+  become: false  
 
 - name: Install "dockly" package globally.
   npm:
     name: dockly
     global: yes
-  become: true
+  become: false
 
 - name: Install "fkill-cli" package globally.
   npm:
     name: fkill-cli
     global: yes
-  become: true
+  become: false
     
 - name: Install "bash-language-server" package globally.
   npm:
     name: bash-language-server
     global: yes
-  become: true
+  become: false
 
 - name: Install "vscode-css-languageserver-bin" package globally.
   npm:
     name: vscode-css-languageserver-bin
     global: yes
-  become: true
+  become: false
 
 - name: Install "vscode-html-languageserver-bin" package globally.
   npm:
     name: vscode-html-languageserver-bin
     global: yes
-  become: true
+  become: false
 
 - name: Install "javascript-typescript-langserver" package globally.
   npm:
     name: javascript-typescript-langserver
     global: yes
-  become: true
+  become: false
 
 - name: Install "neovim" package globally.
   npm:
     name: neovim
     global: yes
-  become: true
+  become: false
   
 - name: Install node version manager
   get_url:

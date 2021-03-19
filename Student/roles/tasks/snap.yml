@@ -3,6 +3,7 @@
     name:
       - microk8s
     classic: yes
+    channel: 1.19
   ignore_errors: yes
   when: ansible_facts['distribution'] == "Ubuntu"
   become: true

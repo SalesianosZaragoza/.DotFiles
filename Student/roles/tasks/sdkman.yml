@@ -1,12 +1,12 @@
 - name: Install sdkman 
-  shell: curl -s "https://get.sdkman.io"| bash 
+  shell: curl -s "https://get.sdkman.io"| zsh 
   ignore_errors: yes
   become: false
 
 - name: sdkman install java
-  shell: sdk install java
+  shell: source ~/.zshrc && sdk install java
   args:
-    executable: /bin/bash
+    executable: /bin/zsh
     warn: no
   ignore_errors: yes
   become: false

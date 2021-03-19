@@ -21,6 +21,7 @@
   git:
     repo: https://github.com/SalesianosZaragoza/ConfigLinuxFiles.git
     dest: ~/GIT/ConfigLinuxFiles
+  ignore_errors: yes
 
 - name: remove zshrc previous config
   file: 
@@ -50,4 +51,6 @@
     repo: https://github.com/sindresorhus/pure.git
     dest: ~/.zsh/pure
 
-
+- name: change shell to zsh
+  shell: "chsh -s /usr/bin/zsh"
+  become: true
