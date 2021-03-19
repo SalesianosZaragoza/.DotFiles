@@ -25,13 +25,6 @@
     warn: no
   become: false
    
-- name: Install npm in bash
-  shell: source ~/.bashrc && nvm install-latest-npm
-  args:
-   executable: /bin/bash
-   warn: no
-  become: false  
-
 - name: Install "dockly" package globally.
   npm:
     name: dockly
