@@ -108,7 +108,7 @@ default_height = 15
     "-jar",
     "$HOME/jls/org.eclipse.equinox.launcher_1.6.100.v20201223-0822.jar",
     "-configuration",
-    "$HOME/TOOLS/jdt-language-server/config_win",
+    "$HOME/jls/config_win",
     "-data",
     "$HOME/.cache/javalsp"
     ]
