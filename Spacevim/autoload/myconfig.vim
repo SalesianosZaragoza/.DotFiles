@@ -28,6 +28,7 @@ function! myconfig#after() abort
 endfunction
 
 function! myconfig#before() abort
+  let g:spacevim_disabled_plugins=['deoplete.nvim']
   let g:vimspector_enable_mappings='VISUAL_STUDIO'
   if !has("nvim")
     " disabled plugins

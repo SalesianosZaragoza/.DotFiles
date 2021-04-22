@@ -24,11 +24,11 @@
     bootstrap_after = "myconfig#after"
 
 # Enable autocomplete layer
-#[[layers]]
-#  name = 'autocomplete'
-#  autocomplete_method = "coc"
-#  auto_completion_return_key_behavior = "complete"
-#  auto_completion_tab_key_behavior = "smart"
+[[layers]]
+  name = 'autocomplete'
+  autocomplete_method = "coc"
+  auto_completion_return_key_behavior = "complete"
+  auto_completion_tab_key_behavior = "smart"
 #
 [[layers]]
   name = 'default'
@@ -165,6 +165,11 @@ merged = 0
 # custom_plugins {{{
 [[custom_plugins]]
 name = 'kyazdani42/nvim-web-devicons'
+merged = 0
+# }}}
+# custom_plugins {{{
+[[custom_plugins]]
+name = 'neoclide/coc.nvim'
 merged = 0
 # }}}
 
