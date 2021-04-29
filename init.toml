@@ -57,6 +57,8 @@ default_height = 15
   name = "lang#plantuml"
   enable_typeinfo = true
 
+[[layers]]
+  name = "lang#php"
 
 [[layers]]
   name = "lang#c"
