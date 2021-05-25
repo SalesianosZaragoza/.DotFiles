@@ -50,3 +50,18 @@
   pip:
     name: greenlet 
   become: true
+
+- name: Install "mycli" package globally.
+  pip:
+    name: mycli 
+  become: true
+  
+- name: Install "pgcli" package globally.
+  pip:
+    name: pgcli 
+  become: true
+
+- name: Install "sqllite-cli" package globally.
+  pip:
+    name:  litecli
+  become: true
