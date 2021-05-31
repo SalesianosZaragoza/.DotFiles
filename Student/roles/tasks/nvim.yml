@@ -1,11 +1,23 @@
 
     
-- name: Install nvim plugins 
+- name: Download nvim app image 
   get_url:
       url: https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-      dest: $HOME/nvim.appimage
+      dest: /home/linuxbrew/.linuxbrew/bin/nvim.appimage
       mode: +x
   become: false
+  ignore_errors: yes
 
-- name: Execute the plugins.sh
-  shell: ./nvim.appimage --appimage-extract && ./squashfs-root/usr/bin/nvim
+- name: Permision for nvim app image
+  shell: chmod u+x /home/linuxbrew/.linuxbrew/bin/nvim.appimage 
+  ignore_errors: yes
+  become: false
+
+- name: nvim symlink
+  file: 
+    path: /home/linuxbrew/.linuxbrew/bin/nvim 
+    mode: u+x
+    src: /home/linuxbrew/.linuxbrew/bin/nvim.appimage
+    state: link 
+    force: no
+  become: false
