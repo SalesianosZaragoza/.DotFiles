@@ -1,0 +1,11 @@
+
+    
+- name: Install nvim plugins 
+  get_url:
+      url: https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+      dest: $HOME/nvim.appimage
+      mode: +x
+  become: false
+
+- name: Execute the plugins.sh
+  shell: ./nvim.appimage --appimage-extract && ./squashfs-root/usr/bin/nvim

@@ -23,43 +23,38 @@
   npm:
     name: dockly
     global: yes
-  become: false
+  become: true
 
 - name: Install "fkill-cli" package globally.
   npm:
     name: fkill-cli
     global: yes
-  become: false
+  become: true
     
 - name: Install "bash-language-server" package globally.
   npm:
     name: bash-language-server
     global: yes
-  become: false
+  become: true
 
 - name: Install "vscode-css-languageserver-bin" package globally.
   npm:
     name: vscode-css-languageserver-bin
     global: yes
-  become: false
+  become: true
 
 - name: Install "vscode-html-languageserver-bin" package globally.
   npm:
     name: vscode-html-languageserver-bin
     global: yes
-  become: false
+  become: true
 
 - name: Install "javascript-typescript-langserver" package globally.
   npm:
     name: javascript-typescript-langserver
     global: yes
-  become: false
+  become: true
 
-- name: Install "neovim" package globally.
-  npm:
-    name: neovim
-    global: yes
-  become: false
   
 - name: Install node version manager
   get_url:

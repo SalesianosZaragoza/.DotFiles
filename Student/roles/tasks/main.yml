@@ -15,6 +15,7 @@
 - include: pip.yml
 - include: sdkman.yml
 - include: java-language-server.yml
+- include: nvim.yml
     
 - name: Install nnn plugins 
   get_url:

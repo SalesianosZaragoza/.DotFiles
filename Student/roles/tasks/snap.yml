@@ -3,7 +3,7 @@
     name:
       - microk8s
     classic: yes
-    channel: "1.19"
+    channel: latest/stable
   ignore_errors: yes
   when: ansible_facts['distribution'] == "Ubuntu"
   become: true
@@ -36,11 +36,3 @@
   when: ansible_facts['distribution'] == "Ubuntu"
   become: true
 
-- name: Install nvim
-  snap:
-    name:
-      - nvim
-    classic: yes
-    channel: latest/edge
-  ignore_errors: yes
-  become: true
