@@ -36,7 +36,8 @@ function! myconfig#before() abort
       \ 'neovim/nvim-lspconfig',
       \ 'nvim-treesitter/nvim-treesitter',
       \ 'nvim-lua/plenary.nvim',
-      \ 'neovim/lsp-config'
+      \ 'neovim/lsp-config',
+      \ 'nvim-telescope/telescope.nvim'
       \ ]
   endif
 endfunction
