@@ -143,7 +143,6 @@ if grep "microsoft" /proc/version >> /dev/null ; then
     echo "Generic Linux"
   else
     echo "Raspberry Linux"
-    source $HOME/.aliases 
 fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
