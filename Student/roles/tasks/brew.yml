@@ -161,8 +161,13 @@
   become: false
   ignore_errors: yes
 
+- name: stat gh cli
+  stat: path=/home/linuxbrew/.linuxbrew/share/zsh/site-functions/_gh
+  register: gh_cli_stat
+
 - name: Github cli autocompletions
-  shell: "sudo mv /home/linuxbrew/.linuxbrew/share/zsh/site-functions/_gh /usr/local/share/zsh/site-functions/_gh"
+  command: mv /home/linuxbrew/.linuxbrew/share/zsh/site-functions/_gh /usr/local/share/zsh/site-functions/_gh"
   become: true
   ignore_errors: yes
+  when: gh_cli_stat.stat.exists
 
