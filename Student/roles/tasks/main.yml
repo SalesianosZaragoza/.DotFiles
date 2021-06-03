@@ -16,6 +16,7 @@
 - include: sdkman.yml
 - include: java-language-server.yml
 - include: nvim.yml
+- include: aws.yml
     
 - name: Install nnn plugins 
   get_url:
