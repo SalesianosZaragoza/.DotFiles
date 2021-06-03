@@ -113,6 +113,14 @@
   ignore_errors: yes
   become: false
 
+- name: Downloading fzf github
+  git:
+    repo: https://github.com/junegunn/fzf.git
+    dest: ~/.fzf
+
+- name: Installing fzf
+  shell: "~/.fzf/install"
+
 - name: Install dive
   homebrew:
     name: dive
