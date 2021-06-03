@@ -3,3 +3,4 @@
           unzip awscliv2.zip &&
           ./aws/install"
   ignore_errors: yes
+  become: true
