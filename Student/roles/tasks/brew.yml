@@ -136,6 +136,14 @@
     state: latest
   ignore_errors: yes
   become: false
+  
+- name: Install tmuxinator
+  homebrew:
+    name: tmuxinator
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
+  ignore_errors: yes
+  become: false
 
 
 - name: Github cli autocompletions
