@@ -21,3 +21,18 @@
     state: link 
     force: no
   become: false
+
+
+- name: tree-sitter
+  get_url:
+    url: https://github.com/tree-sitter/tree-sitter/releases/download/v0.20.0/tree-sitter-linux-x64.gz
+    dest: $HOME/.local/bin/tree-sitter.gz
+  become: false
+  ignore_errors: yes
+
+- name: extract tree.sitter
+  unarchive:
+    src: $HOME/.local/bin/tree-sitter.gz
+    dest: $HOME/local/bin/tree-sitter
+  ignore_errors: yes
+

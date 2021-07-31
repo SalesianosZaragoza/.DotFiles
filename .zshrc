@@ -99,7 +99,7 @@ source $HOME/.aliases
 
 
 export CMAKE_HOME="$HOME/TOOLS/cmake/cmake-3.13.0-irc2-Linux-x86_64/"
-export JAVA_HOME="/usr/lib/jvm/java-1.11.0-openjdk-armhf/"
+export JAVA_HOME="/usr/lib/jvm/java-1.14.0-openjdk-amd64"
 #"$HOME/SDK/JDK/java-11-openjdk-hotswap/"
 export ECLIPSE_HOME="$HOME/IDE/eclipse-jee"
 export MAVEN_HOME="$HOME/TOOLS/apache-maven-3.6.2"

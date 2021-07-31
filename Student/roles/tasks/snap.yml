@@ -36,3 +36,12 @@
   when: ansible_facts['distribution'] == "Ubuntu"
   become: true
 
+- name: Install ccls
+  snap:
+    name:
+      - ccls
+    classic: yes
+  ignore_errors: yes
+  when: ansible_facts['distribution'] == "Ubuntu"
+  become: true
+

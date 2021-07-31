@@ -175,3 +175,9 @@ name = 'neoclide/coc.nvim'
 merged = 0
 # }}}
 
+# custom_plugins {{{
+[[custom_plugins]]
+name = 'neoclide/coc.nvim'
+merged = 0
+rev = 'release'
+# }}}

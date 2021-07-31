@@ -1,6 +1,5 @@
 function! myconfig#after() abort
   let g:lsp_log_verbose = 1
-  let g:python3_host_prog = '/usr/bin/python3'
   if has("nvim")  
     let g:lsp_log_file = expand('~/vim-lsp.log')
     lua require'lspconfig'.ccls.setup{}
@@ -58,7 +57,11 @@ function! myconfig#before() abort
       \ 'nvim-telescope/telescope.nvim',
       \ 'nvim-lua/plenary.nvim',
       \ 'neovim/lsp-config',
+<<<<<<< Updated upstream
+      \ 'nvim-telescope/telescope.nvim'
+=======
       \ 'neoclide/coc.nvim'
+>>>>>>> Stashed changes
       \ ]
   endif
 endfunction
