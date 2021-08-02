@@ -23,7 +23,6 @@
       - pylint
       - global
       - exuberant-ctags
-      - python-pygments
       - bat 
       - fd-find
       - nnn 

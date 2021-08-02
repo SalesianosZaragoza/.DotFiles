@@ -21,6 +21,7 @@
     state: link 
     force: no
   become: false
+  ignore_errors: yes
 
 
 - name: tree-sitter

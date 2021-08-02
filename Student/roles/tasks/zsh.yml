@@ -50,6 +50,7 @@
   git:
     repo: https://github.com/sindresorhus/pure.git
     dest: ~/.zsh/pure
+    version: main
 
 - name: change shell to zsh
   shell: "chsh -s /usr/bin/zsh"
