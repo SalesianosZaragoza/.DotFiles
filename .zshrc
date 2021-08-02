@@ -159,3 +159,10 @@ export NVM_DIR="$HOME/.nvm"
 # BEGIN ANSIBLE MANAGED BLOCK for linuxbrew
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 # END ANSIBLE MANAGED BLOCK for linuxbrew
+
+
+if [ $commands[gh] ]; then
+  source <(gh completion --shell zsh)
+  compdef _gh gh
+  compdump
+fi
