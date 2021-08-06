@@ -18,6 +18,11 @@
 - name: Install nvm in bash
   shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
+- name: Install "pyright" package globally.
+  npm:
+    name: pyright
+    global: yes
+  become: true
    
 - name: Install "dockly" package globally.
   npm:

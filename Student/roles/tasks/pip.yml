@@ -41,6 +41,11 @@
     name: pynvim
   become: true
 
+- name: Install "pygments" package globally.
+  pip:
+    name: pygments
+  become: true
+
 - name: Install "trollius" package globally.
   pip:
     name: trollius

@@ -129,7 +129,7 @@ alias code-java='code --extensions-dir ~/.java-code'
 alias code-php='code --extensions-dir ~/.php-code'
 unalias grv
 fpath=(~/.zsh.d/ $fpath)
-export LD_LIBRARY_PATH=/usr/local/cuda-10.2/targets/x86_64-linux/lib/
+export LD_LIBRARY_PATH=/usr/local/cuda-10.2/targets/x86_64-linux/lib/:/usr/lib/python3/dist-packages/
 export PATH="$HOME/.jenv/bin:$HOME/go/bin:$PATH"
 export GTAGSLABEL=pygments
 export NNN_PLUG='o:fzopen;p:preview-tui;t:preview-tabbed;i:imgthumb'
