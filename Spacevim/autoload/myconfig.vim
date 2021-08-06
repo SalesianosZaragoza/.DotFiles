@@ -54,6 +54,7 @@ function! myconfig#before() abort
     let g:spacevim_disabled_plugins=[
       \ 'neovim/nvim-lspconfig',
       \ 'nvim-treesitter/nvim-treesitter',
+      \ 'nvim-treesitter/playground',
       \ 'nvim-telescope/telescope.nvim',
       \ 'nvim-lua/plenary.nvim',
       \ 'neovim/lsp-config',

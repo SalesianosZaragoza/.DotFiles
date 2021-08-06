@@ -161,6 +161,11 @@ merged = 0
 # }}}
 # custom_plugins {{{
 [[custom_plugins]]
+name = 'nvim-treesitter/playground'
+merged = 0
+# }}}
+# custom_plugins {{{
+[[custom_plugins]]
 name = 'nvim-treesitter/nvim-treesitter'
 merged = 0
 # }}}
