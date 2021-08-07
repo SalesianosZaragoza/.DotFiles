@@ -35,6 +35,10 @@
     name: python-language-server
   become: true
 
+- name: Install "pylint" package globally.
+  pip:
+    name: pylint
+  become: true
 
 - name: Install "pynvim" package globally.
   pip:

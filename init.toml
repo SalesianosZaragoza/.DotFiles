@@ -53,6 +53,7 @@
 [[layers]]
   name = "lang#python"
   format_on_save = 1
+  enabled_linters = ['pylint']
 
 [[layers]]
   name = "lang#plantuml"
@@ -120,64 +121,40 @@
   name = "checkers"
   show_cursor_error = false
 
-# custom plugins {{{
 [[custom_plugins]]
 name = 'neovim/nvim-lspconfig'
 merged = 0
-# }}}
-# custom_plugins {{{
 [[custom_plugins]]
 name = 'szw/vim-maximizer'
 merged = 0
-# }}}
-# custom_plugins {{{
 [[custom_plugins]]
 name = 'puremourning/vimspector'
 merged = 0
-# }}}
-# custom_plugins {{{
 [[custom_plugins]]
 name = 'Shougo/vimproc.vim'
 merged = 0
-# }}}
-# custom_plugins {{{
 [[custom_plugins]]
 name = 'hashivim/vim-terraform'
 merged = 0
-# }}}
-# custom_plugins {{{
 [[custom_plugins]]
 name = 'nvim-lua/popup.nvim'
 merged = 0
-# }}}
-# custom_plugins {{{
 [[custom_plugins]]
 name = 'nvim-lua/plenary.nvim'
 merged = 0
-# }}}
-# custom_plugins {{{
 [[custom_plugins]]
 name = 'nvim-telescope/telescope.nvim'
 merged = 0
-# }}}
-# custom_plugins {{{
 [[custom_plugins]]
 name = 'nvim-treesitter/playground'
 merged = 0
-# }}}
-# custom_plugins {{{
 [[custom_plugins]]
 name = 'nvim-treesitter/nvim-treesitter'
 merged = 0
-# }}}
-# custom_plugins {{{
 [[custom_plugins]]
 name = 'kyazdani42/nvim-web-devicons'
 merged = 0
-# }}}
-# custom_plugins {{{
 [[custom_plugins]]
 name = 'neoclide/coc.nvim'
 merged = 0
 rev = 'release'
-# }}}
