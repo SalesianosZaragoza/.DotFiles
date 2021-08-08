@@ -34,6 +34,6 @@
 - name: extract tree.sitter
   unarchive:
     src: $HOME/.local/bin/tree-sitter.gz
-    dest: $HOME/local/bin/tree-sitter
+    dest: $HOME/.local/bin/tree-sitter
   ignore_errors: yes
 
