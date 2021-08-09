@@ -50,7 +50,7 @@ ZSH_THEME=""
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode git aws fzf mvn fasd zsh-completions vagrant docker docker-compose vagrant-prompt kubectl git-flow gitfast command-not-found copydir copybuffer copyfile git-prompt dotenv colorize colored-man-pages zsh-history-substring-search extract sudo gitignore terraform)
+plugins=(vi-mode git aws microk8s npm nvm pip tmuxinator ubuntu jenv  fzf mvn fasd zsh-completions vagrant docker docker-compose vagrant-prompt kubectl git-flow gitfast command-not-found copydir copybuffer copyfile git-prompt dotenv colorize colored-man-pages zsh-history-substring-search extract sudo gitignore terraform)
 fpath+=$HOME/.zsh/pure
 autoload -U compinit && compinit
 autoload -U promptinit; promptinit
@@ -99,18 +99,15 @@ source $HOME/.aliases
 
 
 export CMAKE_HOME="$HOME/TOOLS/cmake/cmake-3.13.0-irc2-Linux-x86_64/"
-export JAVA_HOME="/usr/lib/jvm/java-1.14.0-openjdk-amd64"
 #"$HOME/SDK/JDK/java-11-openjdk-hotswap/"
 export ECLIPSE_HOME="$HOME/IDE/eclipse-jee"
 export MAVEN_HOME="$HOME/TOOLS/apache-maven-3.6.2"
 export GRADLE_HOME="$HOME/TOOLS/gradle-5.4.1"
 export BREW_HOME="/home/linuxbrew/.linuxbrew"
-export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAVEN_HOME/bin:$SALESFORCE_HOME/bin:$ECLIPSE_HOME/:$BREW_HOME/bin:$HOME/TOOLS/grv/:$PATH
 export JAVA_OPTIONS=$JAVA_OPTIONS"-Xmx4096m -Xms4096m"
 export PYTHONPATH=/usr/lib/python3/dist-packages/:~/.local/lib/python3.7/site-packages:/usr/lib/python3.7/
 export ANDROID_HOME=~/SDK/ANDROID/
 export BREW_HOME=~/../linuxbrew/.linuxbrew/
-export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$PATH:$BREW_HOME/bin:~/.local/bin:/snap/bin
 alias awscli='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
 alias reloadPath='export PATH=$JAVA_HOME/bin:$PATH'
 alias remoteDebugOn="export MAVEN_OPTS='-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 $JAVA_OPTIONS'"
@@ -130,7 +127,6 @@ alias code-php='code --extensions-dir ~/.php-code'
 unalias grv
 fpath=(~/.zsh.d/ $fpath)
 export LD_LIBRARY_PATH=/usr/local/cuda-10.2/targets/x86_64-linux/lib/:/usr/lib/python3/dist-packages/
-export PATH="$HOME/.jenv/bin:$HOME/go/bin:$PATH"
 export GTAGSLABEL=pygments
 export NNN_PLUG='o:fzopen;p:preview-tui;t:preview-tabbed;i:imgthumb'
 export NNN_FIFO='/tmp/nnn.fifo'
@@ -163,3 +159,8 @@ if [ $commands[gh] ]; then
   compdef _gh gh
   compdump
 fi
+
+export JAVA_HOME="/usr/lib/jvm/java-1.14.0-openjdk-amd64"
+export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAVEN_HOME/bin:$SALESFORCE_HOME/bin:$ECLIPSE_HOME/:$BREW_HOME/bin:$HOME/TOOLS/grv/:$PATH
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$PATH:$BREW_HOME/bin:~/.local/bin:/snap/bin
+export PATH="$HOME/.jenv/bin:$HOME/go/bin:$PATH"
