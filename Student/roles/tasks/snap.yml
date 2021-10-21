@@ -13,7 +13,6 @@
     name:
       - dbeaver-ce
     classic: yes
-    channel: latest/edge
   ignore_errors: yes
   when: ansible_facts['distribution'] == "Ubuntu"
   become: true
