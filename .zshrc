@@ -52,7 +52,7 @@ ZSH_THEME=""
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(vi-mode git aws microk8s npm nvm pip tmuxinator ubuntu jenv  fzf mvn fasd zsh-completions vagrant docker docker-compose vagrant-prompt kubectl git-flow gitfast command-not-found copydir copybuffer copyfile git-prompt dotenv colorize colored-man-pages zsh-history-substring-search extract sudo gitignore terraform)
 fpath+=$HOME/.zsh/pure
-autoload -U compinit && compinit
+#autoload -U compinit && compinit
 autoload -U promptinit; promptinit
 # optionally define some options
 PURE_CMD_MAX_EXEC_TIME=10
@@ -150,7 +150,7 @@ eval "$(jenv init -)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
 if [ $commands[gh] ]; then
