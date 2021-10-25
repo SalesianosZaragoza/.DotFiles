@@ -155,8 +155,8 @@ export NVM_DIR="$HOME/.nvm"
 
 if [ $commands[gh] ]; then
   source <(gh completion --shell zsh)
-  compdef _gh gh
-  compdump
+#  compdef _gh gh
+#  compdump
 fi
 
 export JAVA_HOME="/usr/lib/jvm/java-1.14.0-openjdk-amd64"
