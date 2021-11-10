@@ -132,3 +132,7 @@ merged = 0
 name = 'neoclide/coc.nvim'
 merged = 0
 rev = 'release'
+[[custom_plugins]]
+name = 'sudormrfbin/cheatsheet.nvim'
+merged = 0
+
