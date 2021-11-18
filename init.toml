@@ -131,21 +131,21 @@ merged = 0
 [[custom_plugins]]
 name = 'romgrk/nvim-treesitter-context'
 merged = 0
-#[[custom_plugins]]
-#name = 'hrsh7th/nvim-cmp'
-#merged = 0
-#[[custom_plugins]]
-#name = 'hrsh7th/cmp-nvim-lsp'
-#merged = 0
-#[[custom_plugins]]
-#name = 'hrsh7th/cmp-buffer'
-#merged = 0
-#[[custom_plugins]]
-#name = 'hrsh7th/cmp-path'
-#merged = 0
-#[[custom_plugins]]
-#name = 'hrsh7th/cmp-cmdline'
-#merged = 0
+[[custom_plugins]]
+name = 'hrsh7th/nvim-cmp'
+merged = 0
+[[custom_plugins]]
+name = 'hrsh7th/cmp-nvim-lsp'
+merged = 0
+[[custom_plugins]]
+name = 'hrsh7th/cmp-buffer'
+merged = 0
+[[custom_plugins]]
+name = 'hrsh7th/cmp-path'
+merged = 0
+[[custom_plugins]]
+name = 'hrsh7th/cmp-cmdline'
+merged = 0
 [[custom_plugins]]
 name = 'mfussenegger/nvim-dap'
 merged = 0
@@ -173,3 +173,7 @@ merged = 0
 [[custom_plugins]]
 name = 'mfussenegger/nvim-dap-python'
 merged = 0
+[[custom_plugins]]
+name = 'onsails/lspkind-nvim'
+merged = 0
+

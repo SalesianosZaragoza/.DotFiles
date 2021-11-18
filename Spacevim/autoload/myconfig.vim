@@ -71,7 +71,8 @@ function! myconfig#before() abort
   endif
   if has("nvim")  
     let g:spacevim_disabled_plugins=[
-      \ 'deoplete.nvim'
+      \ 'deoplete.nvim',
+      \ 'CompleteParameter.vim'
       \ ]
   endif
 endfunction
