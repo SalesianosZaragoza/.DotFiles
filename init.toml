@@ -25,76 +25,69 @@
 
 # Enable autocomplete layer
 [[layers]]
-  name = 'autocomplete'
-  autocomplete_method = "coc"
-  auto_completion_return_key_behavior = "complete"
-  auto_completion_tab_key_behavior = "smart"
-
+ name = 'autocomplete'
+ autocomplete_method = "coc"
+ auto_completion_return_key_behavior = "complete"
+ auto_completion_tab_key_behavior = "smart"
 [[layers]]
   name = 'default'
-
 [[layers]]
   name = 'shell'
   default_position = 'bootom'
   default_height = 15
-
 [[layers]]
   name = "git"
-
 [[layers]]
   name = "debug"
-
 [[layers]]
   name = 'fzf'
-
 [[layers]]
   name = 'lang#xml'
-
 [[layers]]
   name = "lang#python"
   format_on_save = 1
   enabled_linters = ['pylint']
-
 [[layers]]
   name = "lang#plantuml"
   enable_typeinfo = true
-
 [[layers]]
   name = "lang#php"
-
 [[layers]]
   name = "lang#c"
   enable_clang_syntax_highlight = true
   clang_executable = "/usr/bin/clang"
-
 [[layers]]
   name = "lang#dockerfile"
-
 [[layers]]
   name = "lang#javascript"
   auto_fix = true
   enable_flow_syntax = true
-
 [[layers]]
   name = "lang#html"
-
 [[layers]]
   name = "lang#scala"
-
 [[layers]]
   name = "lang#sh"
-
+[[layers]]
+  name = "lang#vim"
 [[layers]]
   name = "gtags"
   gtagslabel = "pygments"
-
 [[layers]]
   name = "lang#java"
-
 [[layers]]
   name = "checkers"
   show_cursor_error = false
+[[layers]]
+  name = "sudo"
+[[layers]]
+  name = "tools"
+[[layers]]
+  name = "edit"
 
+
+[[layers]]
+  name = "treesitter"
 [[custom_plugins]]
 name = 'neovim/nvim-lspconfig'
 merged = 0
@@ -135,4 +128,48 @@ rev = 'release'
 [[custom_plugins]]
 name = 'sudormrfbin/cheatsheet.nvim'
 merged = 0
-
+[[custom_plugins]]
+name = 'romgrk/nvim-treesitter-context'
+merged = 0
+#[[custom_plugins]]
+#name = 'hrsh7th/nvim-cmp'
+#merged = 0
+#[[custom_plugins]]
+#name = 'hrsh7th/cmp-nvim-lsp'
+#merged = 0
+#[[custom_plugins]]
+#name = 'hrsh7th/cmp-buffer'
+#merged = 0
+#[[custom_plugins]]
+#name = 'hrsh7th/cmp-path'
+#merged = 0
+#[[custom_plugins]]
+#name = 'hrsh7th/cmp-cmdline'
+#merged = 0
+[[custom_plugins]]
+name = 'mfussenegger/nvim-dap'
+merged = 0
+[[custom_plugins]]
+name = 'rcarriga/nvim-dap-ui'
+merged = 0
+[[custom_plugins]]
+name = 'nvim-telescope/telescope-dap.nvim'
+merged = 0
+[[custom_plugins]]
+name = 'tpope/vim-dadbod'
+merged = 0
+[[custom_plugins]]
+name = 'kristijanhusak/vim-dadbod-ui'
+merged = 0
+[[custom_plugins]]
+name = 'kristijanhusak/vim-dadbod-completion'
+merged = 0
+[[custom_plugins]]
+name = 'chipsenkbeil/distant.nvim'
+merged = 0
+[[custom_plugins]]
+name = 'ms-jpq/coq_nvim'
+merged = 0
+[[custom_plugins]]
+name = 'mfussenegger/nvim-dap-python'
+merged = 0

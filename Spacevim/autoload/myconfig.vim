@@ -1,10 +1,13 @@
 function! myconfig#after() abort
   let g:lsp_log_verbose = 1
   if has("nvim")  
-    let g:lsp_log_file = expand('~/vim-lsp.log')
+    let g:lsp_log_fie = expand('~/nvim-lsp.log')
     lua require'lspconfig'.ccls.setup{}
     lua require'lspconfig'.clangd.setup{}
     lua require'lspconfig'.pyright.setup{}
+    lua require('telescope').load_extension('dap')
+    lua require("dapui").setup()
+    lua require('dap-python').setup('/bin/python3')
   endif
   " Required for operations modifying multiple buffers like rename.
   set hidden
@@ -16,8 +19,6 @@ function! myconfig#after() abort
       \ 'cpp': ['/usr/bin/clangd'],
       \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
       \ }
-  let g:LanguageClient_devel = 1 " Use rust debug build
-  let g:LanguageClient_loggingLevel = 'DEBUG' " Use highest logging level
   " note that if you are using Plug mapping you should not use `noremap` mappings.
   nmap <F5> <Plug>(lcn-menu)
   " Or map each action separately
@@ -46,7 +47,6 @@ function! myconfig#after() abort
 endfunction
 
 function! myconfig#before() abort
-  let g:spacevim_disabled_plugins=['deoplete.nvim']
   let g:python3_host_prog = '/usr/bin/python3'
   let g:vimspector_enable_mappings='VISUAL_STUDIO'
   if !has("nvim")
@@ -58,7 +58,20 @@ function! myconfig#before() abort
       \ 'nvim-telescope/telescope.nvim',
       \ 'nvim-lua/plenary.nvim',
       \ 'neovim/lsp-config',
-      \ 'neoclide/coc.nvim'
+      \ 'hrsh7th/cmp-nvim-lsp',
+      \ 'hrsh7th/cmp-buffer',
+      \ 'hrsh7th/cmp-path',
+      \ 'hrsh7th/cmp-cmdline',
+      \ 'hrsh7th/nvim-cmp',
+      \ 'neoclide/coc.nvim',
+      \ 'romgrk/nvim-treesitter-context',
+      \ 'chipsenkbeil/distant.nvim',
+      \ 'ms-jpq/coq_nvim'
+      \ ]
+  endif
+  if has("nvim")  
+    let g:spacevim_disabled_plugins=[
+      \ 'deoplete.nvim'
       \ ]
   endif
 endfunction
