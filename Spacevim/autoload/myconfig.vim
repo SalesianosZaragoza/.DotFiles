@@ -8,6 +8,7 @@ function! myconfig#after() abort
     lua require('telescope').load_extension('dap')
     lua require("dapui").setup()
     lua require('dap-python').setup('/bin/python3')
+    luafile ~/GIT/ConfigLinuxFiles/Spacevim/initLua
   endif
   " Required for operations modifying multiple buffers like rename.
   set hidden
