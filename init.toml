@@ -203,4 +203,6 @@ merged = 0
 [[custom_plugins]]
 name = 'petertriho/cmp-git'
 merged = 0
-
+[[custom_plugins]]
+name = 'tjdevries/complextras.nvim'
+merged = 0

@@ -52,8 +52,9 @@ vim.api.nvim_set_keymap(
 local lspkind = require "lspkind"
 lspkind.init()
 
-local cmp = require "cmp"
 
+
+local cmp = require "cmp"
 cmp.setup {
   snippet = {
       -- REQUIRED - you must specify a snippet engine

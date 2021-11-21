@@ -23,7 +23,7 @@ function! myconfig#after() abort
     nmap        S   <Plug>(vsnip-cut-text)
     xmap        S   <Plug>(vsnip-cut-text)
     
-    luafile ~/GIT/ConfigLinuxFiles/Spacevim/initLua
+    luafile ~/GIT/ConfigLinuxFiles/Spacevim/init.lua
   endif
   " Required for operations modifying multiple buffers like rename.
   set hidden
