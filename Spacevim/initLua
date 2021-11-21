@@ -132,12 +132,12 @@ cmp.setup {
   --        (more?)
   sources = {
     { name = "gh_issues" },
-    -- { name = "tn" },
 
     -- Youtube: Could enable this only for lua, but nvim_lua handles that already.
     { name = "nvim_lua" },
-
+    { name = 'cmp_tabnine' },
     { name = "nvim_lsp" },
+    { name = "copilot" },
     { name = "path" },
     { name = "vsnip" },
     { name = "buffer", keyword_length = 5 },
@@ -189,7 +189,8 @@ cmp.setup {
         path = "[path]",
         vsnip = "[snip]",
         gh_issues = "[issues]",
-        tn = "[TabNine]",
+        cmp_tabnine = "[TN]",
+        copilot = "[copilot]",
       },
     },
   },

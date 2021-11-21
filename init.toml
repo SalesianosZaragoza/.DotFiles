@@ -156,6 +156,15 @@ merged = 0
 name = 'hrsh7th/cmp-cmdline'
 merged = 0
 [[custom_plugins]]
+name = 'hrsh7th/cmp-copilot'
+merged = 0
+[[custom_plugins]]
+name = 'github/copilot.vim'
+merged = 0
+[[custom_plugins]]
+name = 'tzachar/cmp-tabnine'
+merged = 0
+[[custom_plugins]]
 name = 'mfussenegger/nvim-dap'
 merged = 0
 [[custom_plugins]]
@@ -186,14 +195,12 @@ merged = 0
 name = 'onsails/lspkind-nvim'
 merged = 0
 [[custom_plugins]]
-name = 'dsznajder/vscode-es7-javascript-react-snippets'
-[[custom_plugins]]
-name = 'xabikos/vscode-javascript'
-merged = 0
-[[custom_plugins]]
-name = 'abusaidm/html-snippets'
-merged = 0
-[[custom_plugins]]
 name = 'rafamadriz/friendly-snippets'
+merged = 0
+[[custom_plugins]]
+name = 'kitagry/vs-snippets'
+merged = 0
+[[custom_plugins]]
+name = 'petertriho/cmp-git'
 merged = 0
 
