@@ -126,6 +126,9 @@ name = 'neoclide/coc.nvim'
 merged = 0
 rev = 'release'
 [[custom_plugins]]
+name = 'scalameta/nvim-metals'
+merged = 0
+[[custom_plugins]]
 name = 'sudormrfbin/cheatsheet.nvim'
 merged = 0
 [[custom_plugins]]
@@ -136,6 +139,12 @@ name = 'hrsh7th/nvim-cmp'
 merged = 0
 [[custom_plugins]]
 name = 'hrsh7th/cmp-nvim-lsp'
+merged = 0
+[[custom_plugins]]
+name = 'hrsh7th/vim-vsnip' 
+merged = 0
+[[custom_plugins]]
+name = 'hrsh7th/vim-vsnip-integ' 
 merged = 0
 [[custom_plugins]]
 name = 'hrsh7th/cmp-buffer'
@@ -175,5 +184,16 @@ name = 'mfussenegger/nvim-dap-python'
 merged = 0
 [[custom_plugins]]
 name = 'onsails/lspkind-nvim'
+merged = 0
+[[custom_plugins]]
+name = 'dsznajder/vscode-es7-javascript-react-snippets'
+[[custom_plugins]]
+name = 'xabikos/vscode-javascript'
+merged = 0
+[[custom_plugins]]
+name = 'abusaidm/html-snippets'
+merged = 0
+[[custom_plugins]]
+name = 'rafamadriz/friendly-snippets'
 merged = 0
 

@@ -1,4 +1,34 @@
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+require'lspconfig'.html.setup {
+  capabilities = capabilities,
+}
+require'lspconfig'.eslint.setup{}
+require'lspconfig'.cssls.setup{
+  capabilities = capabilities,
+}
+require'lspconfig'.jsonls.setup {
+    capabilities = capabilities,
+    commands = {
+      Format = {
+        function()
+          vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0})
+        end
+      }
+    }
+}
+require'lspconfig'.ccls.setup{}
+require'lspconfig'.clangd.setup{}
+require'lspconfig'.pyright.setup{}
+require('telescope').load_extension('dap')
+require("dapui").setup()
+require('dap-python').setup('/bin/python3')
+require'lspconfig'.ansiblels.setup{} 
+require'lspconfig'.cmake.setup{}
+require'lspconfig'.terraform_lsp.setup{}
+require'lspconfig'.tsserver.setup{}
+require'lspconfig'.vimls.setup{}
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 -- Don't show the dumb matching stuff.
@@ -25,6 +55,15 @@ lspkind.init()
 local cmp = require "cmp"
 
 cmp.setup {
+  snippet = {
+      -- REQUIRED - you must specify a snippet engine
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+        -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
+      end,
+    },
   mapping = {
     ["<C-d>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
@@ -100,7 +139,7 @@ cmp.setup {
 
     { name = "nvim_lsp" },
     { name = "path" },
-    { name = "luasnip" },
+    { name = "vsnip" },
     { name = "buffer", keyword_length = 5 },
   },
 
@@ -148,7 +187,7 @@ cmp.setup {
         nvim_lsp = "[LSP]",
         nvim_lua = "[api]",
         path = "[path]",
-        luasnip = "[snip]",
+        vsnip = "[snip]",
         gh_issues = "[issues]",
         tn = "[TabNine]",
       },

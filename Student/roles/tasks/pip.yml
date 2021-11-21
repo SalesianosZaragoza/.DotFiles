@@ -40,6 +40,11 @@
     name: python-language-server
   become: true
 
+- name: Install "cmake-language-server" package globally.
+  pip:
+    name: cmake-language-server
+  become: true
+
 - name: Install "pylint" package globally.
   pip:
     name: pylint
