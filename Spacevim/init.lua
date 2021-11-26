@@ -1,6 +1,13 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+require('lualine').setup {
+  options = {
+    theme = 'tokyonight'
+  }
+}
+require'lualine'.setup()
+
 require'lspconfig'.html.setup {
   capabilities = capabilities,
 }
@@ -29,7 +36,8 @@ require'lspconfig'.cmake.setup{}
 require'lspconfig'.terraform_lsp.setup{}
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.vimls.setup{}
-vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.opt.completeopt = { "menu", "menuone", "noselect", "preview" }
+
 
 -- Don't show the dumb matching stuff.
 vim.opt.shortmess:append "c"
@@ -69,7 +77,7 @@ cmp.setup {
     ["<C-d>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-e>"] = cmp.mapping.close(),
-    ["<c-y>"] = cmp.mapping(
+    ["<CR>"] = cmp.mapping(
       cmp.mapping.confirm {
         behavior = cmp.ConfirmBehavior.Insert,
         select = true,
@@ -91,6 +99,7 @@ cmp.setup {
         end
       end,
     },
+    
 
     -- ["<tab>"] = cmp.mapping {
     --   i = cmp.config.disable,
@@ -100,7 +109,7 @@ cmp.setup {
     -- },
 
     -- Testing
-    ["<c-q>"] = cmp.mapping.confirm {
+    ["<S-CR>"] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
@@ -183,6 +192,7 @@ cmp.setup {
     -- Youtube: How to set up nice formatting for your sources.
     format = lspkind.cmp_format {
       with_text = true,
+      preset = 'default',
       menu = {
         buffer = "[buf]",
         nvim_lsp = "[LSP]",

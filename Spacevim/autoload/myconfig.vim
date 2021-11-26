@@ -27,20 +27,15 @@ function! myconfig#after() abort
   endif
   " Required for operations modifying multiple buffers like rename.
   set hidden
-
-  let g:LanguageClient_serverCommands = {
-      \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-      \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-      \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
-      \ 'cpp': ['/usr/bin/clangd'],
-      \ 'ruby': ['~/.rbenv/shims/solargraph', 'stdio'],
-      \ }
-  " note that if you are using Plug mapping you should not use `noremap` mappings.
-  nmap <F5> <Plug>(lcn-menu)
-  " Or map each action separately
-  nmap <silent>K <Plug>(lcn-hover)
-  nmap <silent> gd <Plug>(lcn-definition)
-  nmap <silent> <F2> <Plug>(lcn-rename)
+  " LSP config (the mappings used in the default file don't quite work right)
+  nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
+  nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
+  nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
+  nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
+  nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
+  nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+  nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+  nnoremap <silent> <S-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
   " keeping it centered
   nnoremap n nzzzv
   nnoremap N Nzzzv
@@ -54,8 +49,8 @@ function! myconfig#after() abort
   nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
   nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
   " moving text 
-  vnoremap J :m '>+1<CR>gv=gv
   vnoremap K :m '>-2<CR>gv=gv
+  vnoremap J :m '>+1<CR>gv=gv
   nnoremap <leader>j :m .+1<CR>==
   inoremap <C-j> <esc>:m .+1<CR>==
   inoremap <C-k> <esc>:m .-2<CR>==
@@ -63,6 +58,7 @@ function! myconfig#after() abort
 endfunction
 
 function! myconfig#before() abort
+  let g:tokyonight_style = 'night'
   let g:python3_host_prog = '/usr/bin/python3'
   let g:vimspector_enable_mappings='VISUAL_STUDIO'
   if !has("nvim")
@@ -82,7 +78,9 @@ function! myconfig#before() abort
       \ 'neoclide/coc.nvim',
       \ 'romgrk/nvim-treesitter-context',
       \ 'chipsenkbeil/distant.nvim',
-      \ 'ms-jpq/coq_nvim'
+      \ 'ms-jpq/coq_nvim',
+      \ 'github/copilot.vim',
+      \ 'plugin/nvim-treesitter.vim'
       \ ]
   endif
   if has("nvim")  

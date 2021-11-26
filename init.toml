@@ -5,14 +5,13 @@
 # URL: https://spacevim.org
 # License: GPLv3
 #=============================================================================
-
 # All SpaceVim option below [option] section
 [options]
     # set spacevim theme. by default colorscheme layer is not loaded,
     # if you want to use more colorscheme, please load the colorscheme
     # layer
-    colorscheme = "gruvbox"
-    # Disable guicolors in basic mode, many terminal do not support 24bit
+    colorscheme = "tokyonight"
+   # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors
     enable_guicolors = true
     # Disable statusline separator, if you want to use other value, please
@@ -23,7 +22,9 @@
     bootstrap_before = "myconfig#before"
     bootstrap_after = "myconfig#after"
 
-# Enable autocomplete layer
+[[layers]]
+name = "core#statusline"
+enable = false 
 [[layers]]
  name = 'autocomplete'
  autocomplete_method = "coc"
@@ -163,6 +164,7 @@ name = 'github/copilot.vim'
 merged = 0
 [[custom_plugins]]
 name = 'tzachar/cmp-tabnine'
+build = './install.sh'
 merged = 0
 [[custom_plugins]]
 name = 'mfussenegger/nvim-dap'
@@ -206,3 +208,10 @@ merged = 0
 [[custom_plugins]]
 name = 'tjdevries/complextras.nvim'
 merged = 0
+[[custom_plugins]]
+name = 'folke/tokyonight.nvim'
+merged = 0
+[[custom_plugins]]
+name = 'nvim-lualine/lualine.nvim'
+merged = 0
+
