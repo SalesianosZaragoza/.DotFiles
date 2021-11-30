@@ -223,3 +223,6 @@ merged = 0
 [[custom_plugins]]
 name = 'phaazon/hop.nvim'
 merged = 0 
+[[custom_plugins]]
+name = 'L3MON4D3/LuaSnip'
+merged = 0
