@@ -39,7 +39,7 @@ function! myconfig#after() abort
   " keeping it centered
   nnoremap n nzzzv
   nnoremap N Nzzzv
-  nnoremap J nzJ`z
+  nnoremap J mzJ`z
   " undo break points
   inoremap , ,<C-g>u
   inoremap . .<C-g>u
