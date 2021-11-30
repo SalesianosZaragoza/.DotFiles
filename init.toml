@@ -194,6 +194,9 @@ merged = 0
 name = 'mfussenegger/nvim-dap-python'
 merged = 0
 [[custom_plugins]]
+name = 'mfussenegger/nvim-jdtls'
+merged = 0
+[[custom_plugins]]
 name = 'onsails/lspkind-nvim'
 merged = 0
 [[custom_plugins]]
@@ -214,4 +217,9 @@ merged = 0
 [[custom_plugins]]
 name = 'nvim-lualine/lualine.nvim'
 merged = 0
-
+[[custom_plugins]]
+name = 'unblevable/quick-scope'
+merged = 0
+[[custom_plugins]]
+name = 'phaazon/hop.nvim'
+merged = 0 
