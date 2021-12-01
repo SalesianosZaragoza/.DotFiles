@@ -235,3 +235,10 @@ merged = 0
 [[custom_plugins]]
 name = 'lewis6991/gitsigns.nvim'
 merged  = 0
+[[custom_plugins]]
+name = 'liuchengxu/vim-which-key'
+merged = 0
+[[custom_plugins]]
+name = 'AckslD/nvim-whichkey-setup.lua'
+merged = 0
+

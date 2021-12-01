@@ -1,13 +1,20 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+local wk = require('whichkey_setup')
 
+local normal_keymap={
+      j = {':move .+1<CR>==', 'move line down'},
+      k = {':move .-2<CR>==', 'move line up'},
+    }
+
+      wk.register_keymap('m', normal_keymap, {mode = 'n'})
 require('lualine').setup {
   options = {
     theme = 'tokyonight'
   }
 }
-require'lualine'.setup()
 
+    require'lualine'.setup()
 require'lspconfig'.html.setup {
   capabilities = capabilities,
 }
