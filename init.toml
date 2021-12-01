@@ -226,3 +226,12 @@ merged = 0
 [[custom_plugins]]
 name = 'L3MON4D3/LuaSnip'
 merged = 0
+[[custom_plugins]]
+name = 'kristijanhusak/vim-carbon-now-sh'
+merged = 0
+[[custom_plugins]]
+name = 'pwntester/octo.nvim'
+merged = 0
+[[custom_plugins]]
+name = 'lewis6991/gitsigns.nvim'
+merged  = 0
