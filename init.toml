@@ -13,12 +13,6 @@
     colorscheme = "tokyonight"
    # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors
-    enable_guicolors = true
-    # Disable statusline separator, if you want to use other value, please
-    # install nerd fonts
-    buffer_index_type = 4
-    enable_tabline_filetype_icon = true
-    enable_statusline_mode = false
     bootstrap_before = "myconfig#before"
     bootstrap_after = "myconfig#after"
 
@@ -29,6 +23,12 @@ enable = false
 name = "core#statusline"
 enable = false 
 [[layers]]
+name = "core#tabline"
+enable = false 
+[[layers]]
+name = "core#banner"
+enable = false 
+[[layers]]
  name = 'autocomplete'
  autocomplete_method = "coc"
  auto_completion_return_key_behavior = "complete"
@@ -37,8 +37,6 @@ enable = false
   name = 'default'
 [[layers]]
   name = "git"
-[[layers]]
-  name = "debug"
 [[layers]]
   name = 'fzf'
 [[layers]]
