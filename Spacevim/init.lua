@@ -47,7 +47,7 @@ require'nvim-tree'.setup {
     width = 30,
     height = 30,
     hide_root_folder = false,
-    side = 'reght',
+    side = 'right',
     auto_resize = false,
     mappings = {
       custom_only = false,
