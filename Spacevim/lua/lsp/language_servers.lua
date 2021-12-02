@@ -24,14 +24,6 @@ else
   print("Unsupported system for sumneko")
 end
 
--- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
-local sumneko_root_path = '/Users/neilsabde/.config/something/ls/lua-language-server'
-local sumneko_binary = sumneko_root_path .. "/bin/" .. system_name .. "/lua-language-server"
-
-local runtime_path = vim.split(package.path, ';')
-table.insert(runtime_path, "lua/?.lua")
-table.insert(runtime_path, "lua/?/init.lua")
-
 local langservers = {'html', 'eslint','ansiblels','cmake', 'terraform_lsp','vimls', 'jsonls', 'ccls', 'clangd','pyright', 'cssls', 'tsserver'}
 
 
