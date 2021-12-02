@@ -85,7 +85,9 @@ enable = false
   name = "tools"
 [[layers]]
   name = "edit"
-
+[[layers]]
+  name = "core"
+  enable = false
 
 [[layers]]
   name = "treesitter"
@@ -241,4 +243,12 @@ merged = 0
 [[custom_plugins]]
 name = 'AckslD/nvim-whichkey-setup.lua'
 merged = 0
-
+[[custom_plugins]]
+name = 'kyazdani42/nvim-tree.lua'
+merged = 0
+[[custom_plugins]]
+name = 'akinsho/toggleterm.nvim'
+merged = 0
+[[custom_plugins]]
+name = 'sindrets/diffview.nvim'
+merged = 0
