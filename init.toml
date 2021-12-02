@@ -79,3 +79,6 @@ enable = false
   name = "edit"
 [[layers]]
   name = "treesitter"
+[[custom_plugins]]
+  name = 'wbthomason/packer.nvim'
+  merged = 0

@@ -10,13 +10,6 @@ local toggle_lazygit = function()
   return lazygit:toggle()
 end
 local mappings = {
-  q = {":q<cr>", "Quit"},
-  Q = {":wq<cr>", "Save & Quit"},
-  w = {":w<cr>", "Save"},
-  x = {":bdelete<cr>", "Close"},
-  E = {":e ~/.config/nvim/init.lua<cr>", "Edit config"},
-  f = {":Telescope find_files<cr>", "Telescope Find Files"},
-  r = {":Telescope live_grep<cr>", "Telescope Live Grep"},
   j = {':move .+1<CR>==', 'move line down'},
   k = {':move .-2<CR>==', 'move line up'},
   l = {
@@ -31,7 +24,13 @@ local mappings = {
     e = {'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', "Show line diagnostics"},
     q = {'<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', "Show loclist"}
   },
-  t = {t = {":ToggleTerm<cr>", "Split Below"}, f = {toggle_float, "Floating Terminal"}, l = {toggle_lazygit, "LazyGit"}}
+  t = {
+    t = {":ToggleTerm<cr>", "Split Below"}, 
+    f = {toggle_float, "Floating Terminal"}, 
+    l = {toggle_lazygit, "LazyGit"},
+    f = {":Telescope find_files<cr>", "Telescope Find Files"},
+    r = {":Telescope live_grep<cr>", "Telescope Live Grep"}
+  }
 }
-local opts = {prefix = '<localleader>'}
+local opts = {prefix = '<C-x>'}
 wk.register(mappings, opts)

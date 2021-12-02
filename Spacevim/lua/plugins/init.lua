@@ -76,7 +76,6 @@ return require('packer').startup(function(use)
   use 'liuchengxu/vim-which-key'
   use 'AckslD/nvim-whichkey-setup.lua'
   use 'kyazdani42/nvim-tree.lua'
-  use 'akinsho/toggleterm.nvim'
   use 'sindrets/diffview.nvim'
   use 'liuchengxu/vim-clap'
  end)
