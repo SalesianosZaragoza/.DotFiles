@@ -23,7 +23,7 @@
     bootstrap_after = "myconfig#after"
 
 [[layers]]
-name = "core#statusline"
+name = "core"
 enable = false 
 [[layers]]
  name = 'autocomplete'
@@ -33,10 +33,6 @@ enable = false
 [[layers]]
   name = 'default'
 [[layers]]
-  name = 'shell'
-  default_position = 'bootom'
-  default_height = 15
-[[layers]]
   name = "git"
 [[layers]]
   name = "debug"
@@ -44,10 +40,6 @@ enable = false
   name = 'fzf'
 [[layers]]
   name = 'lang#xml'
-[[layers]]
-  name = "lang#python"
-  format_on_save = 1
-  enabled_linters = ['pylint']
 [[layers]]
   name = "lang#plantuml"
   enable_typeinfo = true
@@ -86,169 +78,4 @@ enable = false
 [[layers]]
   name = "edit"
 [[layers]]
-  name = "core"
-  enable = false
-
-[[layers]]
   name = "treesitter"
-[[custom_plugins]]
-name = 'neovim/nvim-lspconfig'
-merged = 0
-[[custom_plugins]]
-name = 'szw/vim-maximizer'
-merged = 0
-[[custom_plugins]]
-name = 'puremourning/vimspector'
-merged = 0
-[[custom_plugins]]
-name = 'Shougo/vimproc.vim'
-merged = 0
-[[custom_plugins]]
-name = 'hashivim/vim-terraform'
-merged = 0
-[[custom_plugins]]
-name = 'nvim-lua/popup.nvim'
-merged = 0
-[[custom_plugins]]
-name = 'nvim-lua/plenary.nvim'
-merged = 0
-[[custom_plugins]]
-name = 'nvim-telescope/telescope.nvim'
-merged = 0
-[[custom_plugins]]
-name = 'nvim-treesitter/playground'
-merged = 0
-[[custom_plugins]]
-name = 'nvim-treesitter/nvim-treesitter'
-merged = 0
-[[custom_plugins]]
-name = 'kyazdani42/nvim-web-devicons'
-merged = 0
-[[custom_plugins]]
-name = 'neoclide/coc.nvim'
-merged = 0
-rev = 'release'
-[[custom_plugins]]
-name = 'scalameta/nvim-metals'
-merged = 0
-[[custom_plugins]]
-name = 'sudormrfbin/cheatsheet.nvim'
-merged = 0
-[[custom_plugins]]
-name = 'romgrk/nvim-treesitter-context'
-merged = 0
-[[custom_plugins]]
-name = 'hrsh7th/nvim-cmp'
-merged = 0
-[[custom_plugins]]
-name = 'hrsh7th/cmp-nvim-lsp'
-merged = 0
-[[custom_plugins]]
-name = 'hrsh7th/vim-vsnip' 
-merged = 0
-[[custom_plugins]]
-name = 'hrsh7th/vim-vsnip-integ' 
-merged = 0
-[[custom_plugins]]
-name = 'hrsh7th/cmp-buffer'
-merged = 0
-[[custom_plugins]]
-name = 'hrsh7th/cmp-path'
-merged = 0
-[[custom_plugins]]
-name = 'hrsh7th/cmp-cmdline'
-merged = 0
-[[custom_plugins]]
-name = 'hrsh7th/cmp-copilot'
-merged = 0
-[[custom_plugins]]
-name = 'github/copilot.vim'
-merged = 0
-[[custom_plugins]]
-name = 'tzachar/cmp-tabnine'
-build = './install.sh'
-merged = 0
-[[custom_plugins]]
-name = 'mfussenegger/nvim-dap'
-merged = 0
-[[custom_plugins]]
-name = 'rcarriga/nvim-dap-ui'
-merged = 0
-[[custom_plugins]]
-name = 'nvim-telescope/telescope-dap.nvim'
-merged = 0
-[[custom_plugins]]
-name = 'tpope/vim-dadbod'
-merged = 0
-[[custom_plugins]]
-name = 'kristijanhusak/vim-dadbod-ui'
-merged = 0
-[[custom_plugins]]
-name = 'kristijanhusak/vim-dadbod-completion'
-merged = 0
-[[custom_plugins]]
-name = 'chipsenkbeil/distant.nvim'
-merged = 0
-[[custom_plugins]]
-name = 'ms-jpq/coq_nvim'
-merged = 0
-[[custom_plugins]]
-name = 'mfussenegger/nvim-dap-python'
-merged = 0
-[[custom_plugins]]
-name = 'mfussenegger/nvim-jdtls'
-merged = 0
-[[custom_plugins]]
-name = 'onsails/lspkind-nvim'
-merged = 0
-[[custom_plugins]]
-name = 'rafamadriz/friendly-snippets'
-merged = 0
-[[custom_plugins]]
-name = 'kitagry/vs-snippets'
-merged = 0
-[[custom_plugins]]
-name = 'petertriho/cmp-git'
-merged = 0
-[[custom_plugins]]
-name = 'tjdevries/complextras.nvim'
-merged = 0
-[[custom_plugins]]
-name = 'folke/tokyonight.nvim'
-merged = 0
-[[custom_plugins]]
-name = 'nvim-lualine/lualine.nvim'
-merged = 0
-[[custom_plugins]]
-name = 'unblevable/quick-scope'
-merged = 0
-[[custom_plugins]]
-name = 'phaazon/hop.nvim'
-merged = 0 
-[[custom_plugins]]
-name = 'L3MON4D3/LuaSnip'
-merged = 0
-[[custom_plugins]]
-name = 'kristijanhusak/vim-carbon-now-sh'
-merged = 0
-[[custom_plugins]]
-name = 'pwntester/octo.nvim'
-merged = 0
-[[custom_plugins]]
-name = 'lewis6991/gitsigns.nvim'
-merged  = 0
-[[custom_plugins]]
-name = 'liuchengxu/vim-which-key'
-merged = 0
-[[custom_plugins]]
-name = 'AckslD/nvim-whichkey-setup.lua'
-merged = 0
-[[custom_plugins]]
-name = 'kyazdani42/nvim-tree.lua'
-merged = 0
-[[custom_plugins]]
-name = 'akinsho/toggleterm.nvim'
-merged = 0
-[[custom_plugins]]
-name = 'sindrets/diffview.nvim'
-merged = 0
