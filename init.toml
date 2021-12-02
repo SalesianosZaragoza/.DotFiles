@@ -26,6 +26,9 @@
 name = "core"
 enable = false 
 [[layers]]
+name = "core#statusline"
+enable = false 
+[[layers]]
  name = 'autocomplete'
  autocomplete_method = "coc"
  auto_completion_return_key_behavior = "complete"

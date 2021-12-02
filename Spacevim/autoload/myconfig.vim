@@ -84,7 +84,8 @@ function! myconfig#before() abort
   if has("nvim")  
     let g:spacevim_disabled_plugins=[
       \ 'deoplete.nvim',
-      \ 'CompleteParameter.vim'
+      \ 'CompleteParameter.vim',
+      \ 'vim-which-key'
       \ ]
   endif
 endfunction
