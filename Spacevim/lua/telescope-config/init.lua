@@ -46,6 +46,12 @@ require('telescope').setup {
         }
     },
     extensions = {
+    arecibo = {
+    ["selected_engine"]   = 'npmjs',
+    ["url_open_command"]  = 'xdg-open',
+    ["show_http_headers"] = false,
+    ["show_domain_icons"] = false,
+  },
     bookmarks = {
       -- Available: 'brave', 'google_chrome', 'safari', 'firefox', 'firefox_dev'
       selected_browser = 'google_chrome',

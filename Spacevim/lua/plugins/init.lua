@@ -1,3 +1,4 @@
+require'packer.luarocks'.install_commands()
 return require('packer').startup(function(use)
 -- Packer can manage itself
   use 'wbthomason/packer.nvim'
@@ -91,6 +92,7 @@ return require('packer').startup(function(use)
   use 'camgraff/telescope-tmux.nvim'
   use 'norcalli/nvim-terminal.lua'
   use 'danielpieper/telescope-tmuxinator.nvim'
+  use_rocks 'lua-http-parser'
   use {
     "nvim-telescope/telescope-arecibo.nvim",
     rocks = {"openssl", "lua-http-parser"}
@@ -120,7 +122,6 @@ return require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'liuchengxu/vim-which-key'
   use 'AckslD/nvim-whichkey-setup.lua'
-  use 'kyazdani42/nvim-tree.lua'
   use 'sindrets/diffview.nvim'
   use 'liuchengxu/vim-clap'
  end)
