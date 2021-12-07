@@ -45,4 +45,30 @@ require('telescope').setup {
             }
         }
     }
+    extensions =
+    bookmarks = {
+      -- Available: 'brave', 'google_chrome', 'safari', 'firefox', 'firefox_dev'
+      selected_browser = 'google_chrome',
+      
+
+      -- Either provide a shell command to open the URL
+      url_open_command = 'open',
+
+      -- Or provide the plugin name which is already installed
+      -- Available: 'vim_external', 'open_browser'
+      url_open_plugin = nil,
+      firefox_profile_name = nil,
+    },
+  }
 }
+require'telescope'.load_extension("arecibo")
+require'telescope'.load_extension'repo'
+require('telescope').load_extension('gh')
+require'telescope'.load_extension('zoxide')
+require('telescope').load_extension('bookmarks')
+require('telescope').load_extension('heading')
+require("telescope").load_extension("vimspector")
+require('telescope').load_extension('coc')
+require'telescope'.load_extension('openbrowser')
+require('telescope').load_extension('tmuxinator')
+

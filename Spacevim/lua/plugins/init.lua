@@ -50,8 +50,13 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-copilot'
   use 'github/copilot.vim'
   use {'tzachar/cmp-tabnine', run = './install.sh'}
+  use 'crispgm/telescope-heading.nvim'
+  use 'nvim-telescope/telescope-packer.nvim'
+  use 'nvim-telescope/telescope-vimspector.nvim'
+  use 'fannheyward/telescope-coc.nvim'
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
+  use'theHamsta/nvim-dap-virtual-text'
   use 'nvim-telescope/telescope-dap.nvim'
   use 'tpope/vim-dadbod'
   use 'kristijanhusak/vim-dadbod-ui'
@@ -64,10 +69,38 @@ return require('packer').startup(function(use)
   use 'rafamadriz/friendly-snippets'
   use 'kitagry/vs-snippets'
   use 'petertriho/cmp-git'
+  use 'TC72/telescope-tele-tabby.nvim'
   use 'tjdevries/complextras.nvim'
   use 'folke/tokyonight.nvim'
   use 'nvim-lualine/lualine.nvim'
   use 'unblevable/quick-scope'
+  use 'tamago324/telescope-openbrowser.nvim'
+  use 'tyru/open-browser.vim'
+  use 'camgraff/telescope-tmux.nvim'
+  use 'norcalli/nvim-terminal.lua'
+  use 'danielpieper/telescope-tmuxinator.nvim'
+  use {
+    "nvim-telescope/telescope-arecibo.nvim",
+    rocks = {"openssl", "lua-http-parser"}
+  }
+  use {
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+        {"nvim-lua/plenary.nvim"},
+        {"nvim-treesitter/nvim-treesitter"}
+    }
+}
+  use 'jvgrootveld/telescope-zoxide'
+  use 'dhruvmanila/telescope-bookmarks.nvim'
+  use 'nvim-telescope/telescope-github.nvim'
+  use 'cljoly/telescope-repo.nvim'
+
+  use {
+  "AckslD/nvim-neoclip.lua",
+  config = function()
+    require('neoclip').setup()
+  end,
+}
   use 'phaazon/hop.nvim'
   use 'L3MON4D3/LuaSnip'
   use 'kristijanhusak/vim-carbon-now-sh'
