@@ -65,6 +65,18 @@ return require('packer').startup(function(use)
   use 'ms-jpq/coq_nvim'
   use 'mfussenegger/nvim-dap-python'
   use 'mfussenegger/nvim-jdtls'
+  use 'nvim-telescope/telescope-media-files.nvim'
+  use { 'nvim-telescope/telescope-z.nvim',
+  requires = {
+    {'nvim-lua/plenary.nvim'},
+    {'nvim-lua/popup.nvim'},
+    {'nvim-telescope/telescope.nvim'},
+  },
+  config = function()
+    require'telescope'.load_extension'z'
+    -- ... other telescope settings
+  end,
+}
   use 'onsails/lspkind-nvim'
   use 'rafamadriz/friendly-snippets'
   use 'kitagry/vs-snippets'
@@ -112,3 +124,5 @@ return require('packer').startup(function(use)
   use 'sindrets/diffview.nvim'
   use 'liuchengxu/vim-clap'
  end)
+
+

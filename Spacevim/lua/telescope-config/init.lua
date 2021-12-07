@@ -52,11 +52,11 @@ require('telescope').setup {
       
 
       -- Either provide a shell command to open the URL
-      url_open_command = 'open',
+      url_open_command = 'xdg-open',
 
       -- Or provide the plugin name which is already installed
       -- Available: 'vim_external', 'open_browser'
-      url_open_plugin = nil,
+      url_open_plugin = 'open_browser',
       firefox_profile_name = nil,
     }
   }
@@ -72,4 +72,7 @@ require("telescope").load_extension("vimspector")
 require('telescope').load_extension('coc')
 require'telescope'.load_extension('openbrowser')
 require('telescope').load_extension('tmuxinator')
+require('telescope').load_extension('packer')
+require('telescope').load_extension('media_files')
+
 
