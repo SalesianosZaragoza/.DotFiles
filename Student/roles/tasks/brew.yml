@@ -97,14 +97,6 @@
   ignore_errors: yes
   become: false
 
-- name: Install autojump
-  homebrew:
-    name: autojump
-    path: /home/linuxbrew/.linuxbrew/bin
-    state: latest
-  ignore_errors: yes
-  become: false
-  
 - name: Downloading fzf github
   git:
     repo: https://github.com/junegunn/fzf.git

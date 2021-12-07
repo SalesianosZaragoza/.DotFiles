@@ -173,3 +173,8 @@ export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAV
 export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$PATH:$BREW_HOME/bin:~/.local/bin:/snap/bin
 export PATH="$HOME/.jenv/bin:$HOME/go/bin:$PATH"
 eval $(thefuck --alias)
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+eval "$(zoxide init zsh)"
