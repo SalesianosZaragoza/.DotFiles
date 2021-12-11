@@ -21,10 +21,7 @@ return require('packer').startup(function(use)
   use {'norcalli/nvim-colorizer.lua', config = "require('colorizer-config')", event = "BufRead"}
   use {
     'lewis6991/gitsigns.nvim',
-    requires = {'nvim-lua/plenary.nvim'},
-    config = function()
-      require('gitsigns').setup {current_line_blame = true}
-    end
+    requires = {'nvim-lua/plenary.nvim'}
   }
   use {'glepnir/dashboard-nvim', cmd = "Dashboard", config = "require('dashboard-config')"}
   use {"lukas-reineke/indent-blankline.nvim", config = "require('blankline-config')", event = "BufRead"}

@@ -36,3 +36,6 @@ vim.o.expandtab = true
 vim.bo.expandtab = true
 vim.opt.termguicolors = true
 vim.g.tokyonight_style = 'night'
+vim.visual_impairing = (os.getenv("BLIND") ~= nil )
+require('gitsigns').setup {current_line_blame = not vim.visual_impairing }
+

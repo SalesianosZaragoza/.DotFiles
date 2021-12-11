@@ -27,32 +27,6 @@ function! myconfig#after() abort
   endif
   " Required for operations modifying multiple buffers like rename.
   set hidden
-  " LSP config (the mappings used in the default file don't quite work right)
-  nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
-  nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
-  nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
-  nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
-  nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
-  nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-  nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-  nnoremap <silent> <S-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-  " keeping it centered
-  nnoremap n nzzzv
-  nnoremap N Nzzzv
-  nnoremap J mzJ`z
-  " undo break points
-  inoremap , ,<C-g>u
-  inoremap . .<C-g>u
-  inoremap ? ?<C-g>u
-  inoremap ! !<C-g>u
-  " Jumplist mutation
-  nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
-  nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
-  " moving text 
-  vnoremap K :m '>-2<CR>gv=gv
-  vnoremap J :m '>+1<CR>gv=gv
-  inoremap <C-j> <esc>:m .+1<CR>==<insert>
-  inoremap <C-k> <esc>:m .-2<CR>==<insert>
 endfunction
 
 function! myconfig#before() abort
