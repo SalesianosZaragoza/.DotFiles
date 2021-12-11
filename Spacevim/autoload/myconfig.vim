@@ -2,7 +2,7 @@ function! myconfig#after() abort
   let g:lsp_log_verbose = 1
   if has("nvim")  
     let g:lsp_log_fie = expand('~/nvim-lsp.log')
-    luafile ~/GIT/ConfigLinuxFiles/Spacevim/nvim/init.lua
+    luafile ~/.DotFiles/Spacevim/nvim/init.lua
   endif
   " Required for operations modifying multiple buffers like rename.
   set hidden
