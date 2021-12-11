@@ -76,8 +76,11 @@ local toggle_lazygit = function()
   return lazygit:toggle()
 end
 local mappings = {
-  j = {':move .+1<CR>==', 'move line down'},
-  k = {':move .-2<CR>==', 'move line up'},
+  e = {
+    name = "edit",
+    j = {':move .+1<CR>==', 'move line down'},
+    k = {':move .-2<CR>==', 'move line up'}
+  },
   l = {
     name = "LSP",
     i = {":LspInfo<cr>", "Connected Language Servers"},
@@ -99,7 +102,7 @@ local mappings = {
     r = {":Telescope live_grep<cr>", "Telescope Live Grep"},
     p = {'<cmd>lua require("telescope").extensions.packer.plugins(opts)<CR>', "Telescope Packer"}
   },
-  g ={
+  G ={
     name = "Git",
     g = {":GitGrep<cr>", "Git Grep"},
     s = {":GitStash<cr>", "Git Stash"},
