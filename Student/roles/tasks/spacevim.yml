@@ -28,7 +28,7 @@
 - name: init.toml symlink
   file: 
     path: ~/.SpaceVim.d/init.toml 
-    src: ~/GIT/ConfigLinuxFiles/init.toml  
+    src: ~/GIT/ConfigLinuxFiles/Spacevim/init.toml  
     state: link 
     force: no
 
