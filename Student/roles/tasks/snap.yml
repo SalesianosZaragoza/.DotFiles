@@ -44,3 +44,20 @@
   when: ansible_facts['distribution'] == "Ubuntu"
   become: true
 
+- name: Install cheat
+  snap:
+    name:
+      - cheat
+    classic: yes
+  ignore_errors: yes
+  when: ansible_facts['distribution'] == "Ubuntu"
+  become: true
+
+- name: Install postman
+  snap:
+    name:
+      - postman
+    classic: yes
+  ignore_errors: yes
+  when: ansible_facts['distribution'] == "Ubuntu"
+  become: true
