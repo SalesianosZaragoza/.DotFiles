@@ -137,6 +137,14 @@
   ignore_errors: yes
   become: false
 
+- name: Install ripgrep
+  homebrew:
+    name: ripgrep
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
+  ignore_errors: yes
+  become: false
+
 
 - name: Github cli autocompletions
   shell: "/home/linuxbrew/.linuxbrew/bin/gh completion -s zsh > /home/linuxbrew/.linuxbrew/share/zsh/site-functions/_gh"

@@ -1,21 +1,7 @@
-#=============================================================================
-# dark_powered.toml --- dark powered configuration example for SpaceVim
-# Copyright (c) 2016-2020 Wang Shidong & Contributors
-# Author: Wang Shidong < wsdjeg at 163.com >
-# URL: https://spacevim.org
-# License: GPLv3
-#=============================================================================
-# All SpaceVim option below [option] section
 [options]
-    # set spacevim theme. by default colorscheme layer is not loaded,
-    # if you want to use more colorscheme, please load the colorscheme
-    # layer
     colorscheme = "tokyonight"
-   # Disable guicolors in basic mode, many terminal do not support 24bit
-    # true colors
     bootstrap_before = "myconfig#before"
     bootstrap_after = "myconfig#after"
-
 [[layers]]
 name = "core"
 enable = false 

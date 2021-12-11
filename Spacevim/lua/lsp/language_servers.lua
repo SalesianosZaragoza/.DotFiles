@@ -24,7 +24,7 @@ else
   print("Unsupported system for sumneko")
 end
 
-local langservers = {'html', 'eslint','ansiblels','cmake', 'terraform_lsp','vimls', 'jsonls', 'ccls', 'clangd','pyright', 'cssls', 'tsserver'}
+local langservers = {'html', 'eslint','ansiblels','cmake', 'terraform_lsp','vimls', 'intelephense', 'jsonls', 'ccls', 'clangd','pyright', 'cssls', 'tsserver'}
 
 
 for _, server in ipairs(langservers) do

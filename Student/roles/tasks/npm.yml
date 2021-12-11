@@ -24,6 +24,12 @@
     global: yes
   become: true
 
+- name: Install "intelephense" package globally.
+  npm:
+    name:  intelephense
+    global: yes
+  become: true
+
 - name: Install "dockerfile-language-server-nodejs" package globally.
   npm:
     name: dockerfile-language-server-nodejs
