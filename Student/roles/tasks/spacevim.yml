@@ -28,13 +28,13 @@
 - name: init.toml symlink
   file: 
     path: ~/.SpaceVim.d/init.toml 
-    src: ~/GIT/ConfigLinuxFiles/init.toml  
+    src: ~/.DotFiles/Spacevim/init.toml  
     state: link 
     force: no
 
 - name: myconfig.vim symlink
   file: 
     path: ~/.SpaceVim/autoload/myconfig.vim 
-    src: ~/GIT/ConfigLinuxFiles/Spacevim/autoload/myconfig.vim
+    src: ~/-DotFiles/Spacevim/autoload/myconfig.vim
     state: link 
     force: no

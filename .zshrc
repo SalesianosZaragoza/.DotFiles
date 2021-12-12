@@ -167,9 +167,14 @@ fi
 if [ $commands[gh] ]; then
   source <(gh completion --shell zsh)
 fi
-
+export LUA_PATH="$HOME/.DotFiles/Spacevim/nvim/lua/?.lua;$HOME/.DotFiles/Spacevim/nvim/lua/?/init.lua;"
 export JAVA_HOME="/usr/lib/jvm/java-1.14.0-openjdk-amd64"
 export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAVEN_HOME/bin:$SALESFORCE_HOME/bin:$ECLIPSE_HOME/:$BREW_HOME/bin:$HOME/TOOLS/grv/:$PATH
 export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$PATH:$BREW_HOME/bin:~/.local/bin:/snap/bin
 export PATH="$HOME/.jenv/bin:$HOME/go/bin:$PATH"
 eval $(thefuck --alias)
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+eval "$(zoxide init zsh)"

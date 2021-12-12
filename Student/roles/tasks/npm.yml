@@ -23,7 +23,31 @@
     name: pyright
     global: yes
   become: true
-   
+
+- name: Install "intelephense" package globally.
+  npm:
+    name:  intelephense
+    global: yes
+  become: true
+
+- name: Install "dockerfile-language-server-nodejs" package globally.
+  npm:
+    name: dockerfile-language-server-nodejs
+    global: yes
+  become: true
+
+- name: Install "vim-languaje-server" package globally.
+  npm:
+    name: vim-languaje-server
+    global: yes
+  become: true
+
+- name: Install "vscode-languageservers-extracted" package globally.
+  npm:
+    name:  vscode-languageservers-extracted
+    global: yes
+  become: true
+
 - name: Install "dockly" package globally.
   npm:
     name: dockly

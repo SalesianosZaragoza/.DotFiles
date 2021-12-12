@@ -40,6 +40,11 @@
     name: python-language-server
   become: true
 
+- name: Install "cmake-language-server" package globally.
+  pip:
+    name: cmake-language-server
+  become: true
+
 - name: Install "pylint" package globally.
   pip:
     name: pylint
@@ -73,6 +78,11 @@
 - name: Install "pgcli" package globally.
   pip:
     name: pgcli 
+  become: true
+
+- name: Install "mssql-cli" package globally.
+  pip:
+    name:  mssql-cli
   become: true
 
 - name: Install "sqllite-cli" package globally.

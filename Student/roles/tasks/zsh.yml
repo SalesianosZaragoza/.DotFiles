@@ -29,8 +29,8 @@
 
 - name: Installing git configfiles
   git:
-    repo: https://github.com/SalesianosZaragoza/ConfigLinuxFiles.git
-    dest: ~/GIT/ConfigLinuxFiles
+    repo: https://github.com/.DotFiles.git
+    dest: ~/.DotFiles
   ignore_errors: yes
 
 - name: remove zshrc previous config
@@ -41,7 +41,7 @@
 - name: zshrc symlink
   file: 
     path: ~/.zshrc 
-    src: ~/GIT/ConfigLinuxFiles/.zshrc  
+    src: ~/.DotFiles/.zshrc  
     state: link 
     force: no
 

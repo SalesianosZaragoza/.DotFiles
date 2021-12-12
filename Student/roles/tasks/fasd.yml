@@ -1,11 +1,2 @@
-- name: Adds fasd repo
-  apt_repository:
-    repo: 'ppa:aacebedo/fasd'
-    update_cache: yes
-  become: true
-  ignore_errors: true
-
-- name: Install fasd with apt
-  apt: name=fasd state=latest
-  become: true
-  ignore_errors: true
+- name: Install zoxide in zsh
+  shell: curl -sS https://webinstall.dev/zoxide | zsh

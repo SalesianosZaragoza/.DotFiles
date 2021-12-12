@@ -1,0 +1,71 @@
+[options]
+    colorscheme = "tokyonight"
+    bootstrap_before = "myconfig#before"
+    bootstrap_after = "myconfig#after"
+[[layers]]
+name = "core"
+enable = false 
+[[layers]]
+name = "core#statusline"
+enable = false 
+[[layers]]
+name = "core#tabline"
+enable = false 
+[[layers]]
+name = "core#banner"
+enable = false 
+[[layers]]
+ name = 'autocomplete'
+ autocomplete_method = "coc"
+ auto_completion_return_key_behavior = "complete"
+ auto_completion_tab_key_behavior = "smart"
+[[layers]]
+  name = 'default'
+[[layers]]
+  name = "git"
+[[layers]]
+  name = 'fzf'
+[[layers]]
+  name = 'lang#xml'
+[[layers]]
+  name = "lang#plantuml"
+  enable_typeinfo = true
+[[layers]]
+  name = "lang#php"
+[[layers]]
+  name = "lang#c"
+  enable_clang_syntax_highlight = true
+  clang_executable = "/usr/bin/clang"
+[[layers]]
+  name = "lang#dockerfile"
+[[layers]]
+  name = "lang#javascript"
+  auto_fix = true
+  enable_flow_syntax = true
+[[layers]]
+  name = "lang#html"
+[[layers]]
+  name = "lang#scala"
+[[layers]]
+  name = "lang#sh"
+[[layers]]
+  name = "lang#vim"
+[[layers]]
+  name = "gtags"
+  gtagslabel = "pygments"
+[[layers]]
+  name = "lang#java"
+[[layers]]
+  name = "checkers"
+  show_cursor_error = false
+[[layers]]
+  name = "sudo"
+[[layers]]
+  name = "tools"
+[[layers]]
+  name = "edit"
+[[layers]]
+  name = "treesitter"
+[[custom_plugins]]
+  name = 'wbthomason/packer.nvim'
+  merged = 0
