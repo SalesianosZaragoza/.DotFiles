@@ -1,3 +1,6 @@
+function fif(condition, if_true, if_false)
+  if condition then return if_true else return if_false end
+end
 vim.cmd('filetype plugin indent on')
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.hidden = true
@@ -36,6 +39,5 @@ vim.o.expandtab = true
 vim.bo.expandtab = true
 vim.opt.termguicolors = true
 vim.g.tokyonight_style = 'night'
-vim.visual_impairing = (os.getenv("BLIND") ~= nil )
-require('gitsigns').setup {current_line_blame = not vim.visual_impairing }
+vim.visual_impairing = ( os.getenv("BLIND") ~= nil )
 

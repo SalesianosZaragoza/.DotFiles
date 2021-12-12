@@ -80,6 +80,11 @@
     name: pgcli 
   become: true
 
+- name: Install "mssql-cli" package globally.
+  pip:
+    name:  mssql-cli
+  become: true
+
 - name: Install "sqllite-cli" package globally.
   pip:
     name:  litecli

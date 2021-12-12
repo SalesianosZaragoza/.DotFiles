@@ -5,7 +5,7 @@ return require('packer').startup(function(use)
   use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate", event = "BufWinEnter", config = "require('treesitter-config')"}
   use {'hoob3rt/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}, event = "BufWinEnter", config = "require('lualine-config')"}
   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons', event = "BufWinEnter", config = "require('bufferline-config')"}
-  use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons', cmd = "NvimTreeToggle", config = "require('nvim-tree-config')"}
+  use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' }
   use {'windwp/nvim-ts-autotag', event = "InsertEnter", after = "nvim-treesitter"}
   use {'p00f/nvim-ts-rainbow', after = "nvim-treesitter"}
   use {'windwp/nvim-autopairs', config = "require('autopairs-config')", after = "nvim-cmp"}

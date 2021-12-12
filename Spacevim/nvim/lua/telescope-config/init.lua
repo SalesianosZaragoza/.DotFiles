@@ -2,15 +2,15 @@ local actions = require('telescope.actions')
 require('telescope').setup {
     defaults = {
         layout_config = {
-          width = 0.99,
+          width = fif(vim.visual_impairing, 0.99, 0.75),
           prompt_position = "top",
           preview_cutoff = 50,
           horizontal = {mirror = false},
           vertical = {mirror = false},
         },
         find_command = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
-        prompt_prefix = "query: ",
-        selection_caret = ">",
+        prompt_prefix = fif(vim.visual_impairing, "query: ", " " ),
+        selection_caret = fif(vim.visual_impairing , ">", " "),
         entry_prefix = "  ",
         initial_mode = "insert",
         selection_strategy = "reset",
@@ -22,7 +22,7 @@ require('telescope').setup {
         path_display = {},
         winblend = 0,
         border = {},
-        borderchars = {'', '', '', '', '', '', '', ''},
+        borderchars = fif(vim.visual_impairing, {'', '', '', '', '', '', '', ''}, {'─', '│', '─', '│', '╭', '╮', '╯', '╰'} ),
         color_devicons = true,
         use_less = true,
         set_env = {['COLORTERM'] = 'truecolor'}, -- default = nil,

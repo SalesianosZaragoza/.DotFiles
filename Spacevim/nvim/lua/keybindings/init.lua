@@ -32,7 +32,7 @@ map('n', 'gD', '<cmd>lua vim.lspdiagnostic.goto_prev()<CR>', {noremap = true, si
 map('n', 'gD', '<cmd>lua vim.lsp.d(diagnostic.goto_next()<CR>', {noremap = true, silent = true})
 -- keeping it centered
 map('n', 'N', 'Nzzzv', {noremap = true})
-map('n', 'J', 'mzJ`z' {noremap = true})
+map('n', 'J', 'mzJ`z', {noremap = true})
 -- undo break points
 map('n', ',', ',<C-g>u', {noremap = true})
 map('n', '.', '.<C-g>u', {noremap = true})
