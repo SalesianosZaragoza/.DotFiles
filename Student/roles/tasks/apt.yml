@@ -4,7 +4,7 @@
     update_cache: yes
     pkg:
       - python3
-      - php7.4-cli
+      - php-cli
       - snapd
       - build-essential
       - mc
