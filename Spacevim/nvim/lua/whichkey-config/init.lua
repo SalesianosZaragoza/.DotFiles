@@ -81,17 +81,35 @@ local mappings = {
     j = {':move .+1<CR>==', 'move line down'},
     k = {':move .-2<CR>==', 'move line up'}
   },
-  l = {
-    name = "LSP",
-    i = {":LspInfo<cr>", "Connected Language Servers"},
+  w ={
+    name = "Workspace",
     A = {'<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', "Add workspace folder"},
     R = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', "Remove workspace folder"},
     l = {'<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', "List workspace folder"},
-    D = {'<cmd>lua vim.lsp.buf.type_definition()<CR>', "Type definition"},
-    r = {'<cmd>lua vim.lsp.buf.rename()<CR>', "Rename"},
+
+  },
+  l = {
+    name = "LSP",
+    i = {":LspInfo<cr>", "Connected Language Servers"},
+--    r = {'<cmd>lua vim.lsp.buf.rename()<CR>', "Rename"},
     a = {'<cmd>lua vim.lsp.buf.code_action()<CR>', "Code actions"},
-    e = {'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', "Show line diagnostics"},
-    q = {'<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', "Show loclist"}
+    q = {'<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', "Show loclist"},
+    i = {":LspInfo<cr>", "Connected Language Servers"},
+    k = {"<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help"},
+    K = {"<cmd>Lspsaga hover_doc<cr>", "Hover Commands"},
+    w = {'<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>', "Add Workspace Folder"},
+    W = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>', "Remove Workspace Folder"},
+    l = {'<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>', "List Workspace Folders"},
+    t = {'<cmd>lua vim.lsp.buf.type_definition()<cr>', "Type Definition"},
+    d = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go To Definition"},
+    D = {'<cmd>lua vim.lsp.buf.declaration()<cr>', "Go To Declaration"},
+    r = {'<cmd>lua vim.lsp.buf.references()<cr>', "References"},
+    R = {'<cmd>Lspsaga rename<cr>', "Rename"},
+    a = {'<cmd>Lspsaga code_action<cr>', "Code Action"},
+    e = {'<cmd>Lspsaga show_line_diagnostics<cr>', "Show Line Diagnostics"},
+    E = {'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', "Show line diagnostics"},
+    n = {'<cmd>Lspsaga diagnostic_jump_next<cr>', "Go To Next Diagnostic"},
+    N = {'<cmd>Lspsaga diagnostic_jump_prev<cr>', "Go To Previous Diagnostic"}
   },
   t = {
     name = "Terminal",

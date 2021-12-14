@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
   use {'lukas-reineke/format.nvim', config = "require('format-config')", cmd = "Format"}
   use {"akinsho/toggleterm.nvim", config = "require('toggleterm-config')"}
   use {"terrortylor/nvim-comment", config = "require('comment-config')", cmd = "CommentToggle"}
+  use 'tami5/lspsaga.nvim' 
   use 'szw/vim-maximizer'
   use 'puremourning/vimspector'
   use 'Shougo/vimproc.vim'
