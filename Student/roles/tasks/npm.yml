@@ -36,15 +36,15 @@
     global: yes
   become: true
 
-- name: Install "vim-languaje-server" package globally.
+- name: Install "vim-language-server" package globally.
   npm:
-    name: vim-languaje-server
+    name: vim-language-server
     global: yes
   become: true
 
-- name: Install "vscode-languageservers-extracted" package globally.
+- name: Install "vscode-langservers-extracted" package globally.
   npm:
-    name:  vscode-languageservers-extracted
+    name:  vscode-langservers-extracted
     global: yes
   become: true
 
@@ -87,7 +87,7 @@
   
 - name: Install node version manager
   get_url:
-      url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh
+      url: https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh
       dest: /tmp/nvm-installer.sh
       mode: +x
   become: false

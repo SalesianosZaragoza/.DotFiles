@@ -167,6 +167,7 @@ fi
 if [ $commands[gh] ]; then
   source <(gh completion --shell zsh)
 fi
+export JDTLS_HOME=$HOME/java-languageservers/ 
 export LUA_PATH="$HOME/.DotFiles/Spacevim/nvim/lua/?.lua;$HOME/.DotFiles/Spacevim/nvim/lua/?/init.lua;"
 export JAVA_HOME="/usr/lib/jvm/java-1.14.0-openjdk-amd64"
 export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAVEN_HOME/bin:$SALESFORCE_HOME/bin:$ECLIPSE_HOME/:$BREW_HOME/bin:$HOME/TOOLS/grv/:$PATH
@@ -178,3 +179,8 @@ eval $(thefuck --alias)
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 eval "$(zoxide init zsh)"
+# BEGIN ANSIBLE MANAGED BLOCK for linuxbrew
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+# END ANSIBLE MANAGED BLOCK for linuxbrew
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
