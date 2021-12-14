@@ -97,6 +97,10 @@ source $HOME/.aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
+# BEGIN ANSIBLE MANAGED BLOCK for linuxbrew
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+# END ANSIBLE MANAGED BLOCK for linuxbrew
+
 export CMAKE_HOME="$HOME/TOOLS/cmake/cmake-3.13.0-irc2-Linux-x86_64/"
 #"$HOME/SDK/JDK/java-11-openjdk-hotswap/"
 export ECLIPSE_HOME="$HOME/IDE/eclipse-jee"
@@ -179,8 +183,4 @@ eval $(thefuck --alias)
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 eval "$(zoxide init zsh)"
-# BEGIN ANSIBLE MANAGED BLOCK for linuxbrew
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-# END ANSIBLE MANAGED BLOCK for linuxbrew
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
