@@ -4,7 +4,7 @@
   args:
     executable: /bin/zsh
     warn: no
-  when: ansible_facts['ansible_architecture'] == "x86_64"  
+  when: "{{ ansible_architecture == 'x86_64' }}"  
   ignore_errors: yes
   become: false
 
@@ -14,7 +14,7 @@
   args:
     executable: /bin/zsh
     warn: no
-  when: ansible_facts['ansible_architecture'] == "x86_64"  
+  when: "{{ ansible_architecture == 'x86_64' }}"  
   ignore_errors: yes
   become: false
 
@@ -24,7 +24,7 @@
   args:
     executable: /bin/zsh
     warn: no
-  when: ansible_facts['ansible_architecture'] == "x86_64"  
+  when: "{{ ansible_architecture == 'x86_64' }}"  
   ignore_errors: yes
   become: false
 

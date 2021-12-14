@@ -1,17 +1,10 @@
-
-    
 - name: Download nvim app image 
   get_url:
       url: https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-      dest: /home/linuxbrew/.linuxbrew/bin/nvim.appimage
-      mode: +x
-  become: false
+      dest: /usr/local/bin/nvim.appimage
+      mode: u+x
+  become: true
   ignore_errors: yes
-
-- name: Permision for nvim app image
-  shell: chmod u+x /home/linuxbrew/.linuxbrew/bin/nvim.appimage 
-  ignore_errors: yes
-  become: false
 
 - name: nvim symlink
   file: 
@@ -20,20 +13,14 @@
     src: /home/linuxbrew/.linuxbrew/bin/nvim.appimage
     state: link 
     force: no
-  become: false
+  become: true
   ignore_errors: yes
 
-
-- name: tree-sitter
-  get_url:
-    url: https://github.com/tree-sitter/tree-sitter/releases/download/v0.20.1/tree-sitter-linux-x64.gz
-    dest: $HOME/.local/bin/tree-sitter.gz
-  become: false
-  ignore_errors: yes
-
-- name: extract tree.sitter
+- name: donwload and extract tree.sitter
   unarchive:
-    src: $HOME/.local/bin/tree-sitter.gz
-    dest: $HOME/.local/bin/tree-sitter
+    src: https://github.com/tree-sitter/tree-sitter/releases/download/v0.20.1/tree-sitter-linux-x64.gz
+    dest: /usr/local/bin/tree-sitter
+    remote_src: yes
   ignore_errors: yes
+  become: true
 

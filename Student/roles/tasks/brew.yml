@@ -25,6 +25,10 @@
   ignore_errors: yes
   become: false
 
+- name: Homebrew upgrading all
+  homebrew:
+    upgrade_all: yes
+
 - name: Install lazydocker
   homebrew:
     name: jesseduffield/lazydocker/lazydocker
@@ -121,14 +125,6 @@
   ignore_errors: yes
   become: false
 
-- name: Install gh cli
-  homebrew:
-    name: gh
-    path: /home/linuxbrew/.linuxbrew/bin
-    state: latest
-  ignore_errors: yes
-  become: false
-  
 - name: Install tmuxinator
   homebrew:
     name: tmuxinator

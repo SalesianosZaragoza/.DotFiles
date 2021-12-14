@@ -2,6 +2,7 @@
 ---
 - include: apt.yml
 - include: zsh.yml
+- include: gh-cli.yml
 - include: docker.yml
 - include: jenv.yml
 - include: snap.yml
@@ -17,6 +18,7 @@
 - include: java-language-server.yml
 - include: nvim.yml
 - include: aws.yml
+
     
 - name: Install nnn plugins 
   get_url:
