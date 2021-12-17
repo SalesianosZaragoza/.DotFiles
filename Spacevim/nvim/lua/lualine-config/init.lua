@@ -1,4 +1,28 @@
-require('lualine').setup({
-  options = {theme = 'tokyonight', section_separators = '', component_separators = ''},
-  extensions = {'nvim-tree'}
-})
+  require('lualine').setup({
+    options = {
+      theme = 'tokyonight', 
+      icons_enabled = fif(vim.visual_impairing, false, true),
+      component_separators = fif(vim.visual_impairing, {left = '', right = ''} ,{ left = '', right = ''}),
+      section_separators = fif(vim.visual_impairing, {left = '', right = ''} , { left = '', right = ''}),
+      disabled_filetypes = {},
+      always_divide_middle = true,
+    },
+    sections = {
+      lualine_a = {'mode'},
+      lualine_b = {'branch', 'diff', 'diagnostics'},
+      lualine_c = {'filename'},
+      lualine_x = {'encoding', 'fileformat', 'filetype'},
+      lualine_y = {'progress'},
+      lualine_z = {'location'}
+    },
+    inactive_sections = {
+      lualine_a = {},
+      lualine_b = {},
+      lualine_c = {'filename'},
+      lualine_x = {'location'},
+      lualine_y = {},
+      lualine_z = {}
+    },
+    tabline = {},
+      extensions = {'nvim-tree'}
+  })
