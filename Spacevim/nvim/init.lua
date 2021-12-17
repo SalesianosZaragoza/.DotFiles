@@ -4,6 +4,7 @@ vim.opt.shortmess:append "c"
 require('options')
 require('plugins')
 require('keybindings')
+require('bufferline-config')
 require('telescope-config')
 require('dap')
 require('octo')
