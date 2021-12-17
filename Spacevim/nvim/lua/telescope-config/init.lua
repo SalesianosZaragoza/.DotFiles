@@ -68,8 +68,6 @@ require('telescope').setup {
   }
 }
 
-require('telescope').load_extension("arecibo")
-require'telescope'.load_extension'repo'
 require('telescope').load_extension('gh')
 require'telescope'.load_extension('zoxide')
 require('telescope').load_extension('bookmarks')

@@ -85,11 +85,6 @@ return require('packer').startup(function(use)
   use 'camgraff/telescope-tmux.nvim'
   use 'norcalli/nvim-terminal.lua'
   use 'danielpieper/telescope-tmuxinator.nvim'
-  use_rocks 'lua-http-parser'
-  use {
-    "nvim-telescope/telescope-arecibo.nvim",
-    rocks = {"openssl", "lua-http-parser"}
-  }
   use {
     "ThePrimeagen/refactoring.nvim",
     requires = {
