@@ -1,5 +1,5 @@
 - name: Install nvm in zsh
-  shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | zsh
+  shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38/install.sh | zsh
 
 - name: Install node in zsh
   shell: source ~/.zshrc && nvm install node
@@ -16,7 +16,7 @@
   become: false  
 
 - name: Install nvm in bash
-  shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+  shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38/install.sh | bash
 
 - name: Install "pyright" package globally.
   npm:
