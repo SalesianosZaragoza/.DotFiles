@@ -1,5 +1,6 @@
 - name: Install nvm in zsh
-  shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | zsh
+  shell: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | zsh
+   
 
 - name: Install node in zsh
   shell: source ~/.zshrc && nvm install node
