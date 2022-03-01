@@ -50,7 +50,7 @@ ZSH_THEME=""
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode git aws microk8s npm nvm pip tmuxinator ubuntu jenv  fzf mvn fasd zsh-completions zsh-syntax-highlighting zsh-autosuggestions vagrant docker docker-compose vagrant-prompt kubectl git-flow gitfast command-not-found copydir copybuffer copyfile git-prompt dotenv colorize colored-man-pages zsh-history-substring-search extract sudo gitignore terraform)
+plugins=(vi-mode git aws microk8s npm nvm pip tmuxinator ubuntu jenv  fzf mvn fasd zsh-completions zsh-syntax-highlighting zsh-autosuggestions vagrant docker docker-compose vagrant-prompt kubectl git-flow gitfast command-not-found copypath copybuffer copyfile git-prompt dotenv colorize colored-man-pages zsh-history-substring-search extract sudo gitignore terraform)
 fpath+=$HOME/.zsh/pure
 #autoload -U compinit && compinit
 autoload -U promptinit; promptinit
@@ -173,7 +173,7 @@ if [ $commands[gh] ]; then
 fi
 export JDTLS_HOME=$HOME/java-languageservers/ 
 export LUA_PATH="$HOME/.DotFiles/Spacevim/nvim/lua/?.lua;$HOME/.DotFiles/Spacevim/nvim/lua/?/init.lua;"
-export JAVA_HOME="/usr/lib/jvm/java-1.14.0-openjdk-amd64"
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
 export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAVEN_HOME/bin:$SALESFORCE_HOME/bin:$ECLIPSE_HOME/:$BREW_HOME/bin:$HOME/TOOLS/grv/:$PATH
 export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$PATH:$BREW_HOME/bin:~/.local/bin:/snap/bin
 export PATH="$HOME/.jenv/bin:$HOME/go/bin:$PATH"
