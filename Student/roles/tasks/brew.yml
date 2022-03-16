@@ -28,6 +28,7 @@
 - name: Homebrew upgrading all
   homebrew:
     upgrade_all: yes
+  ignore_errors: yes
 
 - name: Install lazydocker
   homebrew:
