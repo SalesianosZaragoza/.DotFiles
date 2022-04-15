@@ -13,19 +13,7 @@ require'lspconfig.configs'.ls_emmet = {
   }
 }
 
-local system_name
-if vim.fn.has("mac") == 1 then
-  system_name = "macOS"
-elseif vim.fn.has("unix") == 1 then
-  system_name = "Linux"
-elseif vim.fn.has('win32') == 1 then
-  system_name = "Windows"
-else
-  print("Unsupported system for sumneko")
-end
-
 local langservers = {'html', 'eslint','ansiblels','cmake', 'terraform_lsp','vimls', 'intelephense', 'jsonls', 'ccls', 'clangd','pyright', 'cssls', 'tsserver'}
-
 
 for _, server in ipairs(langservers) do
     require'lspconfig'[server].setup {capabilities = capabilities}
@@ -61,6 +49,5 @@ lsp_installer.on_server_ready(function(server)
   end
   server:setup(opts)
 end)
-require('telescope').load_extension('dap')
 require("dapui").setup()
 require('dap-python').setup('/bin/python3')
