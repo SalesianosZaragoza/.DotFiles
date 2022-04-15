@@ -36,4 +36,5 @@ vim.bo.autoindent = true
 vim.o.expandtab = true
 vim.bo.expandtab = true
 vim.opt.termguicolors = true
+vim.cmd[[colorscheme tokyonight]]
 vim.g.tokyonight_style = 'night'

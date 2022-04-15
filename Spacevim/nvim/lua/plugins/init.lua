@@ -2,11 +2,10 @@ require'packer.luarocks'.install_commands()
 return require('packer').startup(function(use)
 -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate", event = "BufWinEnter", config = "require('treesitter-config')"}
+  use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate", config = "require('treesitter-config')"}
   use {
     'tamton-aquib/staline.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
-    event = "BufRead",
     config = "require('staline-config')"
   }
   use {'akinsho/bufferline.nvim', branch='main', requires = 'kyazdani42/nvim-web-devicons'}
@@ -27,9 +26,7 @@ return require('packer').startup(function(use)
   use {
     'lewis6991/gitsigns.nvim',
     requires = {'nvim-lua/plenary.nvim'},
-    config = function()
-      require('gitsigns').setup {current_line_blame = true}
-    end
+    config = "require('gitsigns')"
   }
   use {'glepnir/dashboard-nvim', cmd = "Dashboard", config = "require('dashboard-config')"}
   use {"lukas-reineke/indent-blankline.nvim", config = "require('blankline-config')", event = "BufRead"}
@@ -66,7 +63,7 @@ return require('packer').startup(function(use)
   use 'fannheyward/telescope-coc.nvim'
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
-  use'theHamsta/nvim-dap-virtual-text'
+  use 'theHamsta/nvim-dap-virtual-text'
   use 'nvim-telescope/telescope-dap.nvim'
   use 'tpope/vim-dadbod'
   use 'kristijanhusak/vim-dadbod-ui'

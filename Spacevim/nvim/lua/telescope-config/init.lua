@@ -79,4 +79,4 @@ require('telescope').load_extension('tmuxinator')
 require('telescope').load_extension('packer')
 require('telescope').load_extension('media_files')
 require'telescope'.load_extension'z'
-
+require('telescope').load_extension('dap')
