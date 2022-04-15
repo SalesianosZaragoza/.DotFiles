@@ -9,7 +9,7 @@ return require('packer').startup(function(use)
     event = "BufRead",
     config = "require('staline-config')"
   }
-  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+  use {'akinsho/bufferline.nvim', branch='main', requires = 'kyazdani42/nvim-web-devicons'}
   use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' }
   use {'windwp/nvim-ts-autotag', event = "InsertEnter", after = "nvim-treesitter"}
   use {'p00f/nvim-ts-rainbow', after = "nvim-treesitter"}
@@ -33,8 +33,7 @@ return require('packer').startup(function(use)
   }
   use {'glepnir/dashboard-nvim', cmd = "Dashboard", config = "require('dashboard-config')"}
   use {"lukas-reineke/indent-blankline.nvim", config = "require('blankline-config')", event = "BufRead"}
-  use {'lukas-reineke/format.nvim', config = "require('format-config')", cmd = "Format"}
-  use {"akinsho/toggleterm.nvim", config = "require('toggleterm-config')"}
+  use {"akinsho/toggleterm.nvim",branch='main', config = "require('toggleterm-config')"}
   use {"terrortylor/nvim-comment", config = "require('comment-config')"}
   use {'tami5/lspsaga.nvim', config = "require('lspsaga-config')"}
   use {'williamboman/nvim-lsp-installer'}

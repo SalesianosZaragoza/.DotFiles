@@ -1,5 +1,4 @@
 local lspkind = require "lspkind"
-lspkind.init()
 local cmp = require "cmp"
 cmp.setup {
   snippet = {
@@ -129,7 +128,7 @@ cmp.setup {
   formatting = {
     -- Youtube: How to set up nice formatting for your sources.
     format = lspkind.cmp_format {
-      with_text = true,
+      mode = 'symbol_text',
       preset = 'default',
       menu = {
         buffer = "[buf]",

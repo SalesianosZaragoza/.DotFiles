@@ -8,7 +8,7 @@ if not vim.visual_impairing then
 
   require("indent_blankline").setup {
     buftype_exclude = {"terminal"},
-    filetype_exclude = {"dashboard", "NvimTree", "packer"},
+    filetype_exclude = {"dashboard", "NvimTree", "packer", "lsp-installer"},
     show_current_context = true,
     char_highlight_list = {
         "IndentBlanklineIndent1",

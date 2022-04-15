@@ -21,6 +21,10 @@ map('n', '<C-k>', '<C-w>k', {noremap = true, silent = false})
 
 map('v', '<', '<gv', {noremap = true, silent = false})
 map('v', '>', '>gv', {noremap = true, silent = false})
+map("n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>",
+    {noremap = true, silent = true})
+map("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>",
+    {noremap = true, silent = true})
 -- LSP config (the mappings used in the default file don't quite work right)
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {noremap = true, silent = true})
 map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', {noremap = true, silent = true})

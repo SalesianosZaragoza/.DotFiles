@@ -1,6 +1,3 @@
-function fif(condition, if_true, if_false)
-  if condition then return if_true else return if_false end
-end
 vim.visual_impairing = ( os.getenv("BLIND") ~= nil )
 vim.cmd('filetype plugin indent on')
 vim.o.shortmess = vim.o.shortmess .. 'c'

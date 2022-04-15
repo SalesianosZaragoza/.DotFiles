@@ -185,6 +185,11 @@ local mappings = {
     l = {":InsertWinLeft<cr>", "Insert Win Left"},
     u = {":InsertWinUp<cr>", "Insert Win Up"},
     d = {":InsertWinDown<cr>", "Insert Win Down"},
+  },
+  z = {
+    name = "Focus",
+    z = {":ZenMode<cr>", "Toggle Zen Mode"},
+    t = {":Twilight<cr>", "Toggle Twilight"}
   }
   
 }
