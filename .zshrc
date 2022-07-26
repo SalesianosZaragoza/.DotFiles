@@ -112,7 +112,6 @@ export PYTHONPATH=/usr/lib/python3/dist-packages/:~/.local/lib/python3.7/site-pa
 export ANDROID_HOME=~/SDK/ANDROID/
 export BREW_HOME=~/../linuxbrew/.linuxbrew/
 alias awscli='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
-alias reloadPath='export PATH=$JAVA_HOME/bin:$PATH'
 alias remoteDebugOn="export MAVEN_OPTS='-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 $JAVA_OPTIONS'"
 alias remoteDebugOff='unset MAVEN_OPTS'
 alias jhotswap="export JAVA_HOME='$HOME/SDK/JDK/java-11-openjdk-hotswap/' && export PATH='$JAVA_HOME/bin:$PATH'"
@@ -172,10 +171,9 @@ if [ $commands[gh] ]; then
   source <(gh completion --shell zsh)
 fi
 export JDTLS_HOME=$HOME/java-languageservers/ 
-export LUA_PATH="$HOME/.DotFiles/Spacevim/nvim/lua/?.lua;$HOME/.DotFiles/Spacevim/nvim/lua/?/init.lua;"
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
 export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAVEN_HOME/bin:$SALESFORCE_HOME/bin:$ECLIPSE_HOME/:$BREW_HOME/bin:$HOME/TOOLS/grv/:$PATH
-export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$PATH:$BREW_HOME/bin:~/.local/bin:/snap/bin
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$PATH:~/.local/bin:/snap/bin:$BREW_HOME/bin
 export PATH="$HOME/.jenv/bin:$HOME/go/bin:$PATH"
 eval $(thefuck --alias)
 
