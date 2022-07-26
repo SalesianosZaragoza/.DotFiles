@@ -4,6 +4,7 @@
     update_cache: yes
     pkg:
       - python3
+      - libpq-dev
       - php-cli
       - snapd
       - build-essential

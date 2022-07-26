@@ -16,11 +16,19 @@
   become: true
   ignore_errors: yes
 
-- name: donwload and extract tree.sitter
+- name: donwload and extract tree sitter
   unarchive:
     src: https://github.com/tree-sitter/tree-sitter/releases/download/v0.20.6/tree-sitter-linux-x64.gz
-    dest: /usr/local/bin/tree-sitter
+    dest: /usr/local/bin/
     remote_src: yes
   ignore_errors: yes
   become: true
+
+
+- name: nvim config files as symlink
+  file: 
+    path: $HOME/.config/nvim
+    src: $HOME/.DotFiles/nvim  
+    state: link 
+    force: no
 

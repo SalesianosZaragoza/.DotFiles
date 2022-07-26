@@ -7,8 +7,7 @@
 - include: jenv.yml
 - include: snap.yml
 - include: kubernetes.yml
-- include: fasd.yml
-#- include: spacevim.yml
+- include: zoxide.yml
 - include: npm.yml
 - include: brew.yml
 - include: serverless.yml

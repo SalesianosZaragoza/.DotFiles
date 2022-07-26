@@ -4,7 +4,12 @@
     executable: /bin/zsh
     warn: no
   become: true
-  
+
+- name: Install "psycopg2-binary" package globally.
+  pip:
+    name: psycopg2-binary
+  become: true
+
 - name: Install "flake8" package globally.
   pip:
     name: flake8
@@ -78,6 +83,7 @@
 - name: Install "pgcli" package globally.
   pip:
     name: pgcli 
+    extra_args: --only-binary psycopg2
   become: true
   ignore_errors: true
 
