@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
     config = "require('staline-config')"
   }
+  use { "LinArcX/telescope-command-palette.nvim" }
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
   use {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' }
   use {'windwp/nvim-ts-autotag', event = "InsertEnter", after = "nvim-treesitter"}
@@ -15,6 +16,7 @@ return require('packer').startup(function(use)
   use {'windwp/nvim-autopairs', config = "require('autopairs-config')", after = "nvim-cmp"}
   use {'folke/which-key.nvim', event = "BufWinEnter", config = "require('whichkey-config')"}
   use {'nvim-telescope/telescope.nvim'}
+  use { "LinArcX/telescope-env.nvim" }
   use {'neovim/nvim-lspconfig', config = "require('lsp')"}
   use {'hrsh7th/cmp-nvim-lsp'}
   use {'hrsh7th/cmp-buffer'}
@@ -78,8 +80,8 @@ return require('packer').startup(function(use)
     {'nvim-lua/plenary.nvim'},
     {'nvim-lua/popup.nvim'},
     {'nvim-telescope/telescope.nvim'},
-  }
-}
+  }}
+  use { 'softinio/scaladex.nvim' }
   use 'onsails/lspkind-nvim'
   use 'rafamadriz/friendly-snippets'
   use 'kitagry/vs-snippets'
@@ -101,11 +103,12 @@ return require('packer').startup(function(use)
         {"nvim-treesitter/nvim-treesitter"}
     }
 }
+  use 'fcying/telescope-ctags-outline.nvim'
   use 'jvgrootveld/telescope-zoxide'
   use 'dhruvmanila/telescope-bookmarks.nvim'
   use 'nvim-telescope/telescope-github.nvim'
   use 'cljoly/telescope-repo.nvim'
-
+  use { "LinArcX/telescope-changes.nvim" }
   use {
   "AckslD/nvim-neoclip.lua",
   config = function()
@@ -120,6 +123,12 @@ return require('packer').startup(function(use)
   use 'AckslD/nvim-whichkey-setup.lua'
   use 'sindrets/diffview.nvim'
   use 'liuchengxu/vim-clap'
+use({
+  "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+  config = function()
+    require("lsp_lines").setup()
+  end,
+})
  end)
 
 

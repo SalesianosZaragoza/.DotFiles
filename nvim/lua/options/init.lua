@@ -1,4 +1,5 @@
 vim.visual_impairing = ( os.getenv("BLIND") ~= nil )
+vim.g.mapleader = ","
 vim.cmd('filetype plugin indent on')
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.hidden = true
