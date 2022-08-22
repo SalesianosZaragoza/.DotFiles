@@ -17,8 +17,10 @@ return require('packer').startup(function(use)
   use {'folke/which-key.nvim', event = "BufWinEnter", config = "require('whichkey-config')"}
   use {'nvim-telescope/telescope.nvim'}
   use { "LinArcX/telescope-env.nvim" }
+  use ( "williamboman/mason-lspconfig.nvim" )
   use {'neovim/nvim-lspconfig', config = "require('lsp')"}
   use {'hrsh7th/cmp-nvim-lsp'}
+  use "folke/lua-dev.nvim"
   use {'hrsh7th/cmp-buffer'}
   use {'hrsh7th/nvim-cmp'}
   use {'hrsh7th/cmp-vsnip'}
@@ -56,7 +58,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/vim-vsnip-integ' 
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/cmp-copilot'
+  --use 'hrsh7th/cmp-copilot'
   use 'github/copilot.vim'
   use {'tzachar/cmp-tabnine', run = './install.sh'}
   use 'crispgm/telescope-heading.nvim'
@@ -83,6 +85,11 @@ return require('packer').startup(function(use)
   }}
   use { 'softinio/scaladex.nvim' }
   use 'onsails/lspkind-nvim'
+  use { "williamboman/mason.nvim", 
+    config = function()
+      require("mason").setup()
+    end,
+    }
   use 'rafamadriz/friendly-snippets'
   use 'kitagry/vs-snippets'
   use 'petertriho/cmp-git'
@@ -103,6 +110,7 @@ return require('packer').startup(function(use)
         {"nvim-treesitter/nvim-treesitter"}
     }
 }
+  use { 'kkharji/lspsaga.nvim' }  -- nightly
   use 'fcying/telescope-ctags-outline.nvim'
   use 'jvgrootveld/telescope-zoxide'
   use 'dhruvmanila/telescope-bookmarks.nvim'
