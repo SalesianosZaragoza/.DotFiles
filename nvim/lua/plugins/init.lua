@@ -40,13 +40,6 @@ return require('packer').startup(function(use)
   use({
     "glepnir/lspsaga.nvim",
     branch = "main",
-    config = function()
-        local saga = require("lspsaga")
-
-        saga.init_lsp_saga({
-            -- your configuration
-        })
-    end,
 })
   use {'jose-elias-alvarez/null-ls.nvim', config = "require('null-ls-config')"}
   use {"folke/zen-mode.nvim", config = 'require("zen-mode-config")'}

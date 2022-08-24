@@ -242,6 +242,4 @@ function M.setup()
     -- Server
     require('jdtls').start_or_attach(config)
 end
-
 return M
-require'jdtls_setup'.setup()
