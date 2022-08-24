@@ -30,14 +30,24 @@ return require('packer').startup(function(use)
   use {
     'lewis6991/gitsigns.nvim',
     requires = {'nvim-lua/plenary.nvim'},
-    config = "require('gitsigns')"
+    config = "require('gitsigns-config')"
   }
   use {'glepnir/dashboard-nvim', cmd = "Dashboard", config = "require('dashboard-config')"}
   use {"lukas-reineke/indent-blankline.nvim", config = "require('blankline-config')", event = "BufRead"}
   use {"akinsho/toggleterm.nvim",branch='main', config = "require('toggleterm-config')"}
   use {"terrortylor/nvim-comment", config = "require('comment-config')"}
-  use {'tami5/lspsaga.nvim', config = "require('lspsaga-config')"}
   use {'williamboman/nvim-lsp-installer'}
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    config = function()
+        local saga = require("lspsaga")
+
+        saga.init_lsp_saga({
+            -- your configuration
+        })
+    end,
+})
   use {'jose-elias-alvarez/null-ls.nvim', config = "require('null-ls-config')"}
   use {"folke/zen-mode.nvim", config = 'require("zen-mode-config")'}
   use {"folke/twilight.nvim", config = "require('twilight-config')"}
@@ -110,7 +120,6 @@ return require('packer').startup(function(use)
         {"nvim-treesitter/nvim-treesitter"}
     }
 }
-  use { 'kkharji/lspsaga.nvim' }  -- nightly
   use 'fcying/telescope-ctags-outline.nvim'
   use 'jvgrootveld/telescope-zoxide'
   use 'dhruvmanila/telescope-bookmarks.nvim'
