@@ -1,4 +1,4 @@
-if not vim.visual_impairing then
+if not vim.g.visual_impairing then
   vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]]
   vim.cmd [[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]]
   vim.cmd [[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]]

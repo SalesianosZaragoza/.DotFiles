@@ -11,17 +11,13 @@ require'nvim-tree'.setup {
   open_on_tab         = true,
   hijack_cursor       = false,
   update_cwd          = false,
-  update_to_buf_dir   = {
-    enable = true,
-    auto_open = true,
-  },
   diagnostics = {
     enable = false,
     icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
+      hint = BlindReturn("!",""),
+      info = BlindReturn("I",""),
+      warning = BlindReturn("W",""),
+      error = BlindReturn("X",""),
     }
   },
   update_focused_file = {
@@ -43,16 +39,15 @@ require'nvim-tree'.setup {
     timeout = 500,
   },
   view = {
-    width = 25,
-    height = fif(vim.visual_impairing , 10 , 30),
+    width = BlindReturn(100, 25),
+    height = BlindReturn(10 , 100),
     hide_root_folder = false,
-    side = fif(vim.visual_impairing , 'top' , 'right'),
-    auto_resize = true,
+    side = BlindReturn( 'top' , 'right'),
     mappings = {
       custom_only = false,
       list = {
-         { 
-         key = {"<C-g>"},    
+         {
+         key = {"<C-g>"},
        cb = tree_cb("cd"), mode = "n"
    }
       }

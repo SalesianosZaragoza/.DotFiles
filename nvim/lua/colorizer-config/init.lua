@@ -1,3 +1,3 @@
-if not vim.visual_impairing then
-require'colorizer'.setup()
+if not vim.g.visual_impairing then
+  require'colorizer'.setup()
 end

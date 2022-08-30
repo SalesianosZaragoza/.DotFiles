@@ -1,4 +1,3 @@
-vim.visual_impairing = ( os.getenv("BLIND") ~= nil )
 vim.g.mapleader = ","
 vim.cmd('filetype plugin indent on')
 vim.o.shortmess = vim.o.shortmess .. 'c'
@@ -8,7 +7,7 @@ vim.o.pumheight = 10
 vim.o.fileencoding = 'utf-8'
 vim.o.cmdheight = 2
 vim.o.splitbelow = true
-vim.o.splitright = fif(vim.visual_impairing, false,true)
+vim.o.splitright = BlindReturn(false,true)
 vim.opt.termguicolors = true
 vim.o.conceallevel = 0
 vim.o.showtabline = 2
@@ -23,7 +22,7 @@ vim.o.ignorecase = true
 vim.o.scrolloff = 3
 vim.o.sidescrolloff = 5
 vim.o.mouse = "a"
-vim.wo.wrap = fif(vim_visual_impairing, true, false)
+vim.wo.wrap = BlindReturn(true, false)
 vim.wo.number = true
 vim.o.cursorline = true
 vim.wo.signcolumn = "yes"

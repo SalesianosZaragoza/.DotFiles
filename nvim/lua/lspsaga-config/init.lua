@@ -1,7 +1,3 @@
-function fif(condition, if_true, if_false)
-  if condition then return if_true else return if_false end
-end
-
 local lspsaga = require 'lspsaga'
 lspsaga.init_lsp_saga({
   -- Options with default value
@@ -22,7 +18,7 @@ move_in_saga = { prev = '<C-p>',next = '<C-n>'},
 -- is function type it will have a param `entry`
 -- entry is a table type has these filed
 -- { bufnr, code, col, end_col, end_lnum, lnum, message, severity, source }
-diagnostic_header = { " ", " ", " ", "ﴞ " },
+diagnostic_header = BlindReturn({"Error","Warn","Info","Hint"}, { " ", " ", " ", "ﴞ " }),
 -- show diagnostic source
 show_diagnostic_source = true,
 -- add bracket or something with diagnostic source, just have 2 elements
@@ -30,7 +26,7 @@ diagnostic_source_bracket = {},
 -- preview lines of lsp_finder and definition preview
 max_preview_lines = 10,
 -- use emoji lightbulb in default
-code_action_icon = "💡",
+code_action_icon = BlindReturn("?","💡"),
 -- if true can press number to execute the codeaction in codeaction window
 code_action_num_shortcut = true,
 -- same as nvim-lightbulb but async
@@ -43,9 +39,9 @@ code_action_lightbulb = {
 },
 -- finder icons
 finder_icons = {
-  def = '  ',
-  ref = '諭 ',
-  link = '  ',
+  def = BlindReturn('def','  '),
+  ref = BlindReturn('ref','諭 '),
+  link = BlindReturn('link' , '  '),
 },
 -- finder do lsp request timeout
 -- if your project big enough or your server very slow

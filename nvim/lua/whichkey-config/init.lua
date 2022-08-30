@@ -30,8 +30,8 @@ require("which-key").setup
     -- ["<tab>"] = "TAB",
   },
   icons = {
-    breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
-    separator = "➜", -- symbol used between a key and it's label
+    breadcrumb = BlindReturn(">", "»"), -- symbol used in the command line area that shows your active key combo
+    separator = BlindReturn("->", "➜"), -- symbol used between a key and it's label
     group = "+", -- symbol prepended to a group
   },
   popup_mappings = {

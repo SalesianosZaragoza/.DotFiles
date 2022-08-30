@@ -1,9 +1,9 @@
   require('lualine').setup({
     options = {
       theme = 'tokyonight', 
-      icons_enabled = fif(vim.visual_impairing, false, true),
-      component_separators = fif(vim.visual_impairing, {left = '', right = ''} ,{ left = '', right = ''}),
-      section_separators = fif(vim.visual_impairing, {left = '', right = ''} , { left = '', right = ''}),
+      icons_enabled = BlindReturn( false, true),
+      component_separators = BlindReturn({left = '', right = ''} ,{ left = '', right = ''}),
+      section_separators = BlindReturn({left = '', right = ''} , { left = '', right = ''}),
       disabled_filetypes = {},
       always_divide_middle = true,
     },
