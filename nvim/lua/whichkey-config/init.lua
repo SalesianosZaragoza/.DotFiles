@@ -65,7 +65,6 @@ require("which-key").setup
   },
 }
 
-
 local Terminal = require('toggleterm.terminal').Terminal
 local toggle_float = function()
   local float = Terminal:new({direction = "float"})
@@ -75,10 +74,10 @@ local toggle_lazygit = function()
   local lazygit = Terminal:new({cmd = 'lazygit', direction = "float"})
   return lazygit:toggle()
 end
-vmappings = {
+local vmappings = {
   ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle linewise (visual)" },
-},
-mappings = {
+}
+local mappings = {
   [";"] = { "<cmd>Alpha<CR>", "Dashboard" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
@@ -116,16 +115,9 @@ mappings = {
     s = { "<cmd>PackerSync<cr>", "Sync" },
     S = { "<cmd>PackerStatus<cr>", "Status" },
     u = { "<cmd>PackerUpdate<cr>", "Update" },
+    P = {'<cmd>lua require("telescope").extensions.packer.plugins(opts)<CR>', "Telescope Packer"},
   },
-
-  -- " Available Debug Adapters:
-  -- "   https://microsoft.github.io/debug-adapter-protocol/implementors/adapters/
-  -- " Adapter configuration and installation instructions:
-  -- "   https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
-  -- " Debug Adapter protocol:
-  -- "   https://microsoft.github.io/debug-adapter-protocol/
-  -- " Debugging
-  g = {
+  G = {
     name = "Git",
     j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
     k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
@@ -167,18 +159,13 @@ mappings = {
       e = {":GitExport<cr>", "Git Export"},
       i = {":GitIgnore<cr>", "Git Ignore"},
     },
-  
   },
   t = {
     name = "Terminal",
-    t = {":ToggleTerm<cr>", "Split Below"}, 
-    f = {toggle_float, "Floating Terminal"}, 
+    t = {":ToggleTerm<cr>", "Split Below"},
+    f = {toggle_float, "Floating Terminal"},
     l = {toggle_lazygit, "LazyGit"},
-    f = {":Telescope find_files<cr>", "Telescope Find Files"},
-    r = {":Telescope live_grep<cr>", "Telescope Live Grep"},
-    p = {'<cmd>lua require("telescope").extensions.packer.plugins(opts)<CR>', "Telescope Packer"}
   },
-  
   l = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
@@ -212,77 +199,35 @@ mappings = {
     e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
     i = {":LspInfo<cr>", "Connected Language Servers"},
     --    r = {'<cmd>lua vim.lsp.buf.rename()<CR>', "Rename"},
-        a = {'<cmd>lua vim.lsp.buf.code_action()<CR>', "Code actions"},
-        q = {'<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', "Show loclist"},
-        i = {":LspInfo<cr>", "Connected Language Servers"},
-        k = {"<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help"},
-        K = {"<cmd>Lspsaga hover_doc<cr>", "Hover Commands"},
-        w = {'<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>', "Add Workspace Folder"},
-        W = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>', "Remove Workspace Folder"},
-        l = {'<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>', "List Workspace Folders"},
-        t = {'<cmd>lua vim.lsp.buf.type_definition()<cr>', "Type Definition"},
-        d = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go To Definition"},
-        D = {'<cmd>lua vim.lsp.buf.declaration()<cr>', "Go To Declaration"},
-        r = {'<cmd>lua vim.lsp.buf.references()<cr>', "References"},
-        R = {'<cmd>Lspsaga rename<cr>', "Rename"},
-        a = {'<cmd>Lspsaga code_action<cr>', "Code Action"},
-        e = {'<cmd>Lspsaga show_line_diagnostics<cr>', "Show Line Diagnostics"},
-        E = {'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', "Show line diagnostics"},
-        n = {'<cmd>Lspsaga diagnostic_jump_next<cr>', "Go To Next Diagnostic"},
-        N = {'<cmd>Lspsaga diagnostic_jump_prev<cr>', "Go To Previous Diagnostic"}
+    Q = {'<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', "Show loclist"},
+    k = {"<cmd>lua vim.lsp.buf.signature_help()<cr>", "Signature Help"},
+    K = {"<cmd>Lspsaga hover_doc<cr>", "Hover Commands"},
+    l = {'<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>', "List Workspace Folders"},
+    t = {'<cmd>lua vim.lsp.buf.type_definition()<cr>', "Type Definition"},
+    d = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go To Definition"},
+    D = {'<cmd>lua vim.lsp.buf.declaration()<cr>', "Go To Declaration"},
+    r = {
+      "Refactor",
+      e = {"<cmd>lua require('refactoring').refactor('Extract Function')<CR>", "Extract Function"},
+      f = {"lua require('refactoring').refactor('Extract Function To File')<CR>", "Extract to File" },
+      r = {"<cmd>lua M.refactors()<CR>"},
+      R = {'<cmd>Lspsaga rename<cr>', "Rename"},
+    },
+    R = {  '<cmd>lua vim.lsp.buf.references()<cr>', "References"},
+    a = {'<cmd>Lspsaga code_action<cr>', "Code Action"},
+    e = {'<cmd>Lspsaga show_line_diagnostics<cr>', "Show Line Diagnostics"},
+    E = {'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', "Show line diagnostics"},
+    n = {'<cmd>Lspsaga diagnostic_jump_next<cr>', "Go To Next Diagnostic"},
+    N = {'<cmd>Lspsaga diagnostic_jump_prev<cr>', "Go To Previous Diagnostic"}
   },
   L = {
-    name = "+NeoVim",
+    name = "Logs",
     c = {
       "<cmd>edit " .. get_config_dir() .. "/init.lua<cr>",
       "Edit init.lua",
     },
-    f = {
-      "<cmd>lua require('lvim.core.telescope.custom-finders').find_lunarvim_files()<cr>",
-      "Find LunarVim files",
-    },
-    g = {
-      "<cmd>lua require('lvim.core.telescope.custom-finders').grep_lunarvim_files()<cr>",
-      "Grep LunarVim files",
-    },
-    k = { "<cmd>Telescope keymaps<cr>", "View LunarVim's keymappings" },
-    i = {
-      "<cmd>lua require('lvim.core.info').toggle_popup(vim.bo.filetype)<cr>",
-      "Toggle LunarVim Info",
-    },
-    I = {
-      "<cmd>lua require('lvim.core.telescope.custom-finders').view_lunarvim_changelog()<cr>",
-      "View LunarVim's changelog",
-    },
-    l = {
-      name = "+logs",
-      d = {
-        "<cmd>lua require('lvim.core.terminal').toggle_log_view(require('lvim.core.log').get_path())<cr>",
-        "view default log",
-      },
-      D = {
-        "<cmd>lua vim.fn.execute('edit ' .. require('lvim.core.log').get_path())<cr>",
-        "Open the default logfile",
-      },
-      l = {
-        "<cmd>lua require('lvim.core.terminal').toggle_log_view(vim.lsp.get_log_path())<cr>",
-        "view lsp log",
-      },
-      L = { "<cmd>lua vim.fn.execute('edit ' .. vim.lsp.get_log_path())<cr>", "Open the LSP logfile" },
-      n = {
-        "<cmd>lua require('lvim.core.terminal').toggle_log_view(os.getenv('NVIM_LOG_FILE'))<cr>",
-        "view neovim log",
-      },
-      N = { "<cmd>edit $NVIM_LOG_FILE<cr>", "Open the Neovim logfile" },
-      p = {
-        "<cmd>lua require('lvim.core.terminal').toggle_log_view(get_cache_dir() .. '/packer.nvim.log')<cr>",
-        "view packer log",
-      },
-      P = { "<cmd>edit $LUNARVIM_CACHE_DIR/packer.nvim.log<cr>", "Open the Packer logfile" },
-    },
+    N = { "<cmd>edit $NVIM_LOG_FILE<cr>", "Open the Neovim logfile" },
     n = { "<cmd>Telescope notify<cr>", "View Notifications" },
-    r = { "<cmd>LvimReload<cr>", "Reload LunarVim's configuration" },
-    u = { "<cmd>LvimUpdate<cr>", "Update LunarVim" },
   },
   s = {
     name = "Search",
@@ -297,6 +242,7 @@ mappings = {
     t = { "<cmd>Telescope live_grep<cr>", "Text" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
+    g = {":Telescope live_grep<cr>", "Telescope Live Grep"},
     p = {
       "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
       "Colorscheme with Preview",
@@ -307,23 +253,26 @@ mappings = {
     j = {':move .+1<CR>==', 'move line down'},
     k = {':move .-2<CR>==', 'move line up'}
   },
-  w ={
+  W ={
     name = "Workspace",
     A = {'<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', "Add workspace folder"},
     R = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', "Remove workspace folder"},
     l = {'<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', "List workspace folder"},
-
+    w = {'<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>', "Add Workspace Folder"},
+    W = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>', "Remove Workspace Folder"},
   },
 
   T = {
     name = "Treesitter",
-    i = { ":TSConfigInfo<cr>", "Info" },
+    i = { ":TSConfigInfo<cr>", "Treesitter info" },
+    p = { ":TSPlaygroundToggle<cr>", "Treesitter playground" },
+
   },
   o = {
     name = "Open",
     o = {":Open<cr>", "Open"},
     c = {":OpenCwd<cr>", "Open Cwd"},
-    d = {":OpenDir<cr>", "Open Dir"},
+    C = {":OpenDir<cr>", "Open Dir"},
     f = {":OpenFile<cr>", "Open File"},
     s = {":OpenSplit<cr>", "Open Split"},
     t = {":OpenTab<cr>", "Open Tab"},
@@ -343,17 +292,12 @@ mappings = {
     g = {":OpenNewVertSplit<cr>", "Open New Vert Split"},
     b = {":OpenNewHorizSplit<cr>", "Open New Horiz Split"},
     m = {":OpenNewPane<cr>", "Open New Pane"},
-    s = {":OpenNewTab<cr>", "Open New Tab"},
-    t = {":OpenNewTab<cr>", "Open New Tab"},
-    w = {":OpenNewWin<cr>", "Open New Win"},
-    v = {":OpenNewVertSplit<cr>", "Open New Vert Split"},
-    h = {":OpenNewHorizSplit<cr>", "Open New Horiz Split"}, 
 },
   i = {
     name = "Insert",
-    i = {":Insert<cr>", "Insert"}, 
+    i = {":Insert<cr>", "Insert"},
     c = {":InsertCwd<cr>", "Insert Cwd"},
-    d = {":InsertDir<cr>", "Insert Dir"},
+    C = {":InsertDir<cr>", "Insert Dir"},
     f = {":InsertFile<cr>", "Insert File"},
     s = {":InsertSplit<cr>", "Insert Split"},
     t = {":InsertTab<cr>", "Insert Tab"},
@@ -372,17 +316,24 @@ mappings = {
     z = {":ZenMode<cr>", "Toggle Zen Mode"},
     t = {":Twilight<cr>", "Toggle Twilight"}
   }
-
-},
 }
 
-local mappings = {
-  l = {
-    name = "LSP",
-   
-  },
-   
-}
-local opts = {prefix = '<C-x>'}
+ local opts = {
+      mode = "n", -- NORMAL mode
+      prefix = "<c-x>",
+      buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+      silent = true, -- use `silent` when creating keymaps
+      noremap = true, -- use `noremap` when creating keymaps
+      nowait = true, -- use `nowait` when creating keymaps
+    }
+   local vopts = {
+      mode = "v", -- VISUAL mode
+      prefix = "<c-x>",
+      buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+      silent = true, -- use `silent` when creating keymaps
+      noremap = true, -- use `noremap` when creating keymaps
+      nowait = true, -- use `nowait` when creating keymaps
+    }
 local wk = require("which-key")
 wk.register(mappings, opts)
+-- wk.register(vmappings, vopts)

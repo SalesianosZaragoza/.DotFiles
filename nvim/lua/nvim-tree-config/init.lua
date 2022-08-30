@@ -1,4 +1,4 @@
-vim.g.nvim_tree_indent_markers = 1
+vim.g.nvim_tree_indent_markers = 0
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
@@ -7,7 +7,6 @@ require'nvim-tree'.setup {
   hijack_netrw        = true,
   open_on_setup       = true,
   ignore_ft_on_setup  = {},
-  auto_close          = false,
   open_on_tab         = true,
   hijack_cursor       = false,
   update_cwd          = false,
