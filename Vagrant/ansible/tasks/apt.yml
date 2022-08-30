@@ -34,6 +34,7 @@
       - libxext-dev 
       - libxft-dev
       - stterm
+      - gh
   ignore_errors: yes 
   become: true
 

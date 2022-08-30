@@ -47,7 +47,7 @@ syntax_style = default
 # Keybindings: Possible values: emacs, vi.
 # Emacs mode: Ctrl-A is home, Ctrl-E is end. All emacs keybindings are available in the REPL.
 # When Vi mode is enabled you can use modal editing features offered by Vi in the REPL.
-key_bindings = emacs
+key_bindings = vi
 
 # Enabling this option will show the suggestions in a wider menu. Thus more items are suggested.
 wider_completion_menu = False
@@ -65,7 +65,7 @@ prompt = '\d> '
 prompt_continuation = '-> '
 
 # Skip intro info on startup and outro info on exit
-less_chatty = False
+less_chatty = True
 
 # Use alias from --login-path instead of host name in prompt
 login_path_as_host = False
@@ -79,7 +79,10 @@ keyword_casing = auto
 
 # disabled pager on startup
 enable_pager = True
-
+# Default pager.
+# By default 'PAGER' environment variable is used
+ pager = nvim ~
+ 
 # Custom colors for the completion menu, toolbar, etc.
 [colors]
 completion-menu.completion.current = 'bg:#ffffff #000000'

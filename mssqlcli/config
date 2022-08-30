@@ -76,7 +76,7 @@ search_path_filter = False
 
 # Default pager.
 # By default 'PAGER' environment variable is used
-# pager = less -SRXF
+ pager = nvim ~
 
 # Table format. Possible values: psql, plain, simple, grid, fancy_grid, pipe,
 # ascii, double, github, orgtbl, rst, mediawiki, html, latex, latex_booktabs,
@@ -93,7 +93,7 @@ syntax_style = default
 # When Vi mode is enabled you can use modal editing features offered by Vi in the REPL.
 # When Vi mode is disabled emacs keybindings such as Ctrl-A for home and Ctrl-E
 # for end are available in the REPL.
-vi = False
+vi = True
 
 # Error handling
 # When one of multiple SQL statements causes an error, choose to either
@@ -105,7 +105,7 @@ on_error = STOP
 row_limit = 1000
 
 # Skip intro on startup and goodbye on exit
-less_chatty = False
+less_chatty = True
 
 # mssql-cli prompt
 # \t - Current date and time
@@ -114,7 +114,7 @@ less_chatty = False
 # \d - Database name
 # \p - Database port
 # \n - Newline
-prompt = '\d> '
+prompt = '\t \u@\h:\d> '
 
 # Number of lines to reserve for the suggestion menu
 min_num_menu_lines = 4
