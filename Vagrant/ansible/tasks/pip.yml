@@ -98,3 +98,9 @@
     name:  litecli
   become: true
   ignore_errors: true
+
+- name: Install "iredis-cli" package globally.
+  pip:
+    name: iredis
+  become: true
+  ignore_errors: true

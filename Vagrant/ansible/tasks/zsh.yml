@@ -45,6 +45,41 @@
     state: link 
     force: no
 
+- name: mycli symlink
+  file: 
+    path: ~/.myclirc 
+    src: ~/.DotFiles/mycli/.myclirc  
+    state: link 
+    force: no
+
+- name: pgcli symlink
+  file: 
+    path: ~/.config/pgcli/config
+    src: ~/.DotFiles/pgcli/config
+    state: link 
+    force: no
+
+- name: litecli symlink
+  file: 
+    path: ~/.config/litecli/config 
+    src: ~/.DotFiles/litecli/config  
+    state: link 
+    force: no
+
+- name: mssql symlink
+  file: 
+    path: ~/.config/mssqlcli/config 
+    src: ~/.DotFiles/mssqlcli/config 
+    state: link 
+    force: no
+
+- name: iredis symlink
+  file: 
+    path: ~/.iredisrc 
+    src: ~/.DotFiles/iredis/.iredisrc  
+    state: link 
+    force: no
+
 - name: Installing zsh completions
   git:
     repo: https://github.com/zsh-users/zsh-completions.git
