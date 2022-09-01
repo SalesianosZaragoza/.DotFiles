@@ -135,6 +135,7 @@ export NNN_FIFO='/tmp/nnn.fifo'
 export NNN_SEL='/tmp/.sel'
 export NNN_ARCHIVE="\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$"
 export NNN_OPENER="nuke"
+export NVM_DIR="$HOME/.nvm"
 if grep "microsoft" /proc/version >> /dev/null ; then
     echo "Ubuntu on Windows"
   elif grep "generic" /proc/version >> /dev/null; then
@@ -155,8 +156,7 @@ eval "$(jenv init -)"
 # run. Ensure this block is only run once if .bashrc gets sourced multiple times
 # by checking whether __init_nvm is a function.
 if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; then
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+  [ -s "$NVM_DIR/zsh_completion" ] && . "$NVM_DIR/zsh_completion"
   declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'gulp' 'grunt' 'webpack')
   function __init_nvm() {
     for i in "${__node_commands[@]}"; do unalias $i; done
@@ -181,3 +181,5 @@ eval $(thefuck --alias)
 
 eval "$(zoxide init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+nvm use default

@@ -18,7 +18,7 @@ return require('packer').startup(function(use)
   use {'nvim-telescope/telescope.nvim'}
   use { "LinArcX/telescope-env.nvim" }
   use ( "williamboman/mason-lspconfig.nvim" )
-  use {'neovim/nvim-lspconfig', config = "require('lsp')"}
+  use {'neovim/nvim-lspconfig'}
   use {'hrsh7th/cmp-nvim-lsp'}
   use "folke/lua-dev.nvim"
   use {'hrsh7th/cmp-buffer'}
@@ -32,7 +32,7 @@ return require('packer').startup(function(use)
     requires = {'nvim-lua/plenary.nvim'},
     config = "require('gitsigns-config')"
   }
-  use {'glepnir/dashboard-nvim', cmd = "Dashboard", config = "require('dashboard-config')"}
+  use {'glepnir/dashboard-nvim'}
   use {"lukas-reineke/indent-blankline.nvim", config = "require('blankline-config')", event = "BufRead"}
   use {"akinsho/toggleterm.nvim",branch='main', config = "require('toggleterm-config')"}
   use {"terrortylor/nvim-comment", config = "require('comment-config')"}

@@ -1,5 +1,6 @@
-require("which-key").setup
-{
+local wk = require("which-key")
+
+local conf = {
   plugins = {
     marks = true, -- shows a list of your marks on ' and `
     registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
@@ -64,6 +65,7 @@ require("which-key").setup
     v = { "j", "k" },
   },
 }
+wk.setup(conf)
 
 local Terminal = require('toggleterm.terminal').Terminal
 local toggle_float = function()
@@ -78,7 +80,7 @@ local vmappings = {
   ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle linewise (visual)" },
 }
 local mappings = {
-  [";"] = { "<cmd>Alpha<CR>", "Dashboard" },
+  [";"] = { "<cmd>Dashboard<CR>", "Dashboard" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
   ["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
   ["c"] = { "<cmd>BufferKill<CR>", "Close Buffer" },
@@ -111,7 +113,6 @@ local mappings = {
     name = "Packer",
     c = { "<cmd>PackerCompile<cr>", "Compile" },
     i = { "<cmd>PackerInstall<cr>", "Install" },
-    r = { "<cmd>lua require('lvim.plugin-loader').recompile()<cr>", "Re-compile" },
     s = { "<cmd>PackerSync<cr>", "Sync" },
     S = { "<cmd>PackerStatus<cr>", "Status" },
     u = { "<cmd>PackerUpdate<cr>", "Update" },
@@ -171,7 +172,6 @@ local mappings = {
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
     d = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
     w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-    f = { require("lvim.lsp.utils").format, "Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>Mason<cr>", "Mason Info" },
     j = {
@@ -185,9 +185,6 @@ local mappings = {
     l = { vim.lsp.codelens.run, "CodeLens Action" },
     p = {
       name = "Peek",
-      d = { "<cmd>lua require('lvim.lsp.peek').Peek('definition')<cr>", "Definition" },
-      t = { "<cmd>lua require('lvim.lsp.peek').Peek('typeDefinition')<cr>", "Type Definition" },
-      i = { "<cmd>lua require('lvim.lsp.peek').Peek('implementation')<cr>", "Implementation" },
     },
     q = { vim.diagnostic.setloclist, "Quickfix" },
     r = { vim.lsp.buf.rename, "Rename" },
@@ -207,10 +204,10 @@ local mappings = {
     d = {'<cmd>lua vim.lsp.buf.definition()<cr>', "Go To Definition"},
     D = {'<cmd>lua vim.lsp.buf.declaration()<cr>', "Go To Declaration"},
     r = {
-      "Refactor",
-      e = {"<cmd>lua require('refactoring').refactor('Extract Function')<CR>", "Extract Function"},
-      f = {"lua require('refactoring').refactor('Extract Function To File')<CR>", "Extract to File" },
-      r = {"<cmd>lua M.refactors()<CR>"},
+      name = "Refactor",
+      e = {"<cmd>lua require('refactor-config').refactor('Extract Function')<CR>", "Extract Function"},
+      f = {"<cmd>lua require('refactor-config').refactor('Extract Function To File')<CR>", "Extract to File" },
+      r = {"<cmd>lua M.refactors()<CR>", "Refactor"},
       R = {'<cmd>Lspsaga rename<cr>', "Rename"},
     },
     R = {  '<cmd>lua vim.lsp.buf.references()<cr>', "References"},
@@ -222,10 +219,6 @@ local mappings = {
   },
   L = {
     name = "Logs",
-    c = {
-      "<cmd>edit " .. get_config_dir() .. "/init.lua<cr>",
-      "Edit init.lua",
-    },
     N = { "<cmd>edit $NVIM_LOG_FILE<cr>", "Open the Neovim logfile" },
     n = { "<cmd>Telescope notify<cr>", "View Notifications" },
   },
@@ -320,7 +313,7 @@ local mappings = {
 
  local opts = {
       mode = "n", -- NORMAL mode
-      prefix = "<c-x>",
+      prefix = "<space>",
       buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
       silent = true, -- use `silent` when creating keymaps
       noremap = true, -- use `noremap` when creating keymaps
@@ -328,12 +321,11 @@ local mappings = {
     }
    local vopts = {
       mode = "v", -- VISUAL mode
-      prefix = "<c-x>",
+      prefix = "<space>",
       buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
       silent = true, -- use `silent` when creating keymaps
       noremap = true, -- use `noremap` when creating keymaps
       nowait = true, -- use `nowait` when creating keymaps
     }
-local wk = require("which-key")
 wk.register(mappings, opts)
--- wk.register(vmappings, vopts)
+wk.register(vmappings, vopts)
