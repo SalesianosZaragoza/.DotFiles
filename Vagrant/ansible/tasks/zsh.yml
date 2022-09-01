@@ -33,52 +33,47 @@
     dest: ~/.DotFiles
   ignore_errors: yes
 
-- name: remove zshrc previous config
-  file: 
-    path: ~/.zshrc 
-    state: absent 
-
 - name: zshrc symlink
   file: 
     path: ~/.zshrc 
     src: ~/.DotFiles/.zshrc  
     state: link 
-    force: no
+    force: yes
 
 - name: mycli symlink
   file: 
     path: ~/.myclirc 
     src: ~/.DotFiles/mycli/.myclirc  
     state: link 
-    force: no
+    force: yes
 
 - name: pgcli symlink
   file: 
     path: ~/.config/pgcli/config
     src: ~/.DotFiles/pgcli/config
     state: link 
-    force: no
+    force: yes
 
 - name: litecli symlink
   file: 
     path: ~/.config/litecli/config 
     src: ~/.DotFiles/litecli/config  
     state: link 
-    force: no
+    force: yes
 
 - name: mssql symlink
   file: 
     path: ~/.config/mssqlcli/config 
     src: ~/.DotFiles/mssqlcli/config 
     state: link 
-    force: no
+    force: yes
 
 - name: iredis symlink
   file: 
     path: ~/.iredisrc 
     src: ~/.DotFiles/iredis/.iredisrc  
     state: link 
-    force: no
+    force: yes
 
 - name: Installing zsh completions
   git:
