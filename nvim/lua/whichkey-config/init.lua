@@ -78,6 +78,13 @@ local toggle_lazygit = function()
 end
 local vmappings = {
   ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle linewise (visual)" },
+
+  j = {
+    name = "Java",
+      -- Java specific
+      e ={ "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", "extract variables"},
+      E = {"<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", "extract method"},
+    },
 }
 local mappings = {
   [";"] = { "<cmd>Dashboard<CR>", "Dashboard" },
@@ -118,6 +125,14 @@ local mappings = {
     u = { "<cmd>PackerUpdate<cr>", "Update" },
     P = {'<cmd>lua require("telescope").extensions.packer.plugins(opts)<CR>', "Telescope Packer"},
   },
+  j = {
+    name = "Java",
+      -- Java specific
+      i = {"<Cmd>lua require'jdtls'.organize_imports()<CR>", "organize imports"},
+      T = {"<Cmd>lua require'jdtls'.test_class()<CR>", "test class"},
+      n = {"<Cmd>lua require'jdtls'.test_nearest_method()<CR>", "text nearest method"},
+      e ={ "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", "extract variables"},
+    },
   G = {
     name = "Git",
     j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
