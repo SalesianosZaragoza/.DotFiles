@@ -1,7 +1,28 @@
+local fn = vim.fn
+
+local pack_dir = join_paths(get_runtime_dir(), "site", "pack")
+local packer_install_dir = join_paths(pack_dir, "packer", "start", "packer.nvim")
+local compile_path = join_paths(get_config_dir(), "plugin", "packer_compiled.lua")
+
+-- Automatically install packer
+if fn.empty(fn.glob(packer_install_dir)) > 0 then
+  PACKER_BOOTSTRAP = fn.system({
+    "git",
+    "clone",
+    "--depth",
+    "1",
+    "https://github.com/wbthomason/packer.nvim",
+    packer_install_dir,
+  })
+  print("Installing packer close and reopen Neovim...")
+  vim.cmd([[packadd packer.nvim]])
+end
+
 require'packer.luarocks'.install_commands()
 return require('packer').startup(function(use)
 -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+  use {'lewis6991/impatient.nvim', config = "require('impatient')"}
   use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate", config = "require('treesitter-config')"}
   use {
     'tamton-aquib/staline.nvim',
@@ -32,10 +53,15 @@ return require('packer').startup(function(use)
     requires = {'nvim-lua/plenary.nvim'},
     config = "require('gitsigns-config')"
   }
+  use({
+    "simrat39/symbols-outline.nvim",
+    config = function()
+      require("dvim.core.plugins.symbols-outline").setup()
+    end,})
   use {'glepnir/dashboard-nvim'}
   use {"lukas-reineke/indent-blankline.nvim", config = "require('blankline-config')", event = "BufRead"}
   use {"akinsho/toggleterm.nvim",branch='main', config = "require('toggleterm-config')"}
-  use {"terrortylor/nvim-comment", config = "require('comment-config')"}
+  use {"numToStr/Comment.nvim", config = "require('comment')"}
   use {'williamboman/nvim-lsp-installer'}
   use({
     "glepnir/lspsaga.nvim",
@@ -72,6 +98,9 @@ return require('packer').startup(function(use)
   use 'rcarriga/nvim-dap-ui'
   use 'theHamsta/nvim-dap-virtual-text'
   use 'nvim-telescope/telescope-dap.nvim'
+  use 'ravenxrz/DAPInstall.nvim'
+  use 'mbbill/undotree'
+  use 'voldikss/vim-translator'
   use 'tpope/vim-dadbod'
   use 'kristijanhusak/vim-dadbod-ui'
   use 'kristijanhusak/vim-dadbod-completion'
@@ -93,6 +122,9 @@ return require('packer').startup(function(use)
       require("mason").setup()
     end,
     }
+  use({
+    "WhoIsSethDaniel/mason-tool-installer.nvim"
+  })
   use 'rafamadriz/friendly-snippets'
   use 'kitagry/vs-snippets'
   use 'petertriho/cmp-git'
@@ -137,6 +169,13 @@ use({
   "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
   config = function()
     require("lsp_lines").setup()
+  end,
+})
+ -- Auto docstring generator
+ use({
+  "danymat/neogen",
+  config = function()
+    require('neogen').setup {}
   end,
 })
  end)
