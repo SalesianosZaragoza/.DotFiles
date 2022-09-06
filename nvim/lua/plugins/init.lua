@@ -23,6 +23,7 @@ return require('packer').startup(function(use)
 -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use {'lewis6991/impatient.nvim', config = "require('impatient')"}
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate", config = "require('treesitter-config')"}
   use {
     'tamton-aquib/staline.nvim',
