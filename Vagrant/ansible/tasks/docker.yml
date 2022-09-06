@@ -1,13 +1,11 @@
 - name: Add an apt signing key for Docker
-  apt_key:
-    url: https://download.docker.com/linux/ubuntu/gpg
-    state: present
+  shell:
+    cmd:  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --batch --yes --dearmor -o /etc/apt/keyrings/docker.gpg
   become: true
 
 - name: Add apt repository for stable version
-  apt_repository:
-    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable
-    state: present
+  shell:
+    cmd: echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   become: true
 
 - name: Install docker and its dependecies
