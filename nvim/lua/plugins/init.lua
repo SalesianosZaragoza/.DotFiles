@@ -35,6 +35,9 @@ return require('packer').startup(function(use)
     requires = {'nvim-lua/plenary.nvim'},
     config = "require('gitsigns-config')"
   }
+  use {'kdheepak/lazygit.nvim'}
+  use {'tanvirtin/vgit.nvim', config = "require('vgit').setup()"}
+  use {'echasnovski/mini.nvim'}
   use({
     "simrat39/symbols-outline.nvim",
     config = function()
