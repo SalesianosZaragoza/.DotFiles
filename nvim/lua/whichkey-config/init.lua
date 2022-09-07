@@ -269,7 +269,10 @@ local mappings = {
     w = {'<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>', "Add Workspace Folder"},
     W = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>', "Remove Workspace Folder"},
   },
-
+  f = {
+    name = "Format",
+    f = {'<cmd> lua vim.lsp.buf.formatting_seq_sync()<CR>', "format file"}
+  }
   T = {
     name = "Treesitter",
     i = { ":TSConfigInfo<cr>", "Treesitter info" },
