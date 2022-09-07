@@ -62,14 +62,6 @@
   ignore_errors: yes
   become: false
 
-- name: Install grv
-  homebrew:
-    name: grv
-    path: /home/linuxbrew/.linuxbrew/bin
-    state: latest
-  ignore_errors: yes
-  become: false
-
 - name: Install ctop
   homebrew:
     name: ctop

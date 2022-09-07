@@ -40,6 +40,36 @@
     state: link 
     force: yes
 
+- name: mycli config folder
+  file: 
+    path: ~/.DotFiles/mycli/  
+    state: directory 
+    mode: '664'
+
+- name: pgcli config folder
+  file: 
+    path: ~/.DotFiles/pgcli/  
+    state: directory 
+    mode: '664'
+
+- name: litecli config folder
+  file: 
+    path: ~/.DotFiles/litecli/  
+    state: directory 
+    mode: '664'
+
+- name: mssql config folder
+  file: 
+    path: ~/.DotFiles/mssql/  
+    state: directory 
+    mode: '664'
+
+- name: iredis config folder
+  file: 
+    path: ~/.DotFiles/iredis/  
+    state: directory 
+    mode: '664'
+
 - name: mycli symlink
   file: 
     path: ~/.myclirc 
