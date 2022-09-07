@@ -3,6 +3,7 @@ return require('packer').startup(function(use)
 -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use {'lewis6991/impatient.nvim', config = "require('impatient')"}
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate", config = "require('treesitter-config')"}
   use {
     'tamton-aquib/staline.nvim',
@@ -27,6 +28,7 @@ return require('packer').startup(function(use)
   use {'hrsh7th/cmp-vsnip'}
   use {'hrsh7th/vim-vsnip'}
   use {'onsails/lspkind-nvim'}
+  use {'sam4llis/nvim-lua-gf'}
   use {'norcalli/nvim-colorizer.lua', config = "require('colorizer-config')", event = "BufRead"}
   use {
     'lewis6991/gitsigns.nvim',
