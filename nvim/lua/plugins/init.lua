@@ -1,23 +1,3 @@
-local fn = vim.fn
-
-local pack_dir = join_paths(get_runtime_dir(), "site", "pack")
-local packer_install_dir = join_paths(pack_dir, "packer", "start", "packer.nvim")
-local compile_path = join_paths(get_config_dir(), "plugin", "packer_compiled.lua")
-
--- Automatically install packer
-if fn.empty(fn.glob(packer_install_dir)) > 0 then
-  PACKER_BOOTSTRAP = fn.system({
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    packer_install_dir,
-  })
-  print("Installing packer close and reopen Neovim...")
-  vim.cmd([[packadd packer.nvim]])
-end
-
 require'packer.luarocks'.install_commands()
 return require('packer').startup(function(use)
 -- Packer can manage itself
@@ -56,12 +36,12 @@ return require('packer').startup(function(use)
   use({
     "simrat39/symbols-outline.nvim",
     config = function()
-      require("dvim.core.plugins.symbols-outline").setup()
+      require("symbols-outline").setup()
     end,})
   use {'glepnir/dashboard-nvim'}
   use {"lukas-reineke/indent-blankline.nvim", config = "require('blankline-config')", event = "BufRead"}
   use {"akinsho/toggleterm.nvim",branch='main', config = "require('toggleterm-config')"}
-  use {"numToStr/Comment.nvim", config = "require('comment')"}
+  use {"numToStr/Comment.nvim", config = "require('Comment')"}
   use {'williamboman/nvim-lsp-installer'}
   use({
     "glepnir/lspsaga.nvim",
