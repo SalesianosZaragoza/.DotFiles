@@ -272,7 +272,7 @@ local mappings = {
   f = {
     name = "Format",
     f = {'<cmd> lua vim.lsp.buf.formatting_seq_sync()<CR>', "format file"}
-  }
+  },
   T = {
     name = "Treesitter",
     i = { ":TSConfigInfo<cr>", "Treesitter info" },
