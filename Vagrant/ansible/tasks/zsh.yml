@@ -44,31 +44,31 @@
   file: 
     path: ~/.config/mycli/  
     state: directory 
-    mode: '664'
+    mode: '666'
 
 - name: pgcli config folder
   file: 
     path: ~/.config/pgcli/  
     state: directory 
-    mode: '664'
+    mode: '666'
 
 - name: litecli config folder
   file: 
     path: ~/.config/litecli/  
     state: directory 
-    mode: '664'
+    mode: '666'
 
 - name: mssql config folder
   file: 
     path: ~/.config/mssql/  
     state: directory 
-    mode: '664'
+    mode: '666'
 
 - name: iredis config folder
   file: 
     path: ~/.config/iredis/  
     state: directory 
-    mode: '664'
+    mode: '666'
 
 - name: mycli symlink
   file: 
