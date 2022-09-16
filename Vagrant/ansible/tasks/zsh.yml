@@ -45,6 +45,7 @@
     path: ~/.config/mycli/  
     state: directory 
     mode: '666'
+  ignore_errors: yes
 
 - name: pgcli config folder
   file: 
@@ -83,8 +84,8 @@
 
 - name: pgcli symlink
   file: 
-    path: ~/.config/pgcli/config
-    src: ~/.DotFiles/pgcli/config
+    path: ~/.DotFiles/pgcli/config
+    src: ~/.config/pgcli/config
     state: link 
     force: yes
 
