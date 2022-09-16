@@ -51,24 +51,28 @@
     path: ~/.config/pgcli/  
     state: directory 
     mode: '666'
+  ignore_errors: yes
 
 - name: litecli config folder
   file: 
     path: ~/.config/litecli/  
     state: directory 
     mode: '666'
+  ignore_errors: yes
 
 - name: mssql config folder
   file: 
     path: ~/.config/mssql/  
     state: directory 
     mode: '666'
+  ignore_errors: yes
 
 - name: iredis config folder
   file: 
     path: ~/.config/iredis/  
     state: directory 
     mode: '666'
+  ignore_errors: yes
 
 - name: mycli symlink
   file: 
