@@ -91,22 +91,22 @@
 
 - name: litecli symlink
   file: 
-    path: ~/.config/litecli/config 
-    src: ~/.DotFiles/litecli/config  
+    path: ~/.DotFiles/litecli/config 
+    src:   ~/.config/litecli/config
     state: link 
     force: yes
 
 - name: mssql symlink
   file: 
-    path: ~/.config/mssqlcli/config 
-    src: ~/.DotFiles/mssqlcli/config 
+    path: ~/.DotFiles/mssqlcli/config
+    src:  ~/.config/mssqlcli/config 
     state: link 
     force: yes
 
 - name: iredis symlink
   file: 
-    path: ~/.iredisrc 
-    src: ~/.DotFiles/iredis/.iredisrc  
+    path: ~/.DotFiles/iredis/.iredisrc 
+    src:  ~/.iredisrc 
     state: link 
     force: yes
 
