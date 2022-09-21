@@ -50,7 +50,10 @@ ZSH_THEME=""
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode git aws microk8s npm nvm pip tmuxinator ubuntu jenv  fzf mvn fasd zsh-completions zsh-syntax-highlighting zsh-autosuggestions vagrant docker docker-compose vagrant-prompt kubectl git-flow gitfast command-not-found copypath copybuffer copyfile git-prompt dotenv colorize colored-man-pages zsh-history-substring-search extract sudo gitignore terraform)
+plugins=(vi-mode git aws microk8s npm nvm pip tmuxinator ubuntu jenv  fzf mvn fasd zsh-completions zsh-syntax-highlighting vagrant docker docker-compose vagrant-prompt kubectl git-flow gitfast command-not-found copypath copybuffer copyfile git-prompt dotenv colorize colored-man-pages zsh-history-substring-search extract sudo gitignore terraform)
+if [[ -z "${BLIND}" ]]; then
+  plugins+=(zsh-autosuggestions)
+fi
 fpath+=$HOME/.zsh/pure
 #autoload -U compinit && compinit
 autoload -U promptinit; promptinit
@@ -182,5 +185,5 @@ eval $(thefuck --alias)
 eval "$(zoxide init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-nvm use default
+nvm use 17
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
