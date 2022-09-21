@@ -53,10 +53,6 @@ return require('packer').startup(function(use)
     "glepnir/lspsaga.nvim",
     branch = "main",
   })
-  use {
-    'declancm/maximize.nvim',
-    config = function() require('maximize').setup() end
-  }
   use { 'jose-elias-alvarez/null-ls.nvim', config = "require('null-ls-config')" }
   use { "folke/zen-mode.nvim", config = 'require("zen-mode-config")' }
   use { "folke/twilight.nvim", config = "require('twilight-config')" }
@@ -162,10 +158,6 @@ return require('packer').startup(function(use)
     end,
   })
   use 'sam4llis/nvim-lua-gf'
-  use {
-  'romgrk/barbar.nvim',
-  requires = {'kyazdani42/nvim-web-devicons'}
-  }
   use { "anuvyklack/windows.nvim",
    requires = {
       "anuvyklack/middleclass",
