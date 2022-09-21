@@ -3,6 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 vim.cmd('filetype plugin indent on')
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.hidden = true
+vim.o.relativenumber= true
 vim.o.whichwrap = 'b,s,<,>,[,],h,l'
 vim.o.pumheight = 10
 vim.o.fileencoding = 'utf-8'
