@@ -19,10 +19,6 @@ move_in_saga = { prev = '<C-p>',next = '<C-n>'},
 -- entry is a table type has these filed
 -- { bufnr, code, col, end_col, end_lnum, lnum, message, severity, source }
 diagnostic_header = BlindReturn({"Error","Warn","Info","Hint"}, { " ", " ", " ", "ﴞ " }),
--- show diagnostic source
-show_diagnostic_source = true,
--- add bracket or something with diagnostic source, just have 2 elements
-diagnostic_source_bracket = {},
 -- preview lines of lsp_finder and definition preview
 max_preview_lines = 10,
 -- use emoji lightbulb in default
@@ -62,7 +58,6 @@ code_action_keys = {
 },
 rename_action_quit = "<C-c>",
 rename_in_select = true,
-definition_preview_icon = "  ",
 -- show symbols in winbar must nightly
 symbol_in_winbar = {
     in_custom = false,

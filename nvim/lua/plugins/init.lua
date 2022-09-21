@@ -161,7 +161,24 @@ return require('packer').startup(function(use)
       require("lsp_lines").setup()
     end,
   })
-  -- Auto docstring generator
+  use 'sam4llis/nvim-lua-gf'
+  use {
+  'romgrk/barbar.nvim',
+  requires = {'kyazdani42/nvim-web-devicons'}
+  }
+  use { "anuvyklack/windows.nvim",
+   requires = {
+      "anuvyklack/middleclass",
+      "anuvyklack/animation.nvim"
+   },
+   config = function()
+      vim.o.winwidth = 10
+      vim.o.winminwidth = 10
+      vim.o.equalalways = false
+      require('windows').setup()
+   end
+  }
+-- Auto docstring generator
   use({
     "danymat/neogen",
     config = function()
