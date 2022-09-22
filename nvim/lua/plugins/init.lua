@@ -1,6 +1,7 @@
 require 'packer.luarocks'.install_commands()
 return require('packer').startup(function(use)
   -- Packer can manage itself
+  use 'mg979/vim-visual-multi'
   use 'wbthomason/packer.nvim'
   use { 'lewis6991/impatient.nvim', config = "require('impatient')" }
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
