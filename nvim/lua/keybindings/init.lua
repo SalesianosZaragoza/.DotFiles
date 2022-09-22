@@ -8,10 +8,6 @@ map('n', '<C-k>', '<C-w>k', {noremap = true, silent = false})
 map('v', '<', '<gv', {noremap = true, silent = false})
 map('v', '>', '>gv', {noremap = true, silent = false})
 
-map("n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>",
-    {noremap = true, silent = true})
-map("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>",
-    {noremap = true, silent = true})
 -- keeping it centered
 map('n', 'N', 'Nzzzv', {noremap = true})
 map('n', 'J', 'mzJ`z', {noremap = true})
@@ -28,3 +24,5 @@ map('v', 'K', ':m \'>-2<CR>gv=gv', {noremap = true})
 map('v', 'J', ':m \'>+1<CR>gv=gv', {noremap = true})
 map('i', '<C-j>', '<esc>:m .+1<CR>==<insert>', {noremap = true})
 map('i', '<C-k>', '<esc>:m .-2<CR>==<insert>', {noremap = true})
+
+map('x', "<leader>p", '"_dP', {noremap = true})
