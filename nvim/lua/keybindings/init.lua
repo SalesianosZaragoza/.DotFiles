@@ -20,9 +20,16 @@ map('n', '!', '!<C-g>u', {noremap = true})
 map('n', '<expr> k', '(v:count > 5 ? "m\'" . v:count : "") . \'k\'', {noremap = true})
 map('n', '<expr> j', '(v:count > 5 ? "m\'" . v:count : "") . \'j\'', {noremap = true})
 -- moving text 
-map('v', 'K', ':m \'>-2<CR>gv=gv', {noremap = true})
-map('v', 'J', ':m \'>+1<CR>gv=gv', {noremap = true})
-map('i', '<C-j>', '<esc>:m .+1<CR>==<insert>', {noremap = true})
-map('i', '<C-k>', '<esc>:m .-2<CR>==<insert>', {noremap = true})
+map('v', '<M-C-Up>', ':m \'>-2<CR>gv=gv', {noremap = true})
+map('v', '<M-C-Down>', ':m \'>+1<CR>gv=gv', {noremap = true})
+map('i', '<M-C-Down>', '<esc>:m .+1<CR>==<insert>', {noremap = true})
+map('i', '<M-C-Up>', '<esc>:m .-2<CR>==<insert>', {noremap = true})
 
 map('x', "<leader>p", '"_dP', {noremap = true})
+
+
+map('n', '<M-C-p>', '<cmd>:Telescope <CR>', {noremap = true})
+
+map('n', '<C-LeftMouse>', '<Plug>(VM-Mouse-Cursor)', {noremap = true})
+map('n', '<C-RightMouse>', '<Plug>(VM-Mouse-Word)', {noremap = true})
+map('n', '<M-C-RightMouse>', '<Plug>(VM-Mouse-Word)', {noremap = true})

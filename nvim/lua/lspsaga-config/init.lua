@@ -7,7 +7,7 @@ border_style = "bold",
 --transparent background. Values between 0-30 are typically most useful.
 saga_winblend = 0,
 -- when cursor in saga window you config these to move
-move_in_saga = { prev = '<C-p>',next = '<C-n>'},
+move_in_saga = { prev = '<C-u>',next = '<C-d>'},
 -- Error, Warn, Info, Hint
 -- use emoji like
 -- { "🙀", "😿", "😾", "😺" }

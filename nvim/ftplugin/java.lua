@@ -146,18 +146,14 @@ end
           };
           configuration = {
             runtimes = {
-              {
-                name = "JavaSE-11",
-                path = home .. "/.sdkman/candidates/java/11.0.10-open/",
-              },
-              {
-                name = "JavaSE-14",
-                path = home .. "/.sdkman/candidates/java/14.0.2-open/",
-              },
-              {
-                name = "JavaSE-15",
-                path = home .. "/.sdkman/candidates/java/15.0.1-open/",
-              },
+              --{
+              --  name = "JavaSE-11",
+              --  path = home .. "/.sdkman/candidates/java/11.0.10-open/",
+              --},
+              --{
+              --  name = "JavaSE-14",
+              --  path = home .. "/.sdkman/candidates/java/14.0.2-open/",
+              --},
             }
           };
         };

@@ -2,15 +2,6 @@ local lspkind = require "lspkind"
 
 local cmp = require "cmp"
 cmp.setup {
-  snippet = {
-      -- REQUIRED - you must specify a snippet engine
-      expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-        -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
-      end,
-    },
   mapping = {
     ["<Up>"] = cmp.mapping.select_prev_item(),
     ["<Down>"] = cmp.mapping.select_next_item(),
@@ -157,11 +148,6 @@ cmp.setup {
 
 cmp.setup.cmdline("/", {
   completion = {
-    -- Might allow this later, but I don't like it right now really.
-    -- Although, perhaps if it just triggers w/ @ then we could.
-    --
-    -- I will have to come back to this.
-    autocomplete = false,
   },
   sources = cmp.config.sources({
     { name = "nvim_lsp_document_symbol" },
@@ -172,7 +158,6 @@ cmp.setup.cmdline("/", {
 
 cmp.setup.cmdline(":", {
   completion = {
-    autocomplete = false,
   },
 
   sources = cmp.config.sources({
