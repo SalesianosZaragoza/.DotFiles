@@ -83,6 +83,7 @@ return require('packer').startup(function(use)
   use 'fannheyward/telescope-coc.nvim'
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
+  use 'jayp0521/mason-nvim-dap.nvim'
   use 'theHamsta/nvim-dap-virtual-text'
   use 'nvim-telescope/telescope-dap.nvim'
   use 'ravenxrz/DAPInstall.nvim'
