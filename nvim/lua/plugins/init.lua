@@ -86,6 +86,8 @@ return require('packer').startup(function(use)
   use 'nvim-telescope/telescope-packer.nvim'
   use 'nvim-telescope/telescope-vimspector.nvim'
   use 'fannheyward/telescope-coc.nvim'
+  use 'axieax/urlview.nvim'
+  use 'mfussenegger/nvim-lint'
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
   use 'jayp0521/mason-nvim-dap.nvim'
