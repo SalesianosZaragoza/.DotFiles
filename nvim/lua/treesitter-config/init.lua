@@ -27,5 +27,14 @@ require'nvim-treesitter.configs'.setup {
   },
   autopairs = {
     enable = true
-  }
+  },
+  textsubjects = {
+        enable = true,
+        prev_selection = ',', -- (Optional) keymap to select the previous selection
+        keymaps = {
+            ['<M-C-s>'] = 'textsubjects-smart',
+            ['<M-C-o>'] = 'textsubjects-container-outer',
+            ['<M-C-i>'] = 'textsubjects-container-inner',
+        },
+    },
 }

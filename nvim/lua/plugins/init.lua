@@ -74,6 +74,7 @@ return require('packer').startup(function(use)
   use 'scalameta/nvim-metals'
   use 'sudormrfbin/cheatsheet.nvim'
   use 'romgrk/nvim-treesitter-context'
+  use 'RRethy/nvim-treesitter-textsubjects'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/vim-vsnip-integ'
   use 'hrsh7th/cmp-path'
