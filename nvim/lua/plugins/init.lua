@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
   use { 'hrsh7th/nvim-cmp' }
   use { 'hrsh7th/cmp-vsnip' }
   use { 'hrsh7th/vim-vsnip' }
+  use { 'lukas-reineke/cmp-rg' }
   use { 'onsails/lspkind-nvim' }
   use { 'sam4llis/nvim-lua-gf' }
   use { 'norcalli/nvim-colorizer.lua', config = "require('colorizer-config')", event = "BufRead" }
@@ -49,6 +50,7 @@ return require('packer').startup(function(use)
   use { "lukas-reineke/indent-blankline.nvim", config = "require('blankline-config')", event = "BufRead" }
   use { "akinsho/toggleterm.nvim", branch = 'main', config = "require('toggleterm-config')" }
   use { "numToStr/Comment.nvim", config = "require('Comment')" }
+  use { 'jeffkreeftmeijer/vim-numbertoggle' }
   use { 'williamboman/nvim-lsp-installer' }
   use({
     "glepnir/lspsaga.nvim",
@@ -57,8 +59,10 @@ return require('packer').startup(function(use)
   use { 'jose-elias-alvarez/null-ls.nvim', config = "require('null-ls-config')" }
   use { "folke/zen-mode.nvim", config = 'require("zen-mode-config")' }
   use { "folke/twilight.nvim", config = "require('twilight-config')" }
+  use { "beauwilliams/focus.nvim", config = function() require("focus").setup() end }
   use { 'andweeb/presence.nvim', config = "require('presence-config')" }
   use 'szw/vim-maximizer'
+  use 'lambdalisue/suda.vim'
   use 'puremourning/vimspector'
   use 'Shougo/vimproc.vim'
   use 'hashivim/vim-terraform'
