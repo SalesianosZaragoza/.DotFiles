@@ -10,7 +10,7 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
     }
 )
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {"html", "javascript", "lua"},
+  ensure_installed = {"html", "javascript", "lua", "java", "python"},
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
@@ -31,17 +31,17 @@ require'nvim-treesitter.configs'.setup {
   textobjects = {
     select = {
       enable = true,
-
+      -- to use this feature you must be in visual mode
       -- Automatically jump forward to textobj, similar to targets.vim
       lookahead = true,
 
       keymaps = {
         -- You can use the capture groups defined in textobjects.scm
-        ["9f"] = "@function.outer",
-        ["[f"] = "@function.inner",
-        ["9c"] = "@class.outer",
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
         -- you can optionally set descriptions to the mappings (used in the desc parameter of nvim_buf_set_keymap
-        ["[c"] = { query = "@class.inner", desc = "Select inner part of a class region" },
+        ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
       },
       -- You can choose the select mode (default is charwise 'v')
       selection_modes = {
@@ -56,12 +56,4 @@ require'nvim-treesitter.configs'.setup {
       include_surrounding_whitespace = true,
     },
   },
-  textsubjects = {
-        enable = true,
-        keymaps = {
-            ['<M-C-s>'] = 'textsubjects-smart',
-            ['<C-7>'] = 'textsubjects-container-outer',
-            ['<C-8>'] = 'textsubjects-container-inner',
-        },
-    },
 }
