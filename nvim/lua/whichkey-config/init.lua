@@ -79,6 +79,20 @@ end
 local vmappings = {
   ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle linewise (visual)" },
 
+    R = {
+      name = "Refactor",
+      f = {"<cmd>lua require('refactoring').refactor('Extract Function')<CR>", "Extract Function"},
+      F = {"<cmd>lua require('refactoring').refactor('Extract Function To File')<CR>", "Extract to File" },
+      b = {"<cmd>lua require('refactoring').refactor('Extract Block')<CR>", "Extract Block"},
+      B = {"<cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", "Extract Block to File"},
+      l = {"<cmd>lua require('refactoring').refactor('Extract Local')<CR>", "Extract Local"},
+      v = {"<cmd>lua require('refactoring').refactor('Extract Variable')<CR>", "Extract Variable"},
+      m = {"<cmd>lua require('refactoring').refactor('Extract Method')<CR>", "Extract Method"},
+      L = {"<cmd>lua require('refactoring').refactor('Inline Local')<CR>", "Inline Local"},
+      V = {"<cmd>lua require('refactoring').refactor('Inline Variable')<CR>", "Inline Variable"},
+      M = {"<cmd>lua require('refactoring').refactor('Inline Method')<CR>", "Inline Method"},
+      R = {'<cmd>Lspsaga rename<cr>', "Rename"},
+    },
   j = {
     name = "Java",
       -- Java specific
@@ -248,9 +262,14 @@ local mappings = {
     D = {'<cmd>lua vim.lsp.buf.declaration()<cr>', "Go To Declaration"},
     F = {
       name = "Refactor",
-      e = {"<cmd>lua require('refactor-config').refactor('Extract Function')<CR>", "Extract Function"},
-      f = {"<cmd>lua require('refactor-config').refactor('Extract Function To File')<CR>", "Extract to File" },
-      r = {"<cmd>lua M.refactors()<CR>", "Refactor"},
+      b = {"<cmd>lua require('refactoring').refactor('Extract Block')<CR>", "Extract Block"},
+      B = {"<cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", "Extract Block to File"},
+      l = {"<cmd>lua require('refactoring').refactor('Extract Local')<CR>", "Extract Local"},
+      v = {"<cmd>lua require('refactoring').refactor('Extract Variable')<CR>", "Extract Variable"},
+      m = {"<cmd>lua require('refactoring').refactor('Extract Method')<CR>", "Extract Method"},
+      L = {"<cmd>lua require('refactoring').refactor('Inline Local')<CR>", "Inline Local"},
+      V = {"<cmd>lua require('refactoring').refactor('Inline Variable')<CR>", "Inline Variable"},
+      M = {"<cmd>lua require('refactoring').refactor('Inline Method')<CR>", "Inline Method"},
       R = {'<cmd>Lspsaga rename<cr>', "Rename"},
     },
     R = {  '<cmd>lua vim.lsp.buf.references()<cr>', "References"},
