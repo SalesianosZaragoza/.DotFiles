@@ -79,6 +79,10 @@ end
 local vmappings = {
   ["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle linewise (visual)" },
 
+    l = {
+      name = "LSP",
+      a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+    },
     R = {
       name = "Refactor",
       f = {"<cmd>lua require('refactoring').refactor('Extract Function')<CR>", "Extract Function"},
