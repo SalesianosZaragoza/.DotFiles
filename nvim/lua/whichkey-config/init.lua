@@ -180,6 +180,7 @@ local mappings = {
       T = {"<Cmd>lua require'jdtls'.test_class()<CR>", "test class"},
       n = {"<Cmd>lua require'jdtls'.test_nearest_method()<CR>", "text nearest method"},
       e ={ "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>", "extract variables"},
+      s = {"<Cmd>lua require('telescope').extensions.scaladex.scaladex.search()<cr>", "scaladex telescope"},
     },
   G = {
     name = "Git",
