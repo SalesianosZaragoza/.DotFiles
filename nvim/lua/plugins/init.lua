@@ -83,6 +83,7 @@ return require('packer').startup(function(use)
   --use 'hrsh7th/cmp-copilot'
   use 'github/copilot.vim'
   use { 'tzachar/cmp-tabnine', run = './install.sh' }
+  use 'ray-x/cmp-treesitter'
   use 'crispgm/telescope-heading.nvim'
   use 'nvim-telescope/telescope-packer.nvim'
   use 'nvim-telescope/telescope-vimspector.nvim'

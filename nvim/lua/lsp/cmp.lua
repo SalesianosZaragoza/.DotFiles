@@ -128,6 +128,7 @@ cmp.setup {
       preset = 'default',
       menu = {
         buffer = "[buf]",
+        treesitter = "[ts]",
         nvim_lsp = "[LSP]",
         nvim_lua = "[api]",
         path = "[path]",
