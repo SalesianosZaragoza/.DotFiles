@@ -1,4 +1,3 @@
-vim.g.nvim_tree_indent_markers = 0
 if (vim.g.visual_impairing) then
 vim.g.nvim_tree_show_icons = {
   folders = 0,
@@ -48,7 +47,6 @@ local blind={
   },
   view = {
     width = 25,
-    height =100,
     hide_root_folder = false,
     side = 'right',
     mappings = {
@@ -77,7 +75,7 @@ local blind={
   trash = {
     cmd = "trash",
     require_confirm = true
-  }
+  },
 }
 
 local normal ={
@@ -117,7 +115,6 @@ local normal ={
   },
   view = {
     width =25,
-    height =100,
     hide_root_folder = false,
     side ='right',
     mappings = {
@@ -135,7 +132,7 @@ local normal ={
   trash = {
     cmd = "trash",
     require_confirm = true
-  }
+  },
 }
 
 require'nvim-tree'.setup(BlindReturn(blind ,normal))
