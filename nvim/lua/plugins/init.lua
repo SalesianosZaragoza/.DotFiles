@@ -91,6 +91,7 @@ return require('packer').startup(function(use)
   use 'mfussenegger/nvim-lint'
   use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
+  use 'rcarriga/nvim-notify'
   use 'jayp0521/mason-nvim-dap.nvim'
   use 'theHamsta/nvim-dap-virtual-text'
   use 'nvim-telescope/telescope-dap.nvim'

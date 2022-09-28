@@ -95,6 +95,7 @@ local vmappings = {
       L = {"<cmd>lua require('refactoring').refactor('Inline Local')<CR>", "Inline Local"},
       V = {"<cmd>lua require('refactoring').refactor('Inline Variable')<CR>", "Inline Variable"},
       M = {"<cmd>lua require('refactoring').refactor('Inline Method')<CR>", "Inline Method"},
+      S = {"<cmd>lua require('refactoring').select_refactor()<CR>", "Select"},
       R = {'<cmd>Lspsaga rename<cr>', "Rename"},
     },
   j = {
@@ -251,7 +252,7 @@ local mappings = {
     q = { vim.diagnostic.setloclist, "Quickfix" },
     r = { vim.lsp.buf.rename, "Rename" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    S = {
+    W = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
       "Workspace Symbols",
     },
@@ -266,6 +267,7 @@ local mappings = {
     D = {'<cmd>lua vim.lsp.buf.declaration()<cr>', "Go To Declaration"},
     F = {
       name = "Refactor",
+      S = {"<cmd>lua require('refactoring').select_refactor()<CR>", "Select"},
       b = {"<cmd>lua require('refactoring').refactor('Extract Block')<CR>", "Extract Block"},
       B = {"<cmd>lua require('refactoring').refactor('Extract Block To File')<CR>", "Extract Block to File"},
       l = {"<cmd>lua require('refactoring').refactor('Extract Local')<CR>", "Extract Local"},
