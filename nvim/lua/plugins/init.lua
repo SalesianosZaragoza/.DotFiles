@@ -55,7 +55,6 @@ return require('packer').startup(function(use)
   use { 'folke/zen-mode.nvim', config = 'require("zen-mode-config")' }
   use { 'folke/twilight.nvim', config = 'require("twilight-config")' }
   use { 'beauwilliams/focus.nvim', config = function() require("focus").setup() end }
-  use { 'andweeb/presence.nvim', config = "require('presence-config')" }
   use 'szw/vim-maximizer'
   use 'lambdalisue/suda.vim'
   use 'puremourning/vimspector'
