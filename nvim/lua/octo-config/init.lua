@@ -122,4 +122,4 @@
       toggle_viewed = "<leader><space>",   -- toggle viewer viewed state
     }
   }
-}) 
+})

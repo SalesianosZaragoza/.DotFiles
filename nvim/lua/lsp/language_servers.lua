@@ -1,33 +1,6 @@
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-require'lspconfig.configs'.ls_emmet = {
-  default_config = {
-    cmd = {'ls_emmet', '--stdio'},
-    filetypes = {'html', 'css', 'scss'}, -- Add the languages you use, see language support
-    root_dir = function(_)
-      return vim.loop.cwd()
-    end,
-    settings = {}
-  }
-}
-
-local langservers = {'html', 'eslint','ansiblels','cmake', 'terraform_lsp','vimls', 'intelephense', 'jsonls', 'ccls', 'clangd','pyright', 'cssls', 'tsserver'}
-
-for _, server in ipairs(langservers) do
-    require'lspconfig'[server].setup {capabilities = capabilities}
-end
-require'lspconfig'.jsonls.setup {
-    capabilities = capabilities,
-    commands = {
-      Format = {
-        function()
-          vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0})
-        end
-      }
-    }
-}
 local lsp_installer = require('nvim-lsp-installer')
 
 lsp_installer.on_server_ready(function(server)
@@ -49,4 +22,3 @@ lsp_installer.on_server_ready(function(server)
   end
   server:setup(opts)
 end)
-require("dapui").setup()
