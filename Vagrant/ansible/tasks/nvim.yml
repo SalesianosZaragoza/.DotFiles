@@ -20,7 +20,7 @@
 - name: Build eclipse.jdt.ls
   command: ./mvnw clean install -DskipTests
   environment:
-    JAVA_HOME: /usr/lib/jvm/1.17.0-openjdk-amd64/
+    JAVA_HOME: /usr/lib/jvm/java-1.17.0-openjdk-amd64
   args:
     chdir: ~/dev/eclipse/eclipse.jdt.ls
 
@@ -44,7 +44,7 @@
 - name: Build vscode-java-test
   command: "{{ item }}"
   environment:
-    JAVA_HOME: /usr/lib/jvm/java-1.17.0-openjdk-amd64/
+    JAVA_HOME: /usr/lib/jvm/java-1.17.0-openjdk-amd64 
   args:
     chdir: ~/dev/microsoft/vscode-java-test
   loop:
