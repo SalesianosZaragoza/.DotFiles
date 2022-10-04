@@ -105,8 +105,6 @@ end
     }
 
     local workspace_folder = home .. "/.workspace/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
-    print(workspace_folder)
-    print(CONFIG)
     local config = {
         flags = {
           allow_incremental_sync = true,
