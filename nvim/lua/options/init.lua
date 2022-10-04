@@ -1,4 +1,5 @@
 vim.g.mapleader = "º"
+vim.o.ch = 0
 vim.g.VM_default_mappings = 0
 vim.cmd [[packadd packer.nvim]]
 vim.cmd('filetype plugin indent on')
