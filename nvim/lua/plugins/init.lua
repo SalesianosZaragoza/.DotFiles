@@ -52,6 +52,9 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
   use 'lukas-reineke/cmp-rg'
+  use 'hrsh7th/vim-vsnip-integ'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
   use { 'norcalli/nvim-colorizer.lua', config = "require('colorizer-config')", event = "BufRead" }
   use {
     'lewis6991/gitsigns.nvim',
@@ -93,10 +96,6 @@ return require('packer').startup(function(use)
   use 'romgrk/nvim-treesitter-context'
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'RRethy/nvim-treesitter-textsubjects'
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/vim-vsnip-integ'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
   use 'github/copilot.vim'
   use { 'tzachar/cmp-tabnine', run = './install.sh' }
   use 'ray-x/cmp-treesitter'
