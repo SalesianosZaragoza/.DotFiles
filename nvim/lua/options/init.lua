@@ -1,3 +1,11 @@
+vim.g.visual_impairing = ( os.getenv("BLIND") ~= nil )
+function BlindReturn(if_true, if_false)
+  if vim.g.visual_impairing then return if_true else return if_false end
+end
+
+vim.opt.completeopt = { "menu", "menuone", "noselect", "preview" }
+-- Don't show the dumb matching stuff.
+vim.opt.shortmess:append "c"
 vim.g.mapleader = "º"
 vim.o.ch = 0
 vim.g.VM_default_mappings = 0
