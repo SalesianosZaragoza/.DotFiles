@@ -50,16 +50,17 @@ ZSH_THEME=""
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode git aws microk8s npm nvm pip tmuxinator ubuntu jenv  fzf mvn fasd zsh-completions zsh-syntax-highlighting vagrant docker docker-compose vagrant-prompt kubectl git-flow gitfast command-not-found copypath copybuffer copyfile git-prompt dotenv colorize colored-man-pages zsh-history-substring-search extract sudo gitignore terraform)
+plugins=(zsh-vi-mode git gh aws microk8s npm nvm pip tmuxinator ubuntu jenv  fzf mvn fasd zsh-completions zsh-syntax-highlighting vagrant docker docker-compose vagrant-prompt kubectl git-flow gitfast command-not-found copypath copybuffer copyfile git-prompt dotenv colorize colored-man-pages zsh-history-substring-search extract sudo gitignore terraform)
 if [[ -z "${BLIND}" ]]; then
   plugins+=(zsh-autosuggestions)
 fi
 fpath+=$HOME/.zsh/pure
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 #autoload -U compinit && compinit
 autoload -U promptinit; promptinit
 # optionally define some options
 PURE_CMD_MAX_EXEC_TIME=10
-
+ZVM_VI_EDITOR="nvim"
 # change the path color
 zstyle :prompt:pure:path color white
 
