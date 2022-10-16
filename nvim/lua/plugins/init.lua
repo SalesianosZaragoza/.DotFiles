@@ -2,6 +2,7 @@ require 'packer.luarocks'.install_commands()
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'mg979/vim-visual-multi'
+  use 'skywind3000/asyncrun.vim'
   use 'wbthomason/packer.nvim'
   use { 'lewis6991/impatient.nvim', config = 'require("impatient")' }
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
@@ -25,6 +26,10 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp'
   use 'folke/lua-dev.nvim'
   use 'folke/trouble.nvim'
+  use 'monaqa/dial.nvim'
+  use 'ggandor/leap.nvim'
+  use 'ggandor/leap-ast.nvim'
+  use 'cwebster2/github-coauthors.nvim'
   use({
     "folke/noice.nvim",
     event = "VimEnter",
