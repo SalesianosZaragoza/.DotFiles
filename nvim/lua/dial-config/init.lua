@@ -3,10 +3,10 @@ require("dial.config").augends:register_group{
   default = {
     augend.integer.alias.decimal,
     augend.integer.alias.hex,
-    augend.constant.alias.boolean,
+    augend.constant.alias.bool,
     augend.date.alias["%d/%m/%Y"],
-    augend.date.alias["%d-%m-%Y"],
-    augend.constant.alias.ja_weekday_full,
+--    augend.date.alias["%d-%m-%Y"],
+--    augend.constant.alias.ja_weekday_full,
   },
   typescript = {
     augend.integer.alias.decimal,
@@ -23,9 +23,9 @@ require("dial.config").augends:register_group{
 }
 
 local map = vim.api.nvim_set_keymap
-map("n", "<c-a>", require("dial.map").inc_normal(), {noremap = true})
-map("n", "<c-x>", require("dial.map").dec_normal(), {noremap = true})
-map("v", "<c-a>", require("dial.map").inc_visual(), {noremap = true})
-map("v", "<c-x>", require("dial.map").dec_visual(), {noremap = true})
-map("v", "g<C-a>", require("dial.map").inc_gvisual(), {noremap = true})
-map("v", "g<C-x>", require("dial.map").dec_gvisual(), {noremap = true})
+map("n", "<C-a>", "<cmd>:DialIncrement<CR>", {noremap = true})
+map("n", "<C-x>", "<cmd>:DialDecrement<CR>", {noremap = true})
+map("v", "<C-a>", "<cmd>:DialIncrement<CR>", {noremap = true})
+map("v", "<C-x>", "<cmd>:DialDecrement<CR>", {noremap = true})
+map("v", "g<C-a>", "<cmd>:DialIncrement<CR>", {noremap = true})
+map("v", "g<C-x>", "<cmd>:DialDecrement<CR>", {noremap = true})
