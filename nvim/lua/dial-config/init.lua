@@ -6,7 +6,7 @@ require("dial.config").augends:register_group{
     augend.constant.alias.boolean,
     augend.date.alias["%d/%m/%Y"],
     augend.date.alias["%d-%m-%Y"],
-    augend.complex.alias.ja_weekday_full,
+    augend.constant.alias.ja_weekday_full,
   },
   typescript = {
     augend.integer.alias.decimal,
