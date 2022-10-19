@@ -57,7 +57,7 @@ return require('packer').startup(function(use)
   }
   use 'kdheepak/lazygit.nvim'
   use { 'tanvirtin/vgit.nvim', config = "require('vgit').setup()" }
-  use { 'echasnovski/mini.nvim', config = "require('mini.cursorword').setup({})" }
+  use 'echasnovski/mini.nvim'
   use {
     "simrat39/symbols-outline.nvim",
     config = function()
@@ -173,7 +173,7 @@ return require('packer').startup(function(use)
       'anuvyklack/animation.nvim'
    },
    config = function()
-      vim.o.winwidth = 10
+      vim.o.winwidth = 20
       vim.o.winminwidth = 10
       vim.o.equalalways = false
       require('windows').setup()
