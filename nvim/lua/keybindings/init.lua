@@ -24,12 +24,11 @@ map('v', '<M-C-Up>', ':m \'>-2<CR>gv=gv', {noremap = true})
 map('v', '<M-C-Down>', ':m \'>+1<CR>gv=gv', {noremap = true})
 map('i', '<M-C-Down>', '<esc>:m .+1<CR>==<insert>', {noremap = true})
 map('i', '<M-C-Up>', '<esc>:m .-2<CR>==<insert>', {noremap = true})
-
+-- deletei setection  to void register then paste before
 map('x', "<leader>p", '"_dP', {noremap = true})
-
-
+-- command palette vscode similar functionality
 map('n', '<M-C-p>', '<cmd>:Telescope <CR>', {noremap = true})
-
+-- multiple cursors
 map('n', '<C-LeftMouse>', '<Plug>(VM-Mouse-Cursor)', {noremap = true})
 map('n', '<C-RightMouse>', '<Plug>(VM-Mouse-Word)', {noremap = true})
 map('n', '<M-C-RightMouse>', '<Plug>(VM-Mouse-Word)', {noremap = true})
