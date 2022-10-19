@@ -83,7 +83,6 @@ return require('packer').startup(function(use)
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-treesitter/playground'
-  use { 'neoclide/coc.nvim', branch = 'release' }
   use 'kyazdani42/nvim-web-devicons'
   use 'scalameta/nvim-metals'
   use 'sudormrfbin/cheatsheet.nvim'
@@ -180,6 +179,7 @@ return require('packer').startup(function(use)
       require('windows').setup()
    end
   }
+  use { 'neoclide/coc.nvim', branch = 'release', cond = function() return not vim.g.vscode end}
 -- Auto docstring generator
   use({
     'danymat/neogen',
