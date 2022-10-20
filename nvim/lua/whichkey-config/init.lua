@@ -414,7 +414,7 @@ local mappings = {
   }
 }
 
- local opts = {
+  local opts = {
       mode = "n", -- NORMAL mode
       prefix = "<space>",
       buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
@@ -422,7 +422,7 @@ local mappings = {
       noremap = true, -- use `noremap` when creating keymaps
       nowait = true, -- use `nowait` when creating keymaps
     }
-   local vopts = {
+  local vopts = {
       mode = "v", -- VISUAL mode
       prefix = "<space>",
       buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings

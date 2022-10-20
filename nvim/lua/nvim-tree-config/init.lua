@@ -53,10 +53,10 @@ local blind={
     mappings = {
       custom_only = false,
       list = {
-         {
-         key = {"<C-g>"},
-       cb = tree_cb("cd"), mode = "n"
-   }
+        {
+          key = {"<C-g>"},
+          cb = tree_cb("cd"), mode = "n"
+        }
       }
     },
     float = {
@@ -122,10 +122,10 @@ local normal ={
     mappings = {
       custom_only = false,
       list = {
-         {
-         key = {"<C-g>"},
-       cb = tree_cb("cd"), mode = "n"
-   }
+          {
+          key = {"<C-g>"},
+          cb = tree_cb("cd"), mode = "n"
+          }
       }
     },
     number = false,

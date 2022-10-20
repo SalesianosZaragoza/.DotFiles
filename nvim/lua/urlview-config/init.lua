@@ -1,5 +1,5 @@
 require("urlview").setup({
-   -- Prompt title (`<context> <default_title>`, e.g. `Buffer Links:`)
+  -- Prompt title (`<context> <default_title>`, e.g. `Buffer Links:`)
   default_title = "Links:",
   -- Default picker to display links with
   -- Options: "native" (vim.ui.select) or "telescope"
