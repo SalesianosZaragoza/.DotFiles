@@ -21,6 +21,7 @@ require('null-ls-config')
 require('trouble-config')
 require('urlview-config')
 require('mini-config')
+require('nvim-lint-config')
 end
 require('dial-config')
 require('leap-config')

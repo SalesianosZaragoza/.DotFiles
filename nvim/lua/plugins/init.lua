@@ -15,7 +15,10 @@ return require('packer').startup(function(use)
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
-        config = 'require("treesitter-config")'
+        config = 'require("treesitter-config")',
+        cond = function()
+            return not vim.g.vscode
+        end
     }
     use {
         'tamton-aquib/staline.nvim',
@@ -89,18 +92,27 @@ return require('packer').startup(function(use)
     use {
         'lewis6991/gitsigns.nvim',
         requires = {'nvim-lua/plenary.nvim'},
-        config = "require('gitsigns-config')"
+        config = "require('gitsigns-config')",
+        cond = function()
+            return not vim.g.vscode
+        end
     }
     use 'kdheepak/lazygit.nvim'
     use {
         'tanvirtin/vgit.nvim',
-        config = "require('vgit').setup()"
+        config = "require('vgit').setup()",
+        cond = function()
+            return not vim.g.vscode
+        end
     }
     use 'echasnovski/mini.nvim'
     use {
         "simrat39/symbols-outline.nvim",
         config = function()
             require("symbols-outline").setup()
+        end,
+        cond = function()
+            return not vim.g.vscode
         end
     }
     use 'glepnir/dashboard-nvim'
@@ -235,7 +247,6 @@ return require('packer').startup(function(use)
             return not vim.g.vscode
         end
     }
-    use 'phaazon/hop.nvim'
     use 'L3MON4D3/LuaSnip'
     use 'kristijanhusak/vim-carbon-now-sh'
     use 'pwntester/octo.nvim'
