@@ -119,17 +119,6 @@ alias awscli='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws
 alias remoteDebugOn="export MAVEN_OPTS='-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 $JAVA_OPTIONS'"
 alias remoteDebugOff='unset MAVEN_OPTS'
 alias jhotswap="export JAVA_HOME='$HOME/SDK/JDK/java-11-openjdk-hotswap/' && export PATH='$JAVA_HOME/bin:$PATH'"
-alias code-sfdx='code --extensions-dir ~/.sfdx-code'
-alias code-cpp='code --extensions-dir ~/.cpp-code'
-alias code-devops='code --extensions-dir ~/.devops-code'
-alias code-python='code --extensions-dir ~/.python-code'
-alias code-arduino='code --extensions-dir ~/.arduino-code'
-alias code-scala='code --extensions-dir ~/.scala-code'
-alias code-node='code --extensions-dir ~/.node-code'
-alias code-asm='code --extensions-dir ~/.asm-code'
-alias code-sql='code --extensions-dir ~/.sql-code'
-alias code-java='code --extensions-dir ~/.java-code'
-alias code-php='code --extensions-dir ~/.php-code'
 unalias grv
 fpath=(~/.zsh.d/ $fpath)
 export LD_LIBRARY_PATH=/usr/local/cuda-10.2/targets/x86_64-linux/lib/:/usr/lib/python3/dist-packages/
