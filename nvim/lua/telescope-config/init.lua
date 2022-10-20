@@ -115,9 +115,7 @@ require("telescope").load_extension("vimspector")
 require('telescope').load_extension('coc')
 require'telescope'.load_extension('openbrowser')
 require('telescope').load_extension('command_palette')
-if not vim.g.vscode then
 require('telescope').load_extension('tmuxinator')
-end
 require('telescope').load_extension('packer')
 require('telescope').load_extension('media_files')
 require'telescope'.load_extension'z'
