@@ -21,6 +21,12 @@ return require('packer').startup(function(use)
         end
     }
     use {
+        'williamboman/mason.nvim',
+        config = function()
+            require("mason").setup()
+        end
+    }
+    use {
         'tamton-aquib/staline.nvim',
         requires = {
             'kyazdani42/nvim-web-devicons',
@@ -89,14 +95,7 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
     use 'norcalli/nvim-colorizer.lua'
-    use {
-        'lewis6991/gitsigns.nvim',
-        requires = {'nvim-lua/plenary.nvim'},
-        config = "require('gitsigns-config')",
-        cond = function()
-            return not vim.g.vscode
-        end
-    }
+    use 'lewis6991/gitsigns.nvim'
     use 'kdheepak/lazygit.nvim'
     use {
         'tanvirtin/vgit.nvim',
@@ -208,15 +207,6 @@ return require('packer').startup(function(use)
     }
     use 'softinio/scaladex.nvim'
     use 'onsails/lspkind-nvim'
-    use {
-        'williamboman/mason.nvim',
-        config = function()
-            require("mason").setup()
-        end,
-        cond = function()
-            return not vim.g.vscode
-        end
-    }
     use 'WhoIsSethDaniel/mason-tool-installer.nvim'
     use 'rafamadriz/friendly-snippets'
     use 'kitagry/vs-snippets'

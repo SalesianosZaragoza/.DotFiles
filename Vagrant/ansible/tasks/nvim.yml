@@ -1,6 +1,6 @@
 - name: donwload and extract tree sitter
   unarchive:
-    src: https://github.com/tree-sitter/tree-sitter/releases/download/v0.20.6/tree-sitter-linux-x64.gz
+    src: https://github.com/tree-sitter/tree-sitter/releases/download/v0.20.7/tree-sitter-linux-x64.gz
     dest: /usr/local/bin/
     remote_src: yes
   ignore_errors: yes
