@@ -1,4 +1,5 @@
 require'packer.luarocks'.install_commands()
+local vscode = vim.g.vscode == 1
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'mg979/vim-visual-multi'
@@ -16,9 +17,7 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
         config = 'require("treesitter-config")',
-        cond = function()
-            return not vim.g.vscode
-        end
+        disable = vscode
     }
     use {
         'williamboman/mason.nvim',
@@ -61,9 +60,7 @@ return require('packer').startup(function(use)
         'folke/which-key.nvim',
         event = "BufWinEnter",
         config = "require('whichkey-config')",
-        cond = function()
-            return not vim.g.vscode
-        end
+        disable = vscode
     }
     use 'nvim-telescope/telescope.nvim'
     use 'LinArcX/telescope-env.nvim'
@@ -82,9 +79,7 @@ return require('packer').startup(function(use)
         config = "require('noice-config')",
         requires = { -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
         "MunifTanjim/nui.nvim", "rcarriga/nvim-notify", "hrsh7th/nvim-cmp"},
-        cond = function()
-            return not vim.g.vscode
-        end
+        disable = vscode
     })
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/nvim-cmp'
@@ -100,9 +95,7 @@ return require('packer').startup(function(use)
     use {
         'tanvirtin/vgit.nvim',
         config = "require('vgit').setup()",
-        cond = function()
-            return not vim.g.vscode
-        end
+        disable = vscode
     }
     use 'echasnovski/mini.nvim'
     use {
@@ -110,9 +103,7 @@ return require('packer').startup(function(use)
         config = function()
             require("symbols-outline").setup()
         end,
-        cond = function()
-            return not vim.g.vscode
-        end
+        disable = vscode
     }
     use 'glepnir/dashboard-nvim'
     use 'lukas-reineke/indent-blankline.nvim'
@@ -120,9 +111,7 @@ return require('packer').startup(function(use)
         'akinsho/toggleterm.nvim',
         branch = 'main',
         config = "require('toggleterm-config')",
-        cond = function()
-            return not vim.g.vscode
-        end
+        disable = vscode
     }
     use {
         'numToStr/Comment.nvim',
@@ -138,25 +127,19 @@ return require('packer').startup(function(use)
     use {
         'folke/zen-mode.nvim',
         config = 'require("zen-mode-config")',
-        cond = function()
-            return not vim.g.vscode
-        end
+        disable = vscode
     }
     use {
         'folke/twilight.nvim',
         config = 'require("twilight-config")',
-        cond = function()
-            return not vim.g.vscode
-        end
+        disable = vscode
     }
     use {
         'beauwilliams/focus.nvim',
         config = function()
             require("focus").setup()
         end,
-        cond = function()
-            return not vim.g.vscode
-        end
+        disable = vscode
     }
     use 'szw/vim-maximizer'
     use 'lambdalisue/suda.vim'
@@ -233,9 +216,7 @@ return require('packer').startup(function(use)
         config = function()
             require('neoclip').setup()
         end,
-        cond = function()
-            return not vim.g.vscode
-        end
+        disable = vscode
     }
     use 'L3MON4D3/LuaSnip'
     use 'kristijanhusak/vim-carbon-now-sh'
@@ -246,9 +227,7 @@ return require('packer').startup(function(use)
         config = function()
             require("lsp_lines").setup()
         end,
-        cond = function()
-            return not vim.g.vscode
-        end
+        disable = vscode
     })
     use 'sam4llis/nvim-lua-gf'
     use {
@@ -260,16 +239,12 @@ return require('packer').startup(function(use)
             vim.o.equalalways = false
             require('windows').setup()
         end,
-        cond = function()
-            return not vim.g.vscode
-        end
+        disable = vscode
     }
     use {
         'neoclide/coc.nvim',
         branch = 'release',
-        cond = function()
-            return not vim.g.vscode
-        end
+        disable = vscode
     }
     -- Auto docstring generator
     use({
@@ -277,8 +252,6 @@ return require('packer').startup(function(use)
         config = function()
             require('neogen').setup {}
         end,
-        cond = function()
-            return not vim.g.vscode
-        end
+        disable = vscode
     })
 end)
