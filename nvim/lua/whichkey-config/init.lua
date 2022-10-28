@@ -332,7 +332,7 @@ local mappings = {
   },
   f = {
     name = "Format",
-    f = {'<cmd> lua vim.lsp.buf.formatting_seq_sync()<CR>', "format file"}
+    f = {'<cmd> lua vim.lsp.buf.format()<CR>', "format file"}
   },
   T = {
     name = "Treesitter",
