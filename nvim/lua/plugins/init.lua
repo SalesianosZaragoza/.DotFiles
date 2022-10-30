@@ -197,7 +197,7 @@ return require('packer').startup(function(use)
     use 'TC72/telescope-tele-tabby.nvim'
     use 'tjdevries/complextras.nvim'
     use 'folke/tokyonight.nvim'
-    use 'nvim-lualine/lualine.nvim'
+    use {'nvim-lualine/lualine.nvim', disable=vscode}
     use 'unblevable/quick-scope'
     use 'tamago324/telescope-openbrowser.nvim'
     use 'tyru/open-browser.vim'
@@ -222,13 +222,13 @@ return require('packer').startup(function(use)
     use 'kristijanhusak/vim-carbon-now-sh'
     use 'pwntester/octo.nvim'
     use 'liuchengxu/vim-clap'
-    use({
+    use {
         'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
         config = function()
             require("lsp_lines").setup()
         end,
         disable = vscode
-    })
+    } 
     use 'sam4llis/nvim-lua-gf'
     use {
         'anuvyklack/windows.nvim',
