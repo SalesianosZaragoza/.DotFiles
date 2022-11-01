@@ -303,6 +303,7 @@ local mappings = {
     t = { "<cmd>Telescope live_grep<cr>", "Text" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
+    l = { "<cmd>Telescope lines<cr>", "Lines" },
     g = {":Telescope live_grep<cr>", "Telescope Live Grep"},
     p = {
       "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
