@@ -25,3 +25,4 @@ require('nvim-lint-config')
 end
 require('dial-config')
 require('leap-config')
+require('surround-config')

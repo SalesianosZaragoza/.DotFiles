@@ -223,8 +223,8 @@ return require('packer').startup(function(use)
   use 'cljoly/telescope-repo.nvim'
   use 'LinArcX/telescope-changes.nvim'
   use({
-    "echasnovski/mini.surround",
-    branch = 'stable'
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
 })
   use {
     "AckslD/nvim-neoclip.lua",
