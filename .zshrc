@@ -111,14 +111,14 @@ export ECLIPSE_HOME="$HOME/IDE/eclipse-jee"
 export MAVEN_HOME="$HOME/TOOLS/apache-maven-3.6.2"
 export GRADLE_HOME="$HOME/TOOLS/gradle-5.4.1"
 export BREW_HOME="/home/linuxbrew/.linuxbrew"
-export JAVA_OPTIONS=$JAVA_OPTIONS"-Xmx4096m -Xms4096m"
+export JAVA_OPTIONS=$JAVA_OPTIONS" -Xmx4096m -Xms4096m"
 # export PYTHONPATH=/usr/lib/python3/dist-packages/:~/.local/lib/python3.7/site-packages:/usr/lib/python3.7/
 export ANDROID_HOME=~/SDK/ANDROID/
 export BREW_HOME=~/../linuxbrew/.linuxbrew/
 alias awscli='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
-alias remoteDebugOn="export MAVEN_OPTS='-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000 $JAVA_OPTIONS'"
+alias remoteDebugOn="export MAVEN_OPTS='-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000  -Xmx4096m -Xms4096m -XX:+AllowEnhancedClassRedefinition -XX:HotswapAgent=fatjar'"
 alias remoteDebugOff='unset MAVEN_OPTS'
-alias jhotswap="export JAVA_HOME='$HOME/SDK/JDK/java-11-openjdk-hotswap/' && export PATH='$JAVA_HOME/bin:$PATH'"
+alias jhotswap="export JAVA_HOME=$HOME/hotswap/jbr-17.0.5-linux-x64-b653.6 && export PATH=$JAVA_HOME/bin:$PATH"
 unalias grv
 fpath=(~/.zsh.d/ $fpath)
 export LD_LIBRARY_PATH=/usr/local/cuda-10.2/targets/x86_64-linux/lib/:/usr/lib/python3/dist-packages/
