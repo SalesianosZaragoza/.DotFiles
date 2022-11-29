@@ -23,7 +23,8 @@ return require('packer').startup(function(use)
     'williamboman/mason.nvim',
     config = function()
       require("mason").setup()
-    end
+    end,
+    disable = vscode
   }
   use {
     'tamton-aquib/staline.nvim',
@@ -37,7 +38,8 @@ return require('packer').startup(function(use)
     'nat-418/telescope-color-names.nvim',
     config = function()
       require('telescope').load_extension('color_names')
-    end
+    end,
+    disable = vscode
   })
   use({
     "neanias/telescope-lines.nvim",
@@ -64,7 +66,8 @@ return require('packer').startup(function(use)
   use {
     'windwp/nvim-autopairs',
     config = "require('autopairs-config')",
-    after = "nvim-cmp"
+    after = "nvim-cmp",
+    disable = vscode
   }
   use {
     'folke/which-key.nvim',
@@ -126,7 +129,8 @@ return require('packer').startup(function(use)
   }
   use {
     'numToStr/Comment.nvim',
-    config = "require('Comment')"
+    config = "require('Comment')",
+    disable = vscode
   }
   use 'jeffkreeftmeijer/vim-numbertoggle'
   use 'williamboman/nvim-lsp-installer'
@@ -169,7 +173,8 @@ return require('packer').startup(function(use)
   use 'github/copilot.vim'
   use {
     'tzachar/cmp-tabnine',
-    run = './install.sh'
+    run = './install.sh',
+    disable = vscode
   }
   use 'ray-x/cmp-treesitter'
   use 'crispgm/telescope-heading.nvim'
