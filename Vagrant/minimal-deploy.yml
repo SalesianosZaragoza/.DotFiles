@@ -1,0 +1,11 @@
+- name: "localhost"
+  hosts: localhost 
+  become_method: sudo
+  become_user: root
+  become: no
+  vars:
+    ansible_python_interpreter: python3
+    ansible_pkg_mgr: apt 
+  tasks:  
+    - name: Include minimal config
+      include: "ansible/tasks/minimal.yml"
