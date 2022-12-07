@@ -1,0 +1,14 @@
+ 
+---
+- name: Install packages with apt 
+  apt:
+    state: present
+    update_cache: yes
+    pkg:
+      - zsh
+      - mc
+  ignore_errors: yes 
+  become: true
+
+- include: zsh.yml
+- include: zoxide.yml
