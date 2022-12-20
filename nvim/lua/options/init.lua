@@ -2,14 +2,21 @@ vim.g.visual_impairing = ( os.getenv("BLIND") ~= nil )
 function BlindReturn(if_true, if_false)
   if vim.g.visual_impairing then return if_true else return if_false end
 end
-
+-- [[ Setting options ]]
+-- See `:help vim.o`
 vim.opt.completeopt = { "menu", "menuone", "noselect", "preview" }
 -- Don't show the dumb matching stuff.
 vim.opt.shortmess:append "c"
 vim.g.mapleader = "º"
+vim.g.maplocalleader = "º"
+-- Enable break indent
+vim.o.breakindent = true
+-- Save undo history
+vim.o.undofile = true
+-- Case insensitive searching UNLESS /C or capital in search
+vim.o.smartcase = true
 vim.o.ch = 0
 vim.g.VM_default_mappings = 0
-vim.cmd [[packadd packer.nvim]]
 vim.cmd('filetype plugin indent on')
 vim.o.shortmess = vim.o.shortmess .. 'c'
 vim.o.hidden = true
