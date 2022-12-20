@@ -5,6 +5,10 @@ map('n', '<C-l>', '<C-w>l', {noremap = true, silent = false})
 map('n', '<C-j>', '<C-w>j', {noremap = true, silent = false})
 map('n', '<C-k>', '<C-w>k', {noremap = true, silent = false})
 
+-- Remap for dealing with word wrap
+map('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+map('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
 map('v', '<', '<gv', {noremap = true, silent = false})
 map('v', '>', '>gv', {noremap = true, silent = false})
 
