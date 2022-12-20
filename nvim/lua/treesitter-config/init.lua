@@ -10,7 +10,20 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
     }
 )
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {"html", "javascript", "lua", "java", "python"},
+ 
+    
+  ensure_installed = {"html", "javascript", "lua", "java", "python", 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'help' },
+
+  indent = { enable = true },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = '<c-space>',
+      node_incremental = '<c-space>',
+      scope_incremental = '<c-s>',
+      node_decremental = '<c-backspace>',
+    },
+  },
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
@@ -29,6 +42,34 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   },
   textobjects = {
+     move = {
+      enable = true,
+      set_jumps = true, -- whether to set jumps in the jumplist
+      goto_next_start = {
+        [']m'] = '@function.outer',
+        [']]'] = '@class.outer',
+      },
+      goto_next_end = {
+        [']M'] = '@function.outer',
+        [']['] = '@class.outer',
+      },
+      goto_previous_start = {
+        ['[m'] = '@function.outer',
+        ['[['] = '@class.outer',
+      },
+      goto_previous_end = {
+        ['[M'] = '@function.outer',
+        ['[]'] = '@class.outer',
+      },
+    },
+    swap = {
+      enable = true,
+      swap_next = {
+        ['<leader>a'] = '@parameter.inner',
+      },
+      swap_previous = {
+        ['<leader>A'] = '@parameter.inner',
+      },
     select = {
       enable = true,
       -- to use this feature you must be in visual mode
@@ -37,11 +78,12 @@ require'nvim-treesitter.configs'.setup {
 
       keymaps = {
         -- You can use the capture groups defined in textobjects.scm
-        ["af"] = "@function.outer",
-        ["if"] = "@function.inner",
-        ["ac"] = "@class.outer",
-        -- you can optionally set descriptions to the mappings (used in the desc parameter of nvim_buf_set_keymap
-        ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
+       ['aa'] = '@parameter.outer',
+        ['ia'] = '@parameter.inner',
+        ['af'] = '@function.outer',
+        ['if'] = '@function.inner',
+        ['ac'] = '@class.outer',
+        ['ic'] = '@class.inner',
       },
       -- You can choose the select mode (default is charwise 'v')
       selection_modes = {
