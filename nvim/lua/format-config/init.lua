@@ -1,3 +1,14 @@
+  -- Create a command `:Format` local to the LSP buffer
+vim.api.nvim_buf_create_user_command(bufnr, 'Format', 
+  function(_)
+    if vim.lsp.buf.format then
+      vim.lsp.buf.format()
+    elseif vim.lsp.buf.formatting then
+      vim.lsp.buf.formatting()
+    end
+  end, { desc = 'Format current buffer with LSP' })
+end
+
 require'format'.setup {
   html = {{cmd = {"prettier -w"}}},
   css = {{cmd = {"prettier -w"}}},
