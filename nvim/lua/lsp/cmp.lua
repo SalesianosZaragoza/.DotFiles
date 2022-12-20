@@ -3,11 +3,27 @@ local lspkind = require "lspkind"
 local cmp = require "cmp"
 cmp.setup {
   mapping = {
-    ["<Up>"] = cmp.mapping.select_prev_item(),
-    ["<Down>"] = cmp.mapping.select_next_item(),
     ["<C-u>"] = cmp.mapping.scroll_docs(-4),
     ["<C-d>"] = cmp.mapping.scroll_docs(4),
     ["<C-c>"] = cmp.mapping.close(),
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }), 
     ["<CR>"] = cmp.mapping(
       cmp.mapping.confirm {
         behavior = cmp.ConfirmBehavior.Insert,
@@ -15,62 +31,12 @@ cmp.setup {
       },
       { "i", "c" }
     ),
-
-    ["<c-space>"] = cmp.mapping {
-      i = cmp.mapping.complete(),
-      c = function(
-        _ --[[fallback]]
-      )
-        if cmp.visible() then
-          if not cmp.confirm { select = true } then
-            return
-          end
-        else
-          cmp.complete()
-        end
-      end,
-    },
-    
-
-    -- ["<tab>"] = cmp.mapping {
-    --   i = cmp.config.disable,
-    --   c = function(fallback)
-    --     fallback()
-    --   end,
-    -- },
-
-    -- Testing
+    ['<C-Space>'] = cmp.mapping.complete(),
     ["<S-CR>"] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
 
-    -- If you want tab completion :'(
-    --  First you have to just promise to read `:help ins-completion`.
-    --
-    -- ["<Tab>"] = function(fallback)
-    --   if cmp.visible() then
-    --     cmp.select_next_item()
-    --   else
-    --     fallback()
-    --   end
-    -- end,
-    -- ["<S-Tab>"] = function(fallback)
-    --   if cmp.visible() then
-    --     cmp.select_prev_item()
-    --   else
-    --     fallback()
-    --   end
-    -- end,
-  },
-
-  -- Youtube:
-  --    the order of your sources matter (by default). That gives them priority
-  --    you can configure:
-  --        keyword_length
-  --        priority
-  --        max_item_count
-  --        (more?)
   sources = {
     { name = "gh_issues" },
 
