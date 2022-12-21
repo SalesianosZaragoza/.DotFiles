@@ -12,3 +12,6 @@ if [ -z "${CODESPACE_NAME}" ]; then
 else
   ansible-playbook ./Vagrant/minimal-deploy.yml
 fi
+
+
+
