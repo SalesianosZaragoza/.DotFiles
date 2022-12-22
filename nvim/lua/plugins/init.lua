@@ -3,7 +3,7 @@ local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nv
 local is_bootstrap = false
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   is_bootstrap = true
-  vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+  vim.fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
   vim.cmd [[packadd packer.nvim]]
 end
 
@@ -11,9 +11,9 @@ require 'packer.luarocks'.install_commands()
 local vscode = vim.g.vscode == 1
 return require('packer').startup(function(use)
   -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
   use 'mg979/vim-visual-multi'
   use 'skywind3000/asyncrun.vim'
-  use 'wbthomason/packer.nvim'
   use {
     'lewis6991/impatient.nvim',
     config = 'require("impatient")'
@@ -87,15 +87,15 @@ return require('packer').startup(function(use)
   use 'nvim-telescope/telescope.nvim'
   use 'LinArcX/telescope-env.nvim'
   use 'williamboman/mason-lspconfig.nvim'
-  use('neovim/nvim-lspconfig',
-     requires = {
+  use { 'neovim/nvim-lspconfig',
+    requires = {
       -- Automatically install LSPs to stdpath for neovim
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
       -- Useful status updates for LSP
       'j-hui/fidget.nvim',
     },
-    )
+  }
   use 'hrsh7th/cmp-nvim-lsp'
   use 'folke/lua-dev.nvim'
   use 'folke/trouble.nvim'
@@ -247,7 +247,7 @@ return require('packer').startup(function(use)
   use({
     "kylechui/nvim-surround",
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-})
+  })
   use {
     "AckslD/nvim-neoclip.lua",
     config = function()
@@ -286,6 +286,13 @@ return require('packer').startup(function(use)
       return vim.g.vscode ~= nil
     end
   }
+  use { 'kevinhwang91/nvim-bqf' }
+  use 'j-hui/fidget.nvim'
+  -- optional
+  use { 'junegunn/fzf', run = function()
+    vim.fn['fzf#install']()
+  end
+  }
   -- Auto docstring generator
   use({
     'danymat/neogen',
@@ -294,21 +301,20 @@ return require('packer').startup(function(use)
     end,
     disable = vscode
   })
-  if is_bootstrap then
-    require('packer').sync()
-  end
 end)
 
-
+--if is_bootstrap then
+--  require('packer').sync()
+--end
 -- When we are bootstrapping a configuration, it doesn't
 -- make sense to execute the rest of the init.lua.
 --
 -- You'll need to restart nvim, and then it will work.
-if is_bootstrap then
-  print '=================================='
-  print '    Plugins are being installed'
-  print '    Wait until Packer completes,'
-  print '       then restart nvim'
-  print '=================================='
-  return
-end
+--if is_bootstrap then
+--  print '=================================='
+--  print '    Plugins are being installed'
+--  print '    Wait until Packer completes,'
+--  print '       then restart nvim'
+--  print '=================================='
+--  return
+--end

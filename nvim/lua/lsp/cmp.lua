@@ -1,6 +1,6 @@
 local lspkind = require "lspkind"
-
 local cmp = require "cmp"
+local luasnip = require 'luasnip'
 cmp.setup {
   mapping = {
     ["<C-u>"] = cmp.mapping.scroll_docs(-4),
@@ -23,7 +23,7 @@ cmp.setup {
       else
         fallback()
       end
-    end, { 'i', 's' }), 
+    end, { 'i', 's' }),
     ["<CR>"] = cmp.mapping(
       cmp.mapping.confirm {
         behavior = cmp.ConfirmBehavior.Insert,
@@ -113,6 +113,7 @@ cmp.setup {
     -- Let's play with this for a day or two
     ghost_text = false,
   },
+},
 }
 
 cmp.setup.cmdline("/", {
