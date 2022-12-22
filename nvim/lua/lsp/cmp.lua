@@ -7,11 +7,11 @@ cmp.setup {
     return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
         or require("cmp_dap").is_dap_buffer()
   end,
- snippet = {
-      expand = function(args)
-        require'luasnip'.lsp_expand(args.body)
-      end
-    },
+  snippet = {
+    expand = function(args)
+      require 'luasnip'.lsp_expand(args.body)
+    end
+  },
   mapping = {
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
@@ -46,8 +46,9 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-    
-     sources = cmp.config.sources({
+  },
+
+    sources = cmp.config.sources({
       { name = 'gh_issues' },
       { name = 'nvim_lua' },
       { name = 'cmp_tabnine' },
@@ -66,27 +67,27 @@ cmp.setup {
       { name = 'nvim_lsp_signature_help' },
       { name = 'nvim_lsp_document_symbol' },
       {
-			name = "dictionary",
-			keyword_length = 2,
-		},
-       {
-            name = 'spell',
-            option = {
-                keep_all_entries = false,
-                enable_in_context = function()
-                    return true
-                end,
-            },
+        name = "dictionary",
+        keyword_length = 2,
+      },
+      {
+        name = 'spell',
+        option = {
+          keep_all_entries = false,
+          enable_in_context = function()
+            return true
+          end,
         },
-       {
-            name = 'look',
-            keyword_length = 2,
-            option = {
-                convert_case = true,
-                loud = true
-                --dict = '/usr/share/dict/words'
-            }
-        },
+      },
+      {
+        name = 'look',
+        keyword_length = 2,
+        option = {
+          convert_case = true,
+          loud = true
+          --dict = '/usr/share/dict/words'
+        }
+      },
 
       -- { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
@@ -94,9 +95,8 @@ cmp.setup {
     }, {
       { name = 'buffer' },
     })
- --   sources = {
- --   },
-  },
+    --   sources = {
+    --   },
 }
 
 cmp.setup.cmdline("/", {
