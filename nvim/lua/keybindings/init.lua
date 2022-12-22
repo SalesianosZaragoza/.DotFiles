@@ -35,4 +35,9 @@ map('n', '<M-C-p>', '<cmd>:Telescope <CR>', {noremap = true})
 -- multiple cursors
 map('n', '<C-LeftMouse>', '<Plug>(VM-Mouse-Cursor)', {noremap = true})
 map('n', '<C-RightMouse>', '<Plug>(VM-Mouse-Word)', {noremap = true})
-map('n', '<M-C-RightMouse>', '<Plug>(VM-Mouse-Word)', {noremap = true})
+('n', '<M-C-RightMouse>', '<Plug>(VM-Mouse-Word)', {noremap = true})
+-- copilot completion key
+map("i", "<C-Right>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+
+
+
