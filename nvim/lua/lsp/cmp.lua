@@ -7,6 +7,11 @@ cmp.setup {
     return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
         or require("cmp_dap").is_dap_buffer()
   end,
+ snippet = {
+      expand = function(args)
+        require'luasnip'.lsp_expand(args.body)
+      end
+    },
   mapping = {
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
@@ -41,11 +46,7 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-     snippet = {
-      expand = function(args)
-        require'luasnip'.lsp_expand(args.body)
-      end
-    },
+    
      sources = cmp.config.sources({
       { name = 'gh_issues' },
       { name = 'nvim_lua' },
