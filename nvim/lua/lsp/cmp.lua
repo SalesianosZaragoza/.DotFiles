@@ -1,7 +1,6 @@
 local lspkind = require "lspkind"
 local cmp = require "cmp"
 local luasnip = require 'luasnip'
-
 cmp.setup {
   enabled = function()
     return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
@@ -10,6 +9,7 @@ cmp.setup {
   experimental = {
     -- I like the new menu better! Nice work hrsh7th
     native_menu = false,
+
 
     -- Let's play with this for a day or two
     ghost_text = false,
@@ -71,7 +71,7 @@ cmp.setup {
     ["<C-c>"] = cmp.mapping.close(),
     ['<Tab>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
-        cmp.select_next_item()
+        cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
       else
@@ -100,55 +100,55 @@ cmp.setup {
       select = true,
     },
   },
-    sources = cmp.config.sources({
-      { name = 'gh_issues' },
-      { name = 'nvim_lua' },
-      { name = 'cmp_tabnine' },
-      { name = 'nvim_lsp' },
-      { name = 'copilot' },
-      { name = 'treesitter' },
-      { name = 'luasnip' },
-      { name = 'path' },
-      { name = 'rg' },
-      { name = 'vsnip' },
-      { name = 'buffer', keyword_length = 5 },
-      { name = 'plugins' },
-      { name = 'tags' },
-      { name = 'npm', keyword_length = 4 },
-      { name = 'zsh' },
-      { name = 'nvim_lsp_signature_help' },
-      { name = 'nvim_lsp_document_symbol' },
-      {
-        name = "dictionary",
-        keyword_length = 2,
+  sources = cmp.config.sources({
+    { name = 'gh_issues' },
+    { name = 'nvim_lua' },
+    { name = 'cmp_tabnine' },
+    { name = 'nvim_lsp' },
+    { name = 'copilot' },
+    { name = 'treesitter' },
+    { name = 'luasnip' },
+    { name = 'path' },
+    { name = 'rg' },
+    { name = 'vsnip' },
+    { name = 'buffer', keyword_length = 5 },
+    { name = 'plugins' },
+    { name = 'tags' },
+    { name = 'npm', keyword_length = 4 },
+    { name = 'zsh' },
+    { name = 'nvim_lsp_signature_help' },
+    { name = 'nvim_lsp_document_symbol' },
+    {
+      name = "dictionary",
+      keyword_length = 2,
+    },
+    {
+      name = 'spell',
+      option = {
+        keep_all_entries = false,
+        enable_in_context = function()
+          return true
+        end,
       },
-      {
-        name = 'spell',
-        option = {
-          keep_all_entries = false,
-          enable_in_context = function()
-            return true
-          end,
-        },
-      },
-      {
-        name = 'look',
-        keyword_length = 2,
-        option = {
-          convert_case = true,
-          loud = true
-          --dict = '/usr/share/dict/words'
-        }
-      },
+    },
+    {
+      name = 'look',
+      keyword_length = 2,
+      option = {
+        convert_case = true,
+        loud = true
+        --dict = '/usr/share/dict/words'
+      }
+    },
 
-      -- { name = 'luasnip' }, -- For luasnip users.
-      -- { name = 'ultisnips' }, -- For ultisnips users.
-      -- { name = 'snippy' }, -- For snippy users.
-    }, {
-      { name = 'buffer' },
-    }),
-    --   sources = {
-    --   },
+    -- { name = 'luasnip' }, -- For luasnip users.
+    -- { name = 'ultisnips' }, -- For ultisnips users.
+    -- { name = 'snippy' }, -- For snippy users.
+  }, {
+    { name = 'buffer' },
+  }),
+  --   sources = {
+  --   },
 }
 
 cmp.setup.cmdline("/", {
