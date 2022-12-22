@@ -97,6 +97,33 @@ return require('packer').startup(function(use)
     },
   }
   use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
+  use 'hrsh7th/cmp-nvim-lsp-document-symbol'
+  use 'f3fora/cmp-spell'
+  use 'uga-rosa/cmp-dictionary'
+  use({"Dosx001/cmp-commit", requires = "hrsh7th/nvim-cmp"})
+  use({
+  "hrsh7th/nvim-cmp",
+  requires = {
+    {
+      "KadoBOT/cmp-plugins",
+      config = function()
+        require("cmp-plugins").setup({
+          files = { ".*\\.lua" }  -- default
+          -- files = { "plugins.lua", "some_path/plugins/" } -- Recommended: use static filenames or partial paths
+        })
+      end,
+    },
+    {
+      'quangnguyen30192/cmp-nvim-tags',
+      -- if you want the sources is available for some file types
+      ft = {
+        'kotlin',
+        'java'
+      }
+    },
+  }
+})
   use 'folke/lua-dev.nvim'
   use 'folke/trouble.nvim'
   use 'monaqa/dial.nvim'
@@ -120,6 +147,13 @@ return require('packer').startup(function(use)
   use 'hrsh7th/vim-vsnip-integ'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
+  use {
+  'David-Kunz/cmp-npm',
+  requires = {
+    'nvim-lua/plenary.nvim'
+  }
+}
+  use 'tamago324/cmp-zsh'
   use 'norcalli/nvim-colorizer.lua'
   use 'lewis6991/gitsigns.nvim'
   use 'kdheepak/lazygit.nvim'
@@ -194,6 +228,8 @@ return require('packer').startup(function(use)
     disable = vscode
   }
   use 'ray-x/cmp-treesitter'
+  use 'octaltree/cmp-look'
+  use ''
   use 'crispgm/telescope-heading.nvim'
   use 'nvim-telescope/telescope-packer.nvim'
   use 'nvim-telescope/telescope-vimspector.nvim'
@@ -256,6 +292,7 @@ return require('packer').startup(function(use)
     disable = vscode
   }
   use 'L3MON4D3/LuaSnip'
+  use { 'saadparwaiz1/cmp_luasnip' }
   use 'kristijanhusak/vim-carbon-now-sh'
   use 'pwntester/octo.nvim'
   use 'liuchengxu/vim-clap'
