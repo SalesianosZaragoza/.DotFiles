@@ -13,7 +13,9 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use 'mg979/vim-visual-multi'
+  use 'Civitasv/cmake-tools.nvim'
   use 'skywind3000/asyncrun.vim'
+  use 'debugloop/telescope-undo.nvim'
   use {
     'lewis6991/impatient.nvim',
     config = 'require("impatient")'
