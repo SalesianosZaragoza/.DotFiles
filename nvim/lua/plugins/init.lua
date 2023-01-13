@@ -230,7 +230,6 @@ return require('packer').startup(function(use)
   }
   use 'ray-x/cmp-treesitter'
   use 'octaltree/cmp-look'
-  use ''
   use 'crispgm/telescope-heading.nvim'
   use 'nvim-telescope/telescope-packer.nvim'
   use 'nvim-telescope/telescope-vimspector.nvim'
