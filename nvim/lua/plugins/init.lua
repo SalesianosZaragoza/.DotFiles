@@ -12,6 +12,7 @@ local vscode = vim.g.vscode == 1
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+  use { 'ibhagwan/smartyank.nvim', config = function() require('smartyank').setup{} end }
   use 'mg979/vim-visual-multi'
   use 'Civitasv/cmake-tools.nvim'
   use 'skywind3000/asyncrun.vim'
