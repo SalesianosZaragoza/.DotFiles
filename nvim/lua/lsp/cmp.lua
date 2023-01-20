@@ -161,23 +161,6 @@ cmp.setup.cmdline("/", {
   }),
 })
 
-cmp.setup.cmdline(":", {
-  completion = {
-  },
-
-  sources = cmp.config.sources({
-    {
-      name = "path",
-    },
-  }, {
-    {
-      name = "cmdline",
-      max_item_count = 20,
-      keyword_length = 4,
-    },
-  }),
-})
-
 require("cmp").setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
   sources = {
     { name = "dap" },
