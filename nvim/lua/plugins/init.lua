@@ -17,6 +17,14 @@ return require('packer').startup(function(use)
   use 'Civitasv/cmake-tools.nvim'
   use 'skywind3000/asyncrun.vim'
   use 'debugloop/telescope-undo.nvim'
+use {
+    "williamboman/mason.nvim",
+    "jose-elias-alvarez/null-ls.nvim",
+    "jay-babu/mason-null-ls.nvim",
+    "mfussenegger/nvim-dap",
+    "jayp0521/mason-nvim-dap.nvim",
+    disable = vscode
+}
   use {
     'lewis6991/impatient.nvim',
     config = 'require("impatient")'
@@ -29,13 +37,6 @@ return require('packer').startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
     config = 'require("treesitter-config")',
-    disable = vscode
-  }
-  use {
-    'williamboman/mason.nvim',
-    config = function()
-      require("mason").setup()
-    end,
     disable = vscode
   }
   use {
@@ -191,7 +192,6 @@ return require('packer').startup(function(use)
     'glepnir/lspsaga.nvim',
     branch = "main"
   }
-  use 'jose-elias-alvarez/null-ls.nvim'
   use {
     'folke/zen-mode.nvim',
     config = 'require("zen-mode-config")',
@@ -237,10 +237,9 @@ return require('packer').startup(function(use)
   use 'fannheyward/telescope-coc.nvim'
   use 'axieax/urlview.nvim'
   use 'mfussenegger/nvim-lint'
-  use 'mfussenegger/nvim-dap'
   use 'rcarriga/nvim-dap-ui'
   use 'rcarriga/nvim-notify'
-  use 'jayp0521/mason-nvim-dap.nvim'
+  use 'rcarriga/cmp-dap'
   use 'theHamsta/nvim-dap-virtual-text'
   use 'nvim-telescope/telescope-dap.nvim'
   use 'ravenxrz/DAPInstall.nvim'
