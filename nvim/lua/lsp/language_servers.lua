@@ -14,7 +14,22 @@ require('fidget').setup()
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-local lsp_installer = require('nvim-lsp-installer')
+local lsp = require('lsp-zero')
+lsp.preset('recommended')
+-- See :help lsp-zero-preferences
+lsp.set_preferences({
+  set_lsp_keymaps = false, -- set to false if you want to configure your own keybindings
+  manage_nvim_cmp = false, -- set to false if you want to configure nvim-cmp on your own
+
+})
+
+lsp.ensure_installed(servers);
+-- Configure lua language server for neovim
+lsp.nvim_workspace()
+
+lsp.setup()
+
+-- local lsp_installer = require('nvim-lsp-installer')
 --[[
 lsp_installer.on_server_ready(function(server)
   local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol

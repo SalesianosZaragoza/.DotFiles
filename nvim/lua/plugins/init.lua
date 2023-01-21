@@ -25,6 +25,7 @@ use {
     "jayp0521/mason-nvim-dap.nvim",
     disable = vscode
 }
+  use {'VonHeikemen/lsp-zero.nvim'}
   use {
     'lewis6991/impatient.nvim',
     config = 'require("impatient")'
@@ -187,7 +188,6 @@ use {
     disable = vscode
   }
   use 'jeffkreeftmeijer/vim-numbertoggle'
-  use 'williamboman/nvim-lsp-installer'
   use {
     'glepnir/lspsaga.nvim',
     branch = "main"
