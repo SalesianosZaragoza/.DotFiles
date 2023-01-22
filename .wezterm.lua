@@ -23,9 +23,7 @@ return {
         {key="9", mods="ALT", action=wezterm.action{ActivateTab=8}},
         {key="0", mods="ALT", action=wezterm.action{ActivateTab=-1}},
     },
-    config = {
-        adjust_window_size_when_changing_font_size = false,
-  },
+    adjust_window_size_when_changing_font_size = false,
     colors = {
         tab_bar = {
 
