@@ -1,3 +1,17 @@
+local scan = require "plenary.scandir"
+local contains = function(tbl, str)
+  for _, v in ipairs(tbl) do
+    if v == str then
+      return true
+    end
+  end
+  return false
+end
+local exists = function(dir, file_pattern)
+  local dirs = scan.scan_dir(dir, { depth = 1, search_pattern = file_pattern })
+  return contains(dirs, dir .. "/" .. file_pattern)
+end
+
 local dap_ok, dap = pcall(require, "dap")
 if not (dap_ok) then
   print("nvim-dap not installed!")
@@ -7,7 +21,7 @@ end
 require("mason-nvim-dap").setup({
     ensure_installed = { "cpptools" }
 })
-require('dap').set_log_level('INFO') -- Helps when configuring DAP, see logs with :DapShowLog
+require('dap').set_log_level('DEBUG') -- Helps when configuring DAP, see logs with :DapShowLog
 
 local dap_ui_ok, ui = pcall(require, "dapui")
 if not (dap_ok and dap_ui_ok) then
@@ -16,68 +30,15 @@ if not (dap_ok and dap_ui_ok) then
 end
 vim.fn.sign_define('DapBreakpoint', { text = '🐞' })
 
-ui.setup({
-  icons = { expanded = "▾", collapsed = "▸" },
-  mappings = {
-    open = "o",
-    remove = "d",
-    edit = "e",
-    repl = "r",
-    toggle = "t",
-  },
-  expand_lines = true,
-  layouts = {
-    {
-      elements = {
-        "scopes",
-      },
-      size = 0.3,
-      position = "right"
-    },
-    {
-      elements = {
-        "repl",
-        "breakpoints"
-      },
-      size = 0.3,
-      position = "bottom",
-    },
-  },
-  floating = {
-    max_height = nil,
-    max_width = nil,
-    border = "single",
-    mappings = {
-      close = { "q", "<Esc>" },
-    },
-  },
-  windows = { indent = 1 },
-  render = {
-    max_type_length = nil,
-  },
-})
-
---[[
-dap.configurations = {
-    cpp = {
-      {
-        type = "cpptools", -- Which adapter to use
-        name = "Debug", -- Human readable name
-        request = "launch", -- Whether to "launch" or "attach" to program
-        program = "${file}", -- The buffer you are focused on when running nvim-dap
-      },
-    }
-}
-
 dap.configurations.cpp = {
   {
     name = "C++ Debug And Run",
-    type = "cppdbg",
+    type = "codelldb",
     request = "launch",
     program = function()
       -- First, check if exists CMakeLists.txt
       local cwd = vim.fn.getcwd()
-      if file.exists(cwd, "CMakeLists.txt") then
+      if exists(cwd, "CMakeLists.txt") then
         -- Then invoke cmake commands
         -- Then ask user to provide execute file
         return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
@@ -99,14 +60,20 @@ dap.configurations.cpp = {
   },
 }
 
-dap.adapters.cpptools = {
-  type = "server",
-  port = "${port}",
-  executable = {
-    command = vim.fn.stdpath("data") .. '/mason/bin/cpptools'
-    args = { "dap", "-l", "127.0.0.1:${port}" },
-  },
+dap.adapters.executable = {
+type = 'executable',
+command = vim.fn.stdpath("data") .. '/mason/bin/codelldb',
+name = 'lldb1',
+host = '127.0.0.1',
+port = 13000
 }
 
-
-]]--
+dap.adapters.codelldb = {
+    name = "codelldb server",
+    type = 'server',
+    port = "${port}",
+    executable = {
+        command = vim.fn.stdpath("data") .. '/mason/bin/codelldb',
+        args = { "--port", "${port}" },
+    }
+}
