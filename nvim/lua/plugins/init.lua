@@ -224,12 +224,14 @@ use {
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'RRethy/nvim-treesitter-textsubjects'
   use 'github/copilot.vim'
+  use 'eandrju/cellular-automaton.nvim'
   use {
     'tzachar/cmp-tabnine',
     run = './install.sh',
     disable = vscode
   }
   use 'ray-x/cmp-treesitter'
+  use 'ray-x/lsp_signature.nvim'
   use 'octaltree/cmp-look'
   use 'crispgm/telescope-heading.nvim'
   use 'nvim-telescope/telescope-packer.nvim'

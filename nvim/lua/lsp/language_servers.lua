@@ -14,6 +14,8 @@ require('fidget').setup()
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities.offsetEncoding = { "utf-16" }
+require("lspconfig").clangd.setup({ capabilities = capabilities })
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
 -- See :help lsp-zero-preferences
@@ -28,6 +30,13 @@ lsp.ensure_installed(servers);
 lsp.nvim_workspace()
 
 lsp.setup()
+
+require "lsp_signature".setup({
+    bind = true, -- This is mandatory, otherwise border config won't get registered.
+    handler_opts = {
+      border = "rounded"
+    }
+  })
 
 -- local lsp_installer = require('nvim-lsp-installer')
 --[[
