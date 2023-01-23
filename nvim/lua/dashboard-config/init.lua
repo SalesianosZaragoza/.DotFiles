@@ -1,11 +1,12 @@
-vim.g.dashboard_default_executive = 'telescope'
-vim.g.dashboard_custom_header = {
+local db = require('dashboard')
+db.default_executive = 'telescope'
+db.custom_header = {
     [[neovim]],
 }
-vim.g.dashboard_custom_section = {
-    a = {description = {'Find File'}, command = 'Telescope find_files'},
-    d = {description = {'Search Text'}, command = 'Telescope live_grep'},
-    b = {description = {'Recent Files'}, command = 'Telescope oldfiles'},
-    e = {description = {'Config'}, command = 'edit ~/.config/nvim/init.lua'},
+db.custom_center = {
+    {desc = 'Find File', action = 'Telescope find_files'},
+    {desc = 'Search Text', action = 'Telescope live_grep'},
+    {desc = 'Recent Files', action = 'Telescope oldfiles'},
+    {desc = 'Config', action = 'edit ~/.config/nvim/init.lua'},
 }
-vim.g.dashboard_custom_footer = {''}
+db.custom_footer = {''}
