@@ -17,6 +17,8 @@ return require('packer').startup(function(use)
   use 'Civitasv/cmake-tools.nvim'
   use 'skywind3000/asyncrun.vim'
   use 'debugloop/telescope-undo.nvim'
+  use 'https://codeberg.org/esensar/nvim-dev-container'
+  use 'lpoto/telescope-docker.nvim'
 use {
     "williamboman/mason.nvim",
     "jose-elias-alvarez/null-ls.nvim",
