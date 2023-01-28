@@ -12,6 +12,10 @@ local exists = function(dir, file_pattern)
   return contains(dirs, dir .. "/" .. file_pattern)
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.offsetEncoding = { "utf-16" }
+require("lspconfig").clangd.setup({ capabilities = capabilities })
+
 local dap_ok, dap = pcall(require, "dap")
 if not (dap_ok) then
   print("nvim-dap not installed!")
