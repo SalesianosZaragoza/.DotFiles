@@ -14,7 +14,9 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.offsetEncoding = { "utf-16" }
-require("lspconfig").clangd.setup({ capabilities = capabilities })
+require("lspconfig").clangd.setup({ capabilities = capabilities,
+cmd = { "clangd", '--background-index', '--clang-tidy' }
+})
 
 local dap_ok, dap = pcall(require, "dap")
 if not (dap_ok) then
