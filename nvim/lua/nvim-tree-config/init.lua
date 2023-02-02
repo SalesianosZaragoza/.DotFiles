@@ -6,14 +6,18 @@ vim.g.nvim_tree_show_icons = {
   folder_arrows = 0,
 }
 end
+local function open_nvim_tree()
+
+  -- open the tree
+  require("nvim-tree.api").tree.open()
+end
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
-
 local blind={
   disable_netrw       = true,
   hijack_netrw        = true,
-  open_on_setup       = true,
   ignore_ft_on_setup  = {},
   open_on_tab         = true,
   hijack_cursor       = false,
@@ -82,7 +86,6 @@ local blind={
 local normal ={
   disable_netrw       = true,
   hijack_netrw        = true,
-  open_on_setup       = true,
   ignore_ft_on_setup  = {},
   open_on_tab         = true,
   hijack_cursor       = false,
