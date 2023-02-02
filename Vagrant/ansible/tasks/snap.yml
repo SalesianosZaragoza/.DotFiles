@@ -17,15 +17,6 @@
   when: ansible_facts['distribution'] == "Ubuntu"
   become: true
 
-- name: Install vs code
-  snap:
-    name:
-      - code
-    classic: yes
-  ignore_errors: yes
-  when: ansible_facts['distribution'] == "Ubuntu"
-  become: true
-
 - name: Install eclipse
   snap:
     name:
