@@ -3,7 +3,7 @@ require('mason').setup()
 
 -- Enable the following language servers
 -- Feel free to add/remove any LSPs that you want here. They will automatically be installed
-local servers = { 'clangd', 'pyright', 'tsserver', 'sumneko_lua' }
+local servers = { 'clangd', 'pyright', 'tsserver', 'sumneko_lua', 'rust_analyzer' }
 
 -- Ensure the servers above are installed
 require('mason-lspconfig').setup {
@@ -14,8 +14,6 @@ require('fidget').setup()
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.offsetEncoding = { "utf-16" }
-require("lspconfig").clangd.setup({ capabilities = capabilities })
 local lsp = require('lsp-zero')
 lsp.preset('recommended')
 -- See :help lsp-zero-preferences
