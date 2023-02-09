@@ -105,11 +105,6 @@ source $HOME/.aliases
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 # END ANSIBLE MANAGED BLOCK for linuxbrew
 
-export CMAKE_HOME="$HOME/TOOLS/cmake/cmake-3.13.0-irc2-Linux-x86_64/"
-#"$HOME/SDK/JDK/java-11-openjdk-hotswap/"
-export ECLIPSE_HOME="$HOME/IDE/eclipse-jee"
-export MAVEN_HOME="$HOME/TOOLS/apache-maven-3.6.2"
-export GRADLE_HOME="$HOME/TOOLS/gradle-5.4.1"
 export BREW_HOME="/home/linuxbrew/.linuxbrew"
 export JAVA_OPTIONS=$JAVA_OPTIONS" -Xmx4096m -Xms4096m"
 # export PYTHONPATH=/usr/lib/python3/dist-packages/:~/.local/lib/python3.7/site-packages:/usr/lib/python3.7/
@@ -164,7 +159,7 @@ if [ $commands[gh] ]; then
   source <(gh completion --shell zsh)
 fi
 export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64/"
-export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$GRADLE_HOME/bin:$MAVEN_HOME/bin:$SALESFORCE_HOME/bin:$ECLIPSE_HOME/:$BREW_HOME/bin:$HOME/TOOLS/grv/:$PATH
+export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$SALESFORCE_HOME/bin:$ECLIPSE_HOME/:$HOME/TOOLS/grv/:$PATH
 export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$PATH:~/.local/bin:/snap/bin:$BREW_HOME/bin
 export PATH="$HOME/.jenv/bin:$HOME/go/bin:$PATH"
 eval $(thefuck --alias)

@@ -21,6 +21,7 @@
       - unzip
       - fonts-powerline
       - maven
+      - gradle
       - npm
       - global
       - exuberant-ctags
@@ -30,11 +31,14 @@
       - chromium-browser
       - clang
       - clangd
+      - cmake
+      - cargo
       - atool
       - libx11-dev 
       - libxext-dev 
       - libxft-dev
       - stterm
+      - podman
       - gh
   ignore_errors: yes 
   become: true
