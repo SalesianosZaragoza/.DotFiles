@@ -182,3 +182,5 @@ _fzf_comprun() {
 }
 nvm use 17
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+  eval "$(github-copilot-cli alias -- "$0")"
