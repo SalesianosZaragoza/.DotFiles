@@ -165,7 +165,6 @@ local blind={
   },
   view = {
     width = 25,
-    hide_root_folder = false,
     preserve_window_proportions = true,
     side = 'right',
     float = {
@@ -223,7 +222,6 @@ local normal ={
   },
   view = {
     width =25,
-    hide_root_folder = false,
     preserve_window_proportions = true,
     side ='left',
     number = false,

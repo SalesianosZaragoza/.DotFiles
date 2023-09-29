@@ -6,9 +6,9 @@ if not vim.g.visual_impairing then
   vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
   vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
 
-  require("indent_blankline").setup {
+  require("ibl").setup {
     buftype_exclude = {"terminal"},
-    filetype_exclude = {"dashboard", "NvimTree", "packer", "lsp-installer"},
+    filetype_exclude = {"dashboard", "NvimTree", "lsp-installer"},
     show_current_context = true,
     char_highlight_list = {
         "IndentBlanklineIndent1",
