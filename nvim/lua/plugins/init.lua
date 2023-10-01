@@ -23,7 +23,7 @@ require("lazy").setup({
   'https://codeberg.org/esensar/nvim-dev-container',
   'lpoto/telescope-docker.nvim',
   'williamboman/mason.nvim',
-  'jose-elias-alvarez/null-ls.nvim',
+  'nvimtools/none-ls.nvim',
   "jay-babu/mason-null-ls.nvim",
   'mfussenegger/nvim-dap',
   'jayp0521/mason-nvim-dap.nvim',
