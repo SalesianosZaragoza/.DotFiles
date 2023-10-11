@@ -10,7 +10,6 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-require 'packer.luarocks'.install_commands()
 local vscode = vim.g.vscode == 1
   -- Lazy can manage itself
 require("lazy").setup({

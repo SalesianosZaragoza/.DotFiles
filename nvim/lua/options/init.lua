@@ -57,8 +57,8 @@ vim.bo.autoindent = true
 vim.o.expandtab = true
 vim.bo.expandtab = true
 vim.opt.termguicolors = true
-vim.cmd[[colorscheme tokyonight]]
-vim.g.tokyonight_style = 'night'
+-- vim.cmd[[colorscheme tokyonight]]
+-- vim.g.tokyonight_style = 'night'
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
