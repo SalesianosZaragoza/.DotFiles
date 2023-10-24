@@ -33,8 +33,6 @@ vim.o.showtabline = 2
 vim.o.showmode = false
 vim.o.backup = false
 vim.o.writebackup = false
--- disable tab key for copilot
-vim.g.copilot_no_tab_map = true
 vim.o.updatetime = 300
 vim.o.timeoutlen = 100
 vim.o.clipboard = "unnamedplus"

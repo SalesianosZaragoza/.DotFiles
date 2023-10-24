@@ -69,7 +69,7 @@ cmp.setup {
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
     ["<C-c>"] = cmp.mapping.close(),
-    ['<Tab>'] = cmp.mapping(function(fallback)
+    ['<Down>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
       elseif luasnip.expand_or_jumpable() then
@@ -78,7 +78,7 @@ cmp.setup {
         fallback()
       end
     end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
+    ['<Up>'] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
       elseif luasnip.jumpable(-1) then
@@ -87,18 +87,29 @@ cmp.setup {
         fallback()
       end
     end, { 'i', 's' }),
-    ['<CR>'] = cmp.mapping(
-      cmp.mapping.confirm {
-        behavior = cmp.ConfirmBehavior.Insert,
-        select = true,
-      },
-      { "i", "c" }
+    ['<Tab>'] = cmp.mapping(
+          cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Insert,
+            select = true,
+          }),{ "i", "c" }
+    ),
+    ['<Cr>'] = cmp.mapping(
+          cmp.mapping.confirm ({
+            behavior = cmp.ConfirmBehavior.Insert,
+            select = true,
+          }), { "i", "c" }
     ),
     ['<C-Space>'] = cmp.mapping.complete(),
-    ['<S-CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
+    ['<S-Tab>'] = cmp.mapping(
+          cmp.mapping.confirm ({
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+          }),{"i","c"}),
+    ['<S-Cr>'] = cmp.mapping(
+          cmp.mapping.confirm ({
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+          }),{"i","c"}),
   },
   sources = cmp.config.sources({
     { name = 'gh_issues' },
@@ -206,3 +217,5 @@ _ = vim.cmd [[
 " Disable cmp for a buffer
 autocmd FileType TelescopePrompt lua require('cmp').setup.buffer { enabled = false }
 --]]
+
+
