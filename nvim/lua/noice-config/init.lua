@@ -206,4 +206,5 @@ local default ={
   ---@type NoiceFormatOptions
   format = {}, --- @see section on formatting
 }
-require("noice").setup(BlindReturn(blind, default))
+require("noice").setup(default)
+print(BlindReturn(blind, default))
