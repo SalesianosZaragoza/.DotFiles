@@ -6,13 +6,9 @@ cmp.setup {
     return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt"
         or require("cmp_dap").is_dap_buffer()
   end,
-  experimental = {
+  view = {
     -- I like the new menu better! Nice work hrsh7th
-    native_menu = false,
-
-
-    -- Let's play with this for a day or two
-    ghost_text = false,
+    native_menu = true,
   },
   snippet = {
     expand = function(args)
@@ -55,7 +51,7 @@ cmp.setup {
         buffer = "[buf]",
         treesitter = "[ts]",
         nvim_lsp = "[LSP]",
-        nvim_lua = "[api]",
+        nvim_lua = "[lua]",
         path = "[path]",
         vsnip = "[snip]",
         gh_issues = "[issues]",
@@ -171,7 +167,15 @@ cmp.setup.cmdline("/", {
     -- { name = "buffer", keyword_length = 5 },
   }),
 })
-
+  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    })
+  })
 require("cmp").setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
   sources = {
     { name = "dap" },

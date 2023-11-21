@@ -24,7 +24,7 @@ require('tabnine-config')
 require('mini-config')
 require('nvim-lint-config')
 require('devcontainer-config')
-
+require('noice-config')
 end
 require('dial-config')
 require('leap-config')
