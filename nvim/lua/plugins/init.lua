@@ -177,7 +177,6 @@ require("lazy").setup({
   },
   {'neoclide/coc.nvim', branch = 'release', disable = vscode, cond = function() return vim.g.vscode ~= nil end },
   { 'kevinhwang91/nvim-bqf' },
-  {"j-hui/fidget.nvim", opts = { }, },
   { 'junegunn/fzf', build = function() vim.fn['fzf#install']() end },
   {'danymat/neogen', config = function() require('neogen').setup {} end, disable = vscode },
 })
