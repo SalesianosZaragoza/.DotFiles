@@ -4,9 +4,7 @@
     update_cache: yes
     pkg:
       - python3
-      - python3.10-venv
       - libpq-dev
-      - php-cli
       - openjdk-17-jdk
       - snapd
       - build-essential
