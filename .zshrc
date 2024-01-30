@@ -50,7 +50,8 @@ ZSH_THEME=""
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-vi-mode git gh aws microk8s npm nvm pip tmuxinator ubuntu jenv  fzf mvn fasd zsh-completions zsh-syntax-highlighting vagrant docker docker-compose vagrant-prompt kubectl git-flow gitfast command-not-found copypath copybuffer copyfile git-prompt dotenv colorize colored-man-pages zsh-history-substring-search extract sudo gitignore terraform )
+zstyle ':omz:plugins:nvm' lazy yes
+plugins=(zsh-vi-mode git aws microk8s npm nvm pip tmuxinator jenv  fzf mvn fasd zsh-completions zsh-syntax-highlighting docker docker-compose kubectl command-not-found copypath copybuffer copyfile git-prompt dotenv colorize colored-man-pages zsh-history-substring-search extract sudo gitignore )
 if [[ -z "${BLIND}" ]]; then
   plugins+=(zsh-autosuggestions)
 fi
@@ -140,20 +141,6 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 # END ANSIBLE MANAGED BLOCK for jenv
 
-# Defer initialization of nvm until nvm, node or a node-dependent command is
-# run. Ensure this block is only run once if .bashrc gets sourced multiple times
-# by checking whether __init_nvm is a function.
-if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(whence -w __init_nvm)" = function ]; then
-  [ -s "$NVM_DIR/zsh_completion" ] && . "$NVM_DIR/zsh_completion"
-  declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'gulp' 'grunt' 'webpack')
-  function __init_nvm() {
-    for i in "${__node_commands[@]}"; do unalias $i; done
-    . "$NVM_DIR"/nvm.sh
-    unset __node_commands
-    unset -f __init_nvm
-  }
-  for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
-fi
 
 if [ $commands[gh] ]; then
   source <(gh completion --shell zsh)
