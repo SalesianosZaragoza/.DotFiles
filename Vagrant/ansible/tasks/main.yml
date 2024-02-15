@@ -6,12 +6,11 @@
 - include: docker.yml
 - include: jenv.yml
 - include: snap.yml
-- include: kubernetes.yml
+- include: kubebox.yml
 - include: zoxide.yml
 - include: npm.yml
 - include: brew.yml
 - include: serverless.yml
-- include: terraform.yml  
 - include: pip.yml
 - include: sdkman.yml 
 - include: nvim.yml
@@ -19,5 +18,6 @@
 - include: nnn.yml
 - include: grv.yml
 - include: code.yml
-    
+- include: nix.xml
+
   

@@ -1,0 +1,31 @@
+- name: Install Nix package manager 
+  shell: curl -L https://nixos.org/nix/install --no-daemon | sh
+
+- name: Install nix package eclipse
+  shell: nix-env -i eclipse
+
+- name: Install nix package vscode
+  shell: nix-env -i vscodes
+
+- name: Install nix package lazygit
+  shell: nix-env -i lazygit
+
+- name: Install nix package lazydocker
+  shell: nix-env -i lazydocker
+
+- name: Install nix package neovim
+  shell: nix-env -i neovim
+
+- name: Install nix package awscliv2
+  shell: nix-env -i awscliv2
+
+- name: Install nix package rustup
+  shell: nix-env -i rustup 
+
+- name: Install nix package k3s
+  shell: nix-env -i k3s 
+
+
+
+
+  
