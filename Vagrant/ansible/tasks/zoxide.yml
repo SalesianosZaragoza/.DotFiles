@@ -1,2 +1,0 @@
-- name: Install zoxide in zsh
-  shell: curl -sS https://webinstall.dev/zoxide | zsh

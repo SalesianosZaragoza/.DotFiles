@@ -46,6 +46,14 @@
   ignore_errors: yes
   become: false
 
+- name: Install postman
+  homebrew:
+    name: postman
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
+  ignore_errors: yes
+  become: false
+
 - name: Install tig
   homebrew:
     name: tig

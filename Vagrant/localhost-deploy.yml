@@ -9,6 +9,6 @@
     eclipse_base_dir: "${HOME}/IDE/eclipse" 
   tasks:  
     - name: Include task list
-      include: "ansible/tasks/main.yml"
+      include_tasks: "ansible/tasks/main.yml"
 
 

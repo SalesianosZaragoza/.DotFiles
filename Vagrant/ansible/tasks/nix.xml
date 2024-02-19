@@ -2,30 +2,55 @@
   shell: curl -L https://nixos.org/nix/install --no-daemon | sh
 
 - name: Install nix package eclipse
-  shell: nix-env -i eclipse
+  shell: nix-env -iA nixpkgs.eclipses.eclipse-jee
 
 - name: Install nix package vscode
-  shell: nix-env -i vscodes
+  shell: nix-env -iA nixpkgs.vscode
 
 - name: Install nix package lazygit
-  shell: nix-env -i lazygit
+  shell: nix-env -iA nixpkgs.lazygit
 
 - name: Install nix package lazydocker
-  shell: nix-env -i lazydocker
+  shell: nix-env -iA nixpkgs.lazydocker
 
 - name: Install nix package neovim
-  shell: nix-env -i neovim
+  shell: nix-env -iA nixpkgs.neovim
 
-- name: Install nix package awscliv2
-  shell: nix-env -i awscliv2
+- name: Install nix package awscli2
+  shell: nix-env -iA nixpkgs.awscli2
 
 - name: Install nix package rustup
-  shell: nix-env -i rustup 
+  shell: nix-env -iA nixpkgs.rustup 
 
 - name: Install nix package k3s
-  shell: nix-env -i k3s 
+  shell: nix-env -iA nixpkgs.k3s 
 
+- name: Install nix package gh
+  shell: nix-env -iA nixpkgs.gh  
 
+- name: Install nix package nodePackage.serverless
+  shell: nix-env -iA nixpkgs.nodePackages.serverless
 
+- name: Install nix package ccls
+  shell: nix-env -iA nixpkgs.ccls
 
+- name: Install nix package dbeaver
+  shell: nix-env -iA nixpkgs.dbeaver 
+
+- name: Install nix package cheat
+  shell: nix-env -iA nixpkgs.cheat
+
+- name: Install nix package neovim
+  shell: nix-env -iA nixpkgs.neovim
+
+- name: Install nix package zoxide
+  shell: nix-env -iA nixpkgs.zoxide
+
+- name: Install nix package vagrant
+  shell: nix-env -iA nixpkgs.vagrant
   
+- name: Install nix package terraform
+  shell: nix-env -iA nixpkgs.terraform 
+
+- name: Install nix package burpsuite
+  shell: nix-env -iA nixpkgs.burpsuite
