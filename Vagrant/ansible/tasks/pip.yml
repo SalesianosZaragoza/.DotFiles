@@ -2,7 +2,6 @@
   shell: curl https://bootstrap.pypa.io/get-pip.py -o $HOME/get-pip.py && python3 $HOME/get-pip.py
   args:
     executable: /bin/zsh
-    warn: no
   become: true
 
 - name: Install "psycopg2-binary" package globally.

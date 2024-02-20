@@ -7,6 +7,8 @@
     ansible_python_interpreter: python3
     ansible_pkg_mgr: apt
     eclipse_base_dir: "${HOME}/IDE/eclipse" 
+  environment:    
+    NIXPKGS_ALLOW_UNFREE: 1
   tasks:  
     - name: Include task list
       include_tasks: "ansible/tasks/main.yml"

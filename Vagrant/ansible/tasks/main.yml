@@ -13,6 +13,5 @@
 - include_tasks: nvim.yml
 - include_tasks: nnn.yml
 - include_tasks: grv.yml
-- include_tasks: code.yml
 
   

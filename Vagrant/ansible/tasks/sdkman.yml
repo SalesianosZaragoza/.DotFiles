@@ -7,7 +7,6 @@
   shell: source ~/.zshrc && sdk install java
   args:
     executable: /bin/zsh
-    warn: no
   ignore_errors: yes
   become: false
 
