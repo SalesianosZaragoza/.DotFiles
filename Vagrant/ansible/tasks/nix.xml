@@ -1,4 +1,4 @@
-- name: Install Nix package manager 
+- name: Download Nix package manager script
   get_url: 
       url: https://nixos.org/nix/install
       dest: /tmp/nix.sh
