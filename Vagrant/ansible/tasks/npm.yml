@@ -5,7 +5,6 @@
   shell: source ~/.zshrc && nvm install node
   args:
     executable: /bin/zsh
-    warn: no
   become: false
   ignore_errors: true
    
@@ -13,7 +12,6 @@
   shell: source ~/.zshrc && nvm install-latest-npm
   args:
    executable: /bin/zsh
-   warn: no
   become: false  
   ignore_errors: true
 

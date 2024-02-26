@@ -2,7 +2,6 @@
   shell: curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash -
   args:
     executable: /bin/bash
-    warn: no
   ignore_errors: yes
   become: false
 
@@ -41,6 +40,14 @@
 - name: Install lazygit
   homebrew:
     name: jesseduffield/lazygit/lazygit
+    path: /home/linuxbrew/.linuxbrew/bin
+    state: latest
+  ignore_errors: yes
+  become: false
+
+- name: Install postman
+  homebrew:
+    name: postman
     path: /home/linuxbrew/.linuxbrew/bin
     state: latest
   ignore_errors: yes

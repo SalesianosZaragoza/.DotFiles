@@ -8,4 +8,4 @@
     ansible_pkg_mgr: apt 
   tasks:  
     - name: Include minimal config
-      include: "ansible/tasks/minimal.yml"
+      include_tasks: "ansible/tasks/minimal.yml"

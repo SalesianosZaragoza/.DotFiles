@@ -1,8 +1,0 @@
-
-- name: Install vscode 
-  shell: wget https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 | dpkg -i code_*.deb
-  args:
-    executable: /bin/zsh
-    warn: no
-  ignore_errors: yes
-  become: false

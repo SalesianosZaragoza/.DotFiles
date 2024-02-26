@@ -1,23 +1,17 @@
  
 ---
-- include: gh-cli.yml
-- include: apt.yml
-- include: zsh.yml
-- include: docker.yml
-- include: jenv.yml
-- include: snap.yml
-- include: kubernetes.yml
-- include: zoxide.yml
-- include: npm.yml
-- include: brew.yml
-- include: serverless.yml
-- include: terraform.yml  
-- include: pip.yml
-- include: sdkman.yml 
-- include: nvim.yml
-- include: aws.yml
-- include: nnn.yml
-- include: grv.yml
-- include: code.yml
-    
+- include_tasks: nix.xml
+- include_tasks: apt.yml
+- include_tasks: zsh.yml
+- include_tasks: docker.yml
+- include_tasks: jenv.yml
+- include_tasks: kubebox.yml
+- include_tasks: npm.yml
+- include_tasks: brew.yml
+- include_tasks: pip.yml
+- include_tasks: sdkman.yml 
+- include_tasks: nvim.yml
+- include_tasks: nnn.yml
+- include_tasks: grv.yml
+
   
