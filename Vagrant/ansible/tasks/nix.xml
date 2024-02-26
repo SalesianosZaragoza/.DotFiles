@@ -1,5 +1,11 @@
 - name: Install Nix package manager 
-  shell: curl -L https://nixos.org/nix/install --no-daemon | sh
+  get_url: 
+      url: https://nixos.org/nix/install
+      dest: /tmp/nix.sh
+      mode: 0755
+      
+- name: Install nix package manager from tmp
+  shell: /tmp/nix.sh --no-daemon
 
 - name: Install nix package eclipse
   shell: nix-env -iA nixpkgs.eclipses.eclipse-jee
