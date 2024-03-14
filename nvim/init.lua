@@ -11,16 +11,16 @@ require('bufferline-config')
 require('telescope-config')
 require('octo-config')
 require('dap-config')
-require('dashboard-config')
+-- require('dashboard-config')
 require('terminal-config')
 require("gitsigns-config")
 require('nvim-tree-config')
 require('lspsaga-config')
-require('lua-dev-config')
+-- require('lua-dev-config')
 require('null-ls-config')
 require('trouble-config')
 require('urlview-config')
-require('tabnine-config')
+-- require('tabnine-config')
 require('mini-config')
 require('nvim-lint-config')
 require('devcontainer-config')
@@ -30,6 +30,6 @@ require('dial-config')
 require('leap-config')
 require('surround-config')
 
-vim.cmd[[colorscheme tokyonight]]
-vim.g.tokyonight_style = 'night'
+-- vim.cmd[[colorscheme tokyonight]]
+-- vim.g.tokyonight_style = 'night'
 
