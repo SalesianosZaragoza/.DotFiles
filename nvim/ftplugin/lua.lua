@@ -18,6 +18,7 @@ require("neodev").setup({
   -- If you disable this, then you have to set {before_init=require("neodev.lsp").before_init}
   -- in your lsp start options
   lspconfig = true,
+  pathStrict = true,
 })
 
 -- then setup your lsp server as usual

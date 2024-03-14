@@ -38,7 +38,7 @@ require("lazy").setup({
   {'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' },
   {'windwp/nvim-ts-autotag', event = "InsertEnter", after = "nvim-treesitter" },
   {'HiPhish/nvim-ts-rainbow2', after = "nvim-treesitter" },
-  {'windwp/nvim-autopairs', config = function() require('autopairs-config') end, after = "nvim-cmp", enabled = not vscode},
+  {'windwp/nvim-autopairs', config = true, event="InsertEnter", after = "nvim-cmp", enabled = not vscode},
   {'folke/which-key.nvim', event = "BufWinEnter", config = function() require('whichkey-config') end, enabled = not vscode },
   'nvim-telescope/telescope.nvim',
   'LinArcX/telescope-env.nvim',
