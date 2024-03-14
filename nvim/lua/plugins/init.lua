@@ -112,7 +112,7 @@ require("lazy").setup({
   'RRethy/nvim-treesitter-textsubjects',
   'github/copilot.vim',
   'eandrju/cellular-automaton.nvim',
--- {'tzachar/cmp-tabnine', build = './install.sh', dependencies = 'hrsh7th/nvim-cmp',},
+  {'tzachar/cmp-tabnine', build = './install.sh', dependencies = 'hrsh7th/nvim-cmp'},
 --  { 'codota/tabnine-nvim', build = "./dl_binaries.sh", enabled = not vscode },
   'ray-x/cmp-treesitter',
   'ray-x/lsp_signature.nvim',
@@ -169,7 +169,7 @@ require("lazy").setup({
   { 'saadparwaiz1/cmp_luasnip' },
   'kristijanhusak/vim-carbon-now-sh',
   'pwntester/octo.nvim',
-  {'https://git.sr.ht/~whynothugo/lsp_lines.nvim', config = function() require("lsp_lines").setup() end, enabled = not vscode},
+--  {'https://git.sr.ht/~whynothugo/lsp_lines.nvim', config = true, enabled = not vscode},
   'sam4llis/nvim-lua-gf',
 -- { 'anuvyklack/windows.nvim', dependencies = { 'anuvyklack/middleclass', 'anuvyklack/animation.nvim' },
 --    config = function()  vim.o.winwidth = 20 vim.o.winminwidth = 10 vim.o.equalalways = false
