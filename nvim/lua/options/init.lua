@@ -56,6 +56,8 @@ vim.bo.autoindent = true
 vim.o.expandtab = true
 vim.bo.expandtab = true
 vim.opt.termguicolors = true
+vim.o.background = 'dark'
+vim.diagnostic.config({ virtual_lines = false })
 -- vim.cmd[[colorscheme tokyonight]]
 -- vim.g.tokyonight_style = 'night'
 -- [[ Highlight on yank ]]

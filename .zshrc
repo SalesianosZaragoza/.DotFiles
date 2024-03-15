@@ -148,7 +148,7 @@ fi
 export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64/"
 export PATH=$CMAKE_HOME/bin:$JAVA_HOME/bin:$SCALA_HOME/bin:$SALESFORCE_HOME/bin:$ECLIPSE_HOME/:$HOME/TOOLS/grv/:$PATH
 export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$PATH:~/.local/bin:/snap/bin:$BREW_HOME/bin
-export PATH="$HOME/go/bin:$PATH"
+export PATH="/opt/nvim-linux64/bin:$HOME/go/bin:$PATH"
 eval $(thefuck --alias)
 
 # Generated for envman. Do not edit.

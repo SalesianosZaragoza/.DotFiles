@@ -82,6 +82,7 @@ local vmappings = {
     l = {
       name = "LSP",
       a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+      v = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Virtual Lines Info Toggle" },
     },
     R = {
       name = "Refactor",
@@ -283,7 +284,8 @@ local mappings = {
     e = {'<cmd>Lspsaga show_line_diagnostics<cr>', "Show Line Diagnostics"},
     E = {'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', "Show line diagnostics"},
     n = {'<cmd>Lspsaga diagnostic_jump_next<cr>', "Go To Next Diagnostic"},
-    N = {'<cmd>Lspsaga diagnostic_jump_prev<cr>', "Go To Previous Diagnostic"}
+    N = {'<cmd>Lspsaga diagnostic_jump_prev<cr>', "Go To Previous Diagnostic"},
+    v = { "<cmd>lua require('lsp_lines').toggle()<cr>", "Virtual Lines Info Toggle" },
   },
   L = {
     name = "Logs",

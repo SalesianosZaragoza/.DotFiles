@@ -1,6 +1,6 @@
   require('lualine').setup({
     options = {
-      theme = 'tokyonight', 
+      theme = 'vscode', 
       icons_enabled = BlindReturn( false, true),
       component_separators = BlindReturn({left = '', right = ''} ,{ left = '', right = ''}),
       section_separators = BlindReturn({left = '', right = ''} , { left = '', right = ''}),
