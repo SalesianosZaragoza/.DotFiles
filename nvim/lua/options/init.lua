@@ -1,4 +1,5 @@
 vim.g.copilot_no_tab_map = true
+vim.opt.fillchars:append { eob = " " }
 vim.g.visual_impairing = ( os.getenv("BLIND") ~= nil )
 function BlindReturn(if_true, if_false)
   if vim.g.visual_impairing then return if_true else return if_false end
