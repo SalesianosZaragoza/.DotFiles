@@ -84,7 +84,7 @@ require("lazy").setup({
   'norcalli/nvim-colorizer.lua',
   'lewis6991/gitsigns.nvim',
   'kdheepak/lazygit.nvim',
-  {'tanvirtin/vgit.nvim', config = function() require('vgit').setup() end, enabled = not vscode },
+ -- {'tanvirtin/vgit.nvim', config = function() require('vgit').setup() end, enabled = not vscode },
   'echasnovski/mini.nvim',
   {"simrat39/symbols-outline.nvim", config = function() require("symbols-outline").setup() end, enabled = not vscode },
   'glepnir/dashboard-nvim',
