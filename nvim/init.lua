@@ -26,11 +26,9 @@ require('mini-config')
 require('nvim-lint-config')
 require('devcontainer-config')
 require('noice-config')
+vim.cmd[[colorscheme tokyonight-night]]
 end
 require('dial-config')
 require('leap-config')
 require('surround-config')
-
--- vim.cmd[[colorscheme tokyonight]]
--- vim.g.tokyonight_style = 'night'
 

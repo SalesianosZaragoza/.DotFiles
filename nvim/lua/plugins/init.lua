@@ -148,7 +148,7 @@ require("lazy").setup({
   'petertriho/cmp-git',
   'TC72/telescope-tele-tabby.nvim',
   'tjdevries/complextras.nvim',
---  'folke/tokyonight.nvim',
+  'folke/tokyonight.nvim',
   'Mofiqul/vscode.nvim',
   { 'nvim-lualine/lualine.nvim', enabled = not vscode },
   'unblevable/quick-scope',
