@@ -11,6 +11,8 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 )
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {"html", "javascript", "lua", "java", "python", 'c', 'cpp', 'rust' },
+  sync_install = false,
+  auto_install = true,
 
   indent = { enable = true },
   incremental_selection = {
