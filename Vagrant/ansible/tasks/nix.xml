@@ -19,9 +19,6 @@
 - name: Install nix package lazydocker
   shell: nix-env -iA nixpkgs.lazydocker
 
-- name: Install nix package neovim
-  shell: nix-env -iA nixpkgs.neovim
-
 - name: Install nix package awscli2
   shell: nix-env -iA nixpkgs.awscli2
 
