@@ -1,6 +1,7 @@
 local wezterm = require 'wezterm';
 return {
     default_prog = {"/usr/bin/zsh", "-l"},
+    color_scheme = "tokyonight_night",
     keys = {
         -- Create a new tab in the same domain as the current tab
         {key="t", mods="CTRL", action=wezterm.action{SpawnTab="CurrentPaneDomain"}},
