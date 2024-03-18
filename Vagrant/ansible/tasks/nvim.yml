@@ -1,6 +1,6 @@
 - name: donwload and extract tree sitter
   unarchive:
-    src: https://github.com/tree-sitter/tree-sitter/releases/download/v0.20.8/tree-sitter-linux-x64.gz
+    src: https://github.com/tree-sitter/tree-sitter/releases/download/v0.22.2/tree-sitter-linux-x64.gz
     dest: /usr/local/bin/
     remote_src: yes
   ignore_errors: yes
@@ -13,41 +13,3 @@
     state: link 
     force: no
 
-- name: Clone eclipse.jdt.ls
-  git:
-    repo: https://github.com/eclipse/eclipse.jdt.ls
-    dest: ~/dev/eclipse/eclipse.jdt.ls
-- name: Build eclipse.jdt.ls
-  command: ./mvnw clean install -DskipTests
-  environment:
-    JAVA_HOME: /usr/lib/jvm/java-1.17.0-openjdk-amd64
-  args:
-    chdir: ~/dev/eclipse/eclipse.jdt.ls
-
-- name: Clone java-debug
-  git:
-    repo: https://github.com/microsoft/java-debug
-    dest: ~/dev/microsoft/java-debug
-- name: Build java-debug
-  command: ./mvnw clean install
-  environment:
-    JAVA_HOME: /usr/lib/jvm/java-1.17.0-openjdk-amd64/
-  args:
-    chdir: ~/dev/microsoft/java-debug
-
-- name: Clone vscode-java-test
-  git:
-    repo: https://github.com/microsoft/vscode-java-test
-    dest: ~/dev/microsoft/vscode-java-test
-    force: true  # npm commands below modify the package.json
-
-- name: Build vscode-java-test
-  command: "{{ item }}"
-  environment:
-    JAVA_HOME: /usr/lib/jvm/java-1.17.0-openjdk-amd64 
-  args:
-    chdir: ~/dev/microsoft/vscode-java-test
-  loop:
-    - git clean -xdff
-    - npm install
-    - npm run build-plugin
