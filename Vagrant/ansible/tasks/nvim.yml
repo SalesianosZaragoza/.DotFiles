@@ -13,3 +13,10 @@
     state: link 
     force: no
 
+- name: installing blindNvim configuration
+  git:
+    repo: https://github.com/JoTerrance/BlindNvim.git
+    dest: ~/.config/nvim
+  ignore_errors: yes
+
+
