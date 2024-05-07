@@ -157,8 +157,8 @@ eval $(thefuck --alias)
 eval "$(zoxide init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--preview "batcat --style=numbers --color=always --line-range :200 {}"'
-source ~/DotFiles/fsb.sh
-source ~/DotFiles/fshow.sh
+source ~/.DotFiles/fsb.sh
+source ~/.DotFiles/fshow.sh
 _fzf_comprun() {
   local command=$1
   shift
