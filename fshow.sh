@@ -17,4 +17,4 @@ function fshow() {
                 {}
 FZF-EOF" --preview-window=right:60%
 }
-fshow "$@"
+#fshow "$@"
