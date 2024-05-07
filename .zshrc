@@ -156,7 +156,7 @@ eval $(thefuck --alias)
 
 eval "$(zoxide init zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS='--preview "batcat --style=numbers --color=always --line-range :200 {}"'
+export FZF_DEFAULT_OPTS='--preview "batcat --style=numbers --color=always --line-range :200 {}" --bind "ctrl-y:execute(readlink -f {} | echo -n {1..} | xclip -selection clipboard)" '
 source ~/.DotFiles/fsb.sh
 source ~/.DotFiles/fshow.sh
 _fzf_comprun() {
