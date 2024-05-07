@@ -13,4 +13,4 @@ function fsb() {
     fi;
     git checkout "$(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")"
 }
-fsb "$@"
+#fsb "$@"
