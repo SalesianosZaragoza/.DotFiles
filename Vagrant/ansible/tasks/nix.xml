@@ -38,7 +38,7 @@
   shell: nix-env -iA nixpkgs.ccls
 
 - name: Install nix package dbeaver
-  shell: nix-env -iA nixpkgs.dbeaver 
+  shell: nix-env -iA nixpkgs.dbeaver-bin 
 
 - name: Install nix package cheat
   shell: nix-env -iA nixpkgs.cheat
